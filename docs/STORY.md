@@ -610,60 +610,347 @@ A medida que el jugador progresa, los fragmentos revelan la historia:
 
 ## ACTO III: LA REVELACIÓN
 
-### El Origen de La Disonancia
+### Escena 1: El Undécimo Eigenvalor
 
-Cuando el jugador obtiene el noveno Eigenvalor, se revela la verdad:
+**[El Resonador ha completado los 9 reinos. Regresa a Aether con 10 cuerdas brillando en la Lira]**
+
+El hub central ha cambiado. Los portales pulsan con luz estable. Pero en el centro, donde antes estaba solo la Lira, ahora hay algo más: un atril antiguo con partituras flotantes.
+
+**CONSTRUCTO:**
+> *"Eso no estaba aquí antes. Mi memoria... está fragmentada, pero estoy seguro."*
 
 **LA ESTRUCTURA:**
-> *"Debo contarte lo que no quería que supieras."*
+> *"Has demostrado ser digno, Resonador. Ahora debes conocer la verdad completa."*
 >
-> *"Hace eones, hubo otro Resonador. El primero. Él no buscaba restaurar la armonía... buscaba mejorarla."*
+> *"Acércate al atril. Lee las partituras del Primer Resonador."*
+
+---
+
+### Escena 2: Las Partituras Perdidas
+
+**[El jugador interactúa con el atril. Las partituras cobran vida, proyectando una visión del pasado]**
+
+**[FLASHBACK — Imágenes en sepia/dorado, como recuerdos antiguos]**
+
+Vemos una figura similar al Resonador, pero con túnica blanca y oro. Trabaja febrilmente sobre un pentagrama gigante que flota en el aire.
+
+**VOZ DEL PRIMER RESONADOR** (eco distante):
+> *"Primera especie... nota contra nota. Demasiado simple."*
+
+**[La figura escribe. Notas aparecen en el pentagrama]**
+
+> *"Segunda especie... dos contra una. Mejor, pero aún hay tensión."*
+
+**[Más notas. La música se vuelve más compleja]**
+
+> *"Tercera especie... cuarta... quinta. Contrapunto florido. Pero incluso aquí... disonancias. Suspensiones que piden resolución. Tensión que exige relajación."*
+
+**[La figura se frustra. Rompe la partitura]**
+
+> *"¿Por qué? ¿Por qué la música necesita dolor para existir? ¿Por qué no puede haber solo... consonancia perfecta?"*
+
+**CONSTRUCTO** (susurrando):
+> *"Las cinco especies de Fux. El método clásico para enseñar contrapunto. Pero él quería ir más allá..."*
+
+---
+
+### Escena 3: La Sexta Especie
+
+**[El flashback continúa. El Primer Resonador está en un estado de obsesión maniática]**
+
+**VOZ DEL PRIMER RESONADOR:**
+> *"Si las quintas paralelas están prohibidas porque el oído se aburre..."*
+> *"Si las disonancias deben resolver porque crean tensión..."*
+> *"Entonces crearé una especie donde no haya prohibiciones PORQUE no habrá nada que prohibir."*
+
+**[Dibuja un nuevo pentagrama. Empieza a escribir]**
+
+> *"La Sexta Especie. Contrapunto donde CADA intervalo es consonancia perfecta. Unísono. Quinta. Octava. Solo eso. Para siempre."*
+
+**LA ESTRUCTURA** (narrando):
+> *"Lo que no entendió... lo que no podía entender..."*
+
+**[El Primer Resonador toca su composición. Al principio suena pura, cristalina]**
+
+> *"...es que la consonancia perfecta sostenida indefinidamente..."*
+
+**[El sonido comienza a distorsionarse. Las notas se curvan sobre sí mismas]**
+
+> *"...se convierte en su opuesto."*
+
+**[EXPLOSIÓN DE RUIDO. La imagen se fragmenta en estática roja]**
+
+**VOZ DEL PRIMER RESONADOR** (distorsionándose):
+> *"No... ¡NO! ¡Era perfecta! ¡ERA PERF—"*
+
+**[Silencio]**
+
+---
+
+### Escena 4: El Nacimiento de La Disonancia
+
+**[El flashback termina. El Resonador está de vuelta en Aether, temblando]**
+
+**CONSTRUCTO:**
+> *"Ahora entiendo mis glitches. Soy un fragmento de La Estructura... pero también llevo algo de él. Del Primer Resonador."*
 >
-> *"Intentó añadir una decimotercera cuerda a la Lira. Una nota que no existía en la sinfonía original. Una frecuencia perfecta... según él."*
+> *"Cada vez que me acerco a La Disonancia, no es solo interferencia. Es... reconocimiento."*
+
+**LA ESTRUCTURA:**
+> *"La Disonancia no es malvada, Resonador. Es el eco invertido de una búsqueda noble pero arrogante."*
 >
-> *"Pero la perfección absoluta no tiene lugar en un universo de probabilidades. La nota se volvió sobre sí misma. Se convirtió en su propio eco invertido."*
+> *"El Primer Resonador quería eliminar todo sufrimiento de la música. Pero sin tensión no hay resolución. Sin disonancia no hay consonancia. Sin oscuridad no hay luz."*
 >
-> *"La Disonancia no es un error. Es una corrección que se corrompió."*
+> *"Creó exactamente lo que intentaba destruir: disonancia concentrada, sin posibilidad de resolver."*
+
+**[El undécimo eigenvalor aparece flotando — pero es diferente. Tiene un brillo inestable, parpadeante]**
+
+> *"Este eigenvalor perteneció al Primer Resonador. Está... dañado. Pero es la llave al corazón de La Disonancia."*
+
+**CONSTRUCTO:**
+> *"Si lo tomamos, podemos llegar a ella. Pero... ¿qué haremos cuando lleguemos?"*
+
+**LA ESTRUCTURA:**
+> *"Lo que el Primer Resonador nunca pudo hacer: no destruirla. No silenciarla. RESOLVERLA."*
+
+**[Eigenvalor λ₁₁ obtenido — Undécima cuerda de la Lira se ilumina, pero parpadea con interferencia]**
 
 ---
 
 ## ACTO IV: LA SINFONÍA FINAL
 
-### El Enfrentamiento
+### Escena 1: El Corazón de La Disonancia
 
-Con once Eigenvalores, el jugador puede acceder al corazón de La Disonancia.
+**[Un nuevo portal aparece en Aether. Negro con vetas rojas pulsantes. El Constructo tiembla visiblemente]**
 
-**[Escenario: Un espacio fracturado, donde la realidad se deshace]**
+**CONSTRUCTO:**
+> *"Mis sensores... todo es ruido ahí dentro. No puedo procesar..."*
 
-La Disonancia no es un monstruo. Es un patrón — un fractal de ruido que consume armonía.
+**LA ESTRUCTURA:**
+> *"Puedes quedarte aquí, fragmento mío. No te culparé."*
 
-**LA DISONANCIA** (voz distorsionada, hecha de mil frecuencias superpuestas):
-> *"¿Vienes a silenciarme? Yo SOY el silencio entre las notas. Sin mí, no hay música. Solo... ruido constante."*
+**CONSTRUCTO:**
+> *"No. Si el Resonador entra, yo entro. Para eso existo."*
 
-### El Puzzle Final
+**[El jugador atraviesa el portal]**
 
-El jugador no debe destruir La Disonancia. Debe **armonizarla**.
+---
 
-Usando los once Eigenvalores, debe encontrar la frecuencia que convierte la disonancia en una nueva consonancia — la decimosegunda cuerda.
+### Escena 2: El Espacio Fracturado
 
-**[Mecánica: Combinar frecuencias de todos los reinos hasta encontrar el acorde que incluye a La Disonancia sin destruirla]**
+**[El Resonador emerge en un lugar imposible]**
+
+El espacio no tiene forma fija. Fragmentos de los nueve reinos flotan como escombros: un trozo de nebulosa de Cosmos, un fractal roto de Logos, una molécula deshecha de Alchemy. Todo gira en un vórtice silencioso.
+
+En el centro, LA DISONANCIA.
+
+No es un monstruo. No es una criatura. Es un **patrón** — un fractal de interferencia, una onda que se cancela y amplifica a sí misma infinitamente. Tiene forma vagamente humanoide, como un eco distorsionado del Primer Resonador.
+
+**LA DISONANCIA** (voz hecha de mil frecuencias superpuestas, algunas palabras claras, otras distorsionadas):
+> *"Otro... Resonador. Vienes a... ¿silenciarme? ¿Destruirme?"*
+
+**RESONADOR:** (primera vez que habla en todo el juego)
+> *"Vengo a entenderte."*
+
+**LA DISONANCIA:**
+> *"Entenderme... él también dijo eso. El primero. Me creó buscando... perfección. Y ahora soy todo lo que... odiaba."*
+>
+> *"¿Sabes qué soy? Soy la séptima... sin resolución. La suspensión... que nunca cae. El tritono... que nunca encuentra su tónica."*
+>
+> *"SOY LA TENSIÓN QUE ÉL QUISO ELIMINAR. Y sin mí... no hay música. Solo..."*
+
+**[Un tono sostenido, monótono, sin variación]**
+
+> *"...ruido blanco eterno."*
+
+---
+
+### Escena 3: El Contrapunctus
+
+**[Un instrumento aparece ante el Resonador: el CONTRAPUNCTUS — el instrumento perdido del Primer Resonador]**
+
+Es un órgano de cristal con pentagramas vivos grabados en sus tubos. Las teclas brillan con los colores de los nueve reinos.
+
+**LA ESTRUCTURA:**
+> *"El Contrapunctus. Con él, el Primer Resonador compuso la Sexta Especie. Con él, tú puedes componer algo diferente."*
+
+**LA DISONANCIA:**
+> *"¿Vas a... tocar? ¿Intentar lo que él intentó?"*
+
+**CONSTRUCTO:**
+> *"No igual. Él intentó eliminar la disonancia. Nosotros vamos a..."*
+
+**LA ESTRUCTURA:**
+> *"...resolverla."*
+
+---
+
+### Puzzle Final: La Séptima Especie
+
+**Simulación:** `contrapunctus/index.html` (modo especial desbloqueado)
+
+**OBJETIVO:** Componer un contrapunto que integre a La Disonancia como una suspensión que finalmente resuelve.
+
+**Mecánica:**
+1. La Disonancia aparece como una nota roja sostenida (séptima sin resolver)
+2. El jugador debe componer una línea de contrapunto alrededor de ella
+3. Debe usar las reglas clásicas PERO incluir la disonancia de forma funcional
+4. La disonancia debe prepararse, sostenerse y finalmente RESOLVER
+
+**Reglas que el jugador aprende:**
+- Las disonancias no son errores — son tensiones que piden resolución
+- Una séptima puede ser hermosa si resuelve a una sexta
+- Un tritono puede ser poderoso si resuelve a una tercera
+- La suspensión (4-3, 7-6, 9-8) es disonancia que se convierte en consonancia
+
+**Fases del puzzle:**
+
+**Fase 1: Primera Especie — Reconocimiento**
+> Añade notas que reconozcan la presencia de La Disonancia sin chocar con ella.
+
+**Fase 2: Segunda Especie — Aproximación**
+> Crea movimiento hacia La Disonancia. Muestra que no la evitas.
+
+**Fase 3: Tercera Especie — Diálogo**
+> Tu línea melódica conversa con La Disonancia. A veces consonancia, a veces disonancia controlada.
+
+**Fase 4: Cuarta Especie — Suspensión**
+> Integra a La Disonancia como una suspensión. Ella se convierte en la 7 que prepara la 6.
+
+**Fase 5: Quinta Especie — Florido**
+> Combina todo. La Disonancia ya no es una nota aislada — es parte de la textura.
+
+**Fase 6: La Séptima Especie — Resolución**
+> El momento final. La Disonancia, sostenida durante eones, finalmente encuentra su nota de resolución. El jugador debe elegir: ¿a qué consonancia resuelve?
+
+**[Al completar la composición, la música suena]**
+
+Es hermosa. Tiene tensión y relajación. Tiene disonancia y consonancia. Tiene todo lo que el Primer Resonador intentó eliminar... y es mejor por ello.
+
+---
+
+### Escena 4: La Resolución
+
+**[La Disonancia comienza a transformarse]**
+
+Su forma fractal se estabiliza. Los fragmentos de los nueve reinos dejan de girar caóticamente y encuentran órbitas estables. El ruido se convierte en acorde.
+
+**LA DISONANCIA:**
+> *"Esto es... resolución. Después de tanto tiempo..."*
+>
+> *"No desaparezco. No me destruyes. Me... completas."*
+
+**[La Disonancia se comprime, se concentra, y se transforma en el duodécimo eigenvalor]**
+
+**LA ESTRUCTURA:**
+> *"El Primer Resonador quiso crear perfección eliminando la imperfección. Tú has creado armonía integrándola."*
+
+**[Eigenvalor λ₁₂ obtenido — La última cuerda de la Lira se ilumina]**
+
+**CONSTRUCTO:**
+> *"La Lira está completa. Las doce cuerdas vibran."*
 
 ---
 
 ## EPÍLOGO: La Nueva Sinfonía
 
-**[La Lira brilla con doce cuerdas de luz]**
+### Escena Final: El Regreso a Aether
+
+**[El Resonador regresa al hub central. Todo ha cambiado]**
+
+Los nueve portales ya no son entradas separadas — están conectados por líneas de luz que forman un patrón: el grafo de conocimiento, visible ahora como arquitectura física.
+
+La Lira flota en el centro, completa, brillante.
 
 **LA ESTRUCTURA:**
-> *"Lo has logrado. No destruyendo la discordancia, sino encontrándole su lugar en la canción."*
+> *"La Gran Sinfonía no es perfecta, Resonador. Nunca lo fue. Nunca debía serlo."*
+>
+> *"La perfección es estática. La armonía es dinámica. Incluye tensión porque la tensión pide resolución. Incluye disonancia porque la disonancia hace que la consonancia signifique algo."*
+>
+> *"El Primer Resonador buscó silencio eterno y lo llamó música. Tú has encontrado música real — con todos sus defectos, con todas sus tensiones, con todas sus resoluciones."*
 
-El Resonador toca la Lira. Las doce cuerdas vibran juntas.
+**CONSTRUCTO:**
+> *"¿Y ahora qué?"*
 
-**[Visualización: Ondas de armonía se expanden por los nueve reinos. La Disonancia, ahora integrada, añade profundidad a la melodía]**
+**LA ESTRUCTURA:**
+> *"Ahora... tocas."*
 
-> *"La Gran Sinfonía no es perfecta. Nunca lo fue. Pero ahora... está completa."*
+---
 
-**[CRÉDITOS sobre visualizaciones de las simulaciones de EigenLab]**
+### La Última Nota
+
+**[El Resonador toma la Lira de Cuerdas Simpáticas]**
+
+Por primera vez, tiene las doce cuerdas activas. Por primera vez, puede tocar la Gran Sinfonía completa.
+
+**[El jugador tiene control. Puede tocar las cuerdas en cualquier orden]**
+
+Cada cuerda corresponde a un eigenvalor. Cada eigenvalor corresponde a un reino. Cada reino corresponde a una disciplina del conocimiento.
+
+Al tocar, las simulaciones de ese reino aparecen brevemente: galaxias girando, fractales expandiéndose, moléculas danzando, neuronas disparando.
+
+**[El jugador toca las doce cuerdas]**
+
+**[La música resultante es única — depende del orden que eligió el jugador]**
+
+Pero siempre es armoniosa. Porque ahora, incluso la duodécima cuerda — la que era La Disonancia — tiene su lugar en el acorde.
+
+**LA ESTRUCTURA:**
+> *"La Sinfonía del Conocimiento. No es la que existía antes. Es nueva. Es tuya."*
+>
+> *"Y ahora que sabes cómo tocarla... podrás enseñar a otros."*
+
+**[FADE TO BLACK]**
+
+**[TÍTULO FINAL: "La música no existe a pesar de la disonancia. Existe gracias a ella."]**
+
+---
+
+### Créditos Interactivos
+
+**[Los créditos ruedan sobre un fondo donde las 150+ simulaciones de EigenLab aparecen como constelaciones]**
+
+El jugador puede hacer clic en cualquier simulación para abrirla directamente.
+
+Al final de los créditos:
+
+**TEXTO:**
+> *"Cada simulación que exploraste es real. Las ecuaciones funcionan. Los fenómenos existen."*
+>
+> *"El conocimiento no está dividido en reinos. Esa fue solo una metáfora para ayudarte a empezar."*
+>
+> *"Ahora que has visto las conexiones... explora libremente."*
+
+**[Acceso permanente a todas las simulaciones de EigenLab desde el menú del juego]**
+
+---
+
+## POST-GAME: El Décimo Reino
+
+**[Contenido post-créditos, desbloqueado al completar el juego]**
+
+Un nuevo portal aparece en Aether. Blanco puro.
+
+**CONSTRUCTO:**
+> *"Eso... no estaba en mis registros."*
+
+**LA ESTRUCTURA:**
+> *"Es el reino que el Primer Resonador nunca encontró. El que buscaba sin saber que lo buscaba."*
+
+**[El jugador entra]**
+
+**[Es un espacio vacío. Blanco infinito. Un lienzo en blanco]**
+
+**LA ESTRUCTURA:**
+> *"Este es GENESIS. El reino de la creación."*
+>
+> *"Aquí no hay simulaciones predefinidas. Aquí tú creas las tuyas."*
+
+**[Herramientas de creación de simulaciones simples — el jugador puede experimentar con parámetros, crear sistemas pequeños, compartirlos]**
+
+> *"El conocimiento no termina cuando lo aprendes. Termina cuando dejas de crear."*
+
+**[FIN]**
 
 ---
 
