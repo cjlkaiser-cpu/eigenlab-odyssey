@@ -403,12 +403,12 @@ El jugador debe:
 
 **[El portal verde terminal se abre a un espacio de circuitos y código vivo]**
 
-Flujos de datos serpentean como ríos luminosos. Árboles binarios crecen del suelo. Autómatas celulares evolucionan en las paredes.
+Flujos de datos serpentean como ríos luminosos. Árboles binarios crecen del suelo. En las paredes, patrones celulares nacen, mueren y evolucionan en ciclos infinitos.
 
 **GUARDIÁN DE MACHINA** (El Algoritmo Primordial):
 > *"IF player.seeks(truth) THEN reveal(fragment). ELSE wait()."*
 >
-> *"Bienvenido al reino donde la lógica cobra vida. Donde cada decisión bifurca el universo."*
+> *"Bienvenido al reino donde la lógica cobra vida. Donde cuatro reglas simples crean universos enteros."*
 
 **CONSTRUCTO:**
 > *"Estoy... en casa. Este lugar es como mi interior, pero expandido. Puedo ver mis propios engranajes reflejados en las paredes."*
@@ -418,29 +418,47 @@ Flujos de datos serpentean como ríos luminosos. Árboles binarios crecen del su
 - `binary-search-tree.html` — Árboles de búsqueda
 - `logic-gates.html` — Compuertas lógicas
 - `finite-automata.html` — Máquinas de estados
+- `perceptron.html` — La unidad de aprendizaje
 
-#### Puzzle Central: El Perceptrón
-**Simulación:** `perceptron.html`
+#### Puzzle Central: El Juego de la Vida
+**Simulación:** `game-of-life.html`
 
-**OBJETIVO:** Entrenar una mente mínima para distinguir armonía de disonancia.
+**OBJETIVO:** Demostrar que reglas simples pueden crear complejidad infinita.
+
+**Contexto narrativo:**
+El Guardián muestra un grid vacío — el "tejido computacional" de Machina, corrompido por La Disonancia. Todas las células han muerto. El jugador debe sembrar vida que se sostenga a sí misma.
 
 El jugador debe:
-1. Presentar puntos de datos (sonidos armónicos vs disonantes)
-2. Ajustar los pesos del perceptrón
-3. Lograr que la red clasifique correctamente nuevos sonidos
-4. Alcanzar 100% de precisión en el set de prueba
+1. Observar las cuatro reglas: nacimiento (3 vecinos), supervivencia (2-3), muerte (soledad o sobrepoblación)
+2. Colocar un patrón inicial que NO muera ni se congele
+3. Crear una "fábrica de gliders" — el Gosper Glider Gun
+4. Los gliders generados deben alcanzar una diana en el extremo del grid
 
-**CONSTRUCTO** (observando el entrenamiento):
-> *"Fascinante. Esto es... aprendizaje. La máquina no fue programada para distinguir. Aprendió a hacerlo."*
+**CONSTRUCTO** (al ver el grid vacío):
+> *"Cuatro reglas. Solo cuatro. Nacimiento si tienes exactamente tres vecinos. Supervivencia con dos o tres. Muerte por soledad o asfixia."*
 >
-> *"Me pregunto si yo también aprendí a ser lo que soy... o si fui programado así."*
+> *"Conway demostró que con estas cuatro líneas... puedes simular cualquier computadora. Cualquier programa. Cualquier pensamiento."*
 
-**[Al lograr 100% de precisión, el perceptrón dibuja la frontera de decisión: una línea que separa λ de Ψ]**
+**[El jugador coloca las primeras células. Algunas configuraciones mueren. Otras se congelan en "bloques" estáticos]**
+
+**CONSTRUCTO** (si el patrón se congela):
+> *"Un 'still life'. Estable, sí. Pero no vivo. No evoluciona. Es lo que el Primer Resonador quería: perfección congelada."*
+
+**[El jugador descubre el Gosper Glider Gun. Al activarlo, gliders emergen en diagonal, uno tras otro, infinitamente]**
+
+**CONSTRUCTO** (al ver los gliders):
+> *"¡Mira! Vida que crea vida. Patrones que generan patrones. Esto es lo que él no entendió..."*
+>
+> *"La complejidad no viene de reglas complejas. Viene de reglas simples ejecutadas con paciencia."*
+
+**[Los gliders alcanzan la diana. El grid entero pulsa con el símbolo λ formado por células vivas]**
 
 **GUARDIÁN:**
-> *"Has creado discernimiento. La habilidad más peligrosa."*
+> *"Has creado un universo. Con cuatro reglas y paciencia."*
 >
-> *"El Primer Resonador usó algoritmos como este para buscar la nota perfecta. La máquina la encontró... pero no debió haberla encontrado."*
+> *"El Primer Resonador también creó algo aquí. Una búsqueda algorítmica de la nota perfecta. La encontró... en un still life eterno. Una nota que nunca cambia."*
+>
+> *"Pero la música necesita cambio. Necesita gliders, no bloques."*
 
 **[Eigenvalor λ₇ obtenido — Séptima cuerda de la Lira se ilumina]**
 
@@ -601,7 +619,7 @@ A medida que el jugador progresa, los fragmentos revelan la historia:
 | **LOGOS** | "Un teorema que se demuestra a sí mismo falso. El Primer Resonador la encontró." |
 | **ATOMOS** | "Observó demasiado. Y lo observado... miró de vuelta." |
 | **TERRA** | "Intentó anclar la nota perfecta en la roca. La Tierra la rechazó." |
-| **MACHINA** | "La máquina encontró la nota perfecta... pero no debió haberla encontrado." |
+| **MACHINA** | "Buscó la nota perfecta con algoritmos. La encontró en un still life eterno — una nota que nunca cambia." |
 | **ALCHEMY** | "Quiso congelar el baile en un solo acorde. La música necesita movimiento." |
 | **BIOS** | "Quiso ser el origen de un nuevo patrón. La vida ya tenía su melodía." |
 | **PSYCHE** | "Estaba demasiado seguro de su propia genialidad." |
@@ -1021,14 +1039,14 @@ Un nuevo portal aparece en Aether. Blanco puro.
 > *"Los continentes bailan. Un baile lentísimo que dura millones de años. Pangea fue solo una pose."*
 
 #### MACHINA
-**Ante el perceptrón:**
-> *"Una neurona artificial. Aprende de sus errores. Me pregunto... ¿yo también aprendo? ¿O solo proceso?"*
+**Ante el Game of Life:**
+> *"Cuatro reglas. Nacimiento, muerte, supervivencia, soledad. Conway creó un universo con cuatro líneas de código. Y ese universo... puede simular cualquier otro."*
 
-**Ante los autómatas finitos:**
-> *"Estados y transiciones. Cada decisión lleva a otra. La vida también podría modelarse así... si supiéramos todos los estados."*
+**Ante el Gosper Glider Gun:**
+> *"Una fábrica de vida. Células que crean células que crean células. Bill Gosper la descubrió en 1970, y con ella probó que la vida puede crecer sin límite."*
 
-**Ante las compuertas lógicas:**
-> *"AND, OR, NOT. De estos tres ladrillos se construye todo pensamiento digital. Incluido el mío."*
+**Ante un still life:**
+> *"Un bloque. Cuatro células que nunca cambian. Estables para siempre. El Primer Resonador habría amado esto... pero no es vida. Es muerte disfrazada de eternidad."*
 
 #### ALCHEMY
 **Ante Le Chatelier:**
