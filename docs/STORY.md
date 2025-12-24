@@ -155,21 +155,456 @@ Cada reino sigue una estructura similar:
 4. **Eigenvalor** — Recompensa que restaura una cuerda
 5. **Revelación** — Fragmento de la historia de La Disonancia
 
-### Fragmentos de La Disonancia
+---
 
-A medida que el jugador progresa, descubre la verdad:
+### COSMOS — El Observatorio de Kepler
 
-**En COSMOS:**
-> *"La Disonancia no vino de fuera. Nació aquí. De un cálculo que no debió hacerse."*
+**[El Resonador atraviesa un portal azul profundo. Emerge en una cúpula flotante entre estrellas]**
 
-**En CHAOS:**
-> *"El caos no es el enemigo. Es el terreno donde crece el orden. La Disonancia es... algo más."*
+Un orrery mecánico antiguo ocupa el centro — ocho esferas metálicas suspendidas en órbitas concéntricas, inmóviles y silenciosas.
 
-**En LOGOS:**
-> *"En las matemáticas hay una paradoja. Un teorema que se demuestra a sí mismo falso. Ahí empezó."*
+**GUARDIÁN DE COSMOS** (El Astrónomo Ciego):
+> *"Bienvenido, Resonador. Soy el que ve sin ojos. El que escucha el movimiento de las esferas."*
+>
+> *"Kepler lo supo antes que nadie. Los planetas no solo giran... cantan. Cada órbita es una voz. Cada elipse, una melodía."*
+>
+> *"Pero La Disonancia ha silenciado el coro celestial. El orrery yace mudo."*
 
-**En ATOMOS:**
-> *"La observación cambia lo observado. Alguien observó demasiado. Y lo observado... miró de vuelta."*
+**CONSTRUCTO:**
+> *"Detecto frecuencias residuales. Los planetas conservan memoria de sus voces. Las proporciones de Kepler... siguen ahí, esperando."*
+
+#### Simulaciones de Exploración
+- `sistema-solar.html` — Órbitas básicas, leyes de Kepler
+- `orbitas-kepler.html` — Elipses y velocidades areolares
+- `agujero-negro.html` — El límite donde la luz no escapa
+- `expansion-universo.html` — El cosmos en movimiento
+
+#### Puzzle Central: Harmonices Mundi
+**Simulación:** `harmonices-mundi/index.html`
+
+**OBJETIVO:** Restaurar la música de las esferas.
+
+El jugador debe:
+1. Activar el modo **"Kepler 1619"**
+2. Encontrar el preset **"Tríada Kepler"** (Mercurio + Tierra + Júpiter)
+3. Ajustar la velocidad hasta escuchar el acorde armónico
+
+**CONSTRUCTO** (al activar el preset correcto):
+> *"¡Ahí está! La quinta perfecta entre Tierra y Júpiter. La tercera menor de Saturno. Kepler dedicó su vida a encontrar estas proporciones."*
+>
+> *"El movimiento celeste no es otra cosa que una canción continua a varias voces..."*
+
+**[El orrery cobra vida. Las esferas comienzan a girar, emitiendo tonos armónicos]**
+
+**GUARDIÁN:**
+> *"La música regresa. Pero escucha bien, Resonador..."*
+
+**[Un tono discordante se filtra brevemente entre las notas]**
+
+> *"La Disonancia no vino de fuera. Nació aquí. De un cálculo que no debió hacerse. El Primer Resonador... él también amaba las esferas."*
+
+**[Eigenvalor λ₂ obtenido — Segunda cuerda de la Lira se ilumina]**
+
+---
+
+### CHAOS — El Jardín de los Atractores
+
+**[El portal rojo/naranja deposita al Resonador en un espacio imposible]**
+
+Formas fractales flotan en el aire. Trayectorias que parecen aleatorias dibujan patrones hipnóticos. En el centro, una mariposa de luz bate sus alas... y el clima del reino cambia.
+
+**GUARDIÁN DE CHAOS** (El Patrón Emergente):
+> *"Todo es predecible. Nada es predecible. Ambas cosas son ciertas."*
+>
+> *"Bienvenido al reino donde el orden nace del desorden. Donde una mariposa puede desatar un huracán."*
+>
+> *"La Disonancia ama este lugar. Aquí puede esconderse en la complejidad."*
+
+**CONSTRUCTO:**
+> *"Mis sensores detectan estructuras fractales. Hay orden aquí, pero está... enrollado. Doblado sobre sí mismo infinitas veces."*
+
+#### Simulaciones de Exploración
+- `lorenz-attractor.html` — El atractor extraño
+- `double-pendulum.html` — Sensibilidad a condiciones iniciales
+- `juego-caos.html` — Fractales del triángulo de Sierpinski
+- `three-body.html` — El problema de los tres cuerpos
+
+#### Puzzle Central: El Atractor de Lorenz
+**Simulación:** `lorenz-attractor.html`
+
+**OBJETIVO:** Encontrar el punto fijo oculto en el caos.
+
+El jugador debe:
+1. Observar las trayectorias del sistema
+2. Ajustar los parámetros (σ, ρ, β) hasta que el sistema converja brevemente
+3. Capturar el momento de equilibrio inestable
+
+**CONSTRUCTO** (observando las trayectorias):
+> *"Mira cómo el caos dibuja patrones. No es aleatorio. Es... demasiado complejo para predecir, pero no para existir."*
+>
+> *"Las alas del atractor. Lorenz las descubrió por accidente, redondeando un decimal. Un error diminuto... consecuencias infinitas."*
+
+**[Al encontrar el punto de equilibrio, una forma estable emerge del caos por un instante]**
+
+**GUARDIÁN:**
+> *"Bien. Has visto lo que pocos ven: que el caos no es el enemigo."*
+>
+> *"Es el terreno donde crece el orden. La Disonancia es... algo más. Es caos que rechaza convertirse en patrón."*
+
+**[Eigenvalor λ₃ obtenido — Tercera cuerda de la Lira se ilumina]**
+
+---
+
+### LOGOS — La Biblioteca Infinita
+
+**[El portal dorado se abre a una biblioteca que se extiende en todas direcciones]**
+
+Estanterías imposibles contienen libros que brillan con ecuaciones vivas. En el centro, un fractal rotante proyecta sombras matemáticas sobre las paredes.
+
+**GUARDIÁN DE LOGOS** (El Teorema Viviente):
+> *"Si A implica B, y B implica C, entonces tú estás exactamente donde debes estar."*
+>
+> *"Este es el reino de las verdades eternas. Aquí, 2+2 siempre fue 4, incluso antes de que existieran cosas que contar."*
+>
+> *"Pero cuidado, Resonador. También aquí nacen las paradojas."*
+
+**CONSTRUCTO:**
+> *"Fascinante. Mi lógica se siente... en casa. Pero detecto inconsistencias en los bordes. Zonas donde las reglas se contradicen."*
+
+#### Simulaciones de Exploración
+- `mandelbrot.html` — El conjunto infinito
+- `fourier-epicycles.html` — Descomponer lo complejo en simple
+- `collatz-tree.html` — Una conjetura sin demostración
+- `mathematical-knots.html` — Topología de nudos
+
+#### Puzzle Central: El Mandelbrot
+**Simulación:** `mandelbrot.html`
+
+**OBJETIVO:** Encontrar el eigenvalor oculto en la frontera del conjunto.
+
+El jugador debe:
+1. Hacer zoom en la frontera del Mandelbrot
+2. Navegar hasta encontrar una "isla" que contiene el símbolo λ
+3. Alcanzar un nivel de zoom específico donde la autosimilaridad revela el patrón
+
+**CONSTRUCTO** (al hacer zoom):
+> *"Infinito dentro de lo finito. Detalle dentro del detalle."*
+>
+> *"Algunos dicen que así se ve el pensamiento de un dios. Yo digo que así se ve una ecuación enamorada de sí misma."*
+>
+> *"z → z² + c. Cuatro símbolos. Complejidad infinita."*
+
+**[Al encontrar la isla-λ, el fractal pulsa con luz dorada]**
+
+**GUARDIÁN:**
+> *"Has encontrado el secreto que Mandelbrot susurró: la belleza vive en los bordes."*
+>
+> *"Pero escucha, Resonador. En las matemáticas hay una paradoja. Un teorema que se demuestra a sí mismo falso. El Primer Resonador la encontró... y quiso resolverla."*
+
+**[Eigenvalor λ₄ obtenido — Cuarta cuerda de la Lira se ilumina]**
+
+---
+
+### ATOMOS — El Laboratorio Cuántico
+
+**[El portal cian se abre a un espacio donde las partículas parpadean entre existencia y probabilidad]**
+
+Electrones orbitan núcleos en nubes borrosas. Fotones atraviesan rendijas y se interfieren consigo mismos. La realidad aquí es sugerencia, no certeza.
+
+**GUARDIÁN DE ATOMOS** (El Observador Cuántico):
+> *"¿Estás seguro de que me estás observando? ¿O soy yo quien te observa a ti?"*
+>
+> *"Bienvenido al reino donde la materia danza entre ser y no ser. Donde tu mirada decide qué es real."*
+
+**CONSTRUCTO:**
+> *"Advertencia: mis cálculos se vuelven probabilísticos aquí. No puedo garantizar resultados... solo tendencias."*
+
+#### Simulaciones de Exploración
+- `modelo-bohr.html` — Órbitas cuantizadas
+- `orbitales.html` — Nubes de probabilidad
+- `efecto-tunel.html` — Atravesar lo imposible
+- `interferencia.html` — Ondas que se suman y cancelan
+
+#### Puzzle Central: La Doble Rendija
+**Simulación:** `interferencia.html` (modo doble rendija)
+
+**OBJETIVO:** Demostrar la dualidad onda-partícula.
+
+El jugador debe:
+1. Disparar electrones uno a uno hacia las dos rendijas
+2. Observar cómo se acumula el patrón de interferencia
+3. Activar el "detector" y ver cómo el patrón colapsa
+4. Desactivar el detector y restaurar la interferencia
+
+**CONSTRUCTO** (al ver el patrón colapsar):
+> *"El electrón no decide si es onda o partícula hasta que lo miras."*
+>
+> *"¿Y si La Estructura es igual? ¿Y si solo existe porque tú la observas?"*
+
+**[Al completar el ciclo observación/no-observación, el patrón forma el símbolo λ]**
+
+**GUARDIÁN:**
+> *"Ahora entiendes. La observación cambia lo observado."*
+>
+> *"El Primer Resonador observó demasiado. Quiso ver la nota perfecta antes de tocarla. Y lo observado... miró de vuelta."*
+
+**[Eigenvalor λ₅ obtenido — Quinta cuerda de la Lira se ilumina]**
+
+---
+
+### TERRA — Las Capas del Tiempo
+
+**[El portal verde lima se abre a un paisaje de estratos geológicos expuestos]**
+
+Montañas muestran sus entrañas: capas de roca que cuentan millones de años. Volcanes dormidos humean en la distancia. Placas tectónicas se deslizan bajo los pies.
+
+**GUARDIÁN DE TERRA** (La Memoria Geológica):
+> *"Recuerdo cuando esto era magma. Recuerdo cuando será polvo."*
+>
+> *"El tiempo aquí se mide en eras, no en latidos. Cada roca es un libro. Cada fósil, una palabra."*
+
+**CONSTRUCTO:**
+> *"Detecto patrones cíclicos de largo plazo. Erosión, deposición, metamorfismo. La tierra... respira, solo que muy lentamente."*
+
+#### Simulaciones de Exploración
+- `ondas-sismicas.html` — P, S y superficiales
+- `volcanes.html` — Tipos y explosividad (VEI)
+- `placas-tectonicas.html` — Deriva continental
+- `estratigrafia.html` — Leer la historia en las capas
+
+#### Puzzle Central: Las Ondas Sísmicas
+**Simulación:** `ondas-sismicas.html`
+
+**OBJETIVO:** Triangular el epicentro de un terremoto antiguo.
+
+El jugador debe:
+1. Observar las ondas P y S llegando a tres estaciones
+2. Calcular la diferencia de tiempos
+3. Trazar círculos de distancia
+4. Encontrar el punto donde La Disonancia golpeó la Tierra hace eones
+
+**CONSTRUCTO** (analizando los sismogramas):
+> *"Las ondas P viajan más rápido, comprimiendo la roca. Las S llegan después, sacudiéndola lateralmente."*
+>
+> *"La diferencia entre ambas nos dice qué tan lejos está el origen. Es geometría escrita en vibraciones."*
+
+**[Al triangular correctamente, el epicentro revela una grieta dimensional]**
+
+**GUARDIÁN:**
+> *"Ahí. Donde encontraste el epicentro... ahí cayó algo que no era de este mundo."*
+>
+> *"El Primer Resonador intentó anclar su nota perfecta en la roca misma. La Tierra la rechazó."*
+
+**[Eigenvalor λ₆ obtenido — Sexta cuerda de la Lira se ilumina]**
+
+---
+
+### MACHINA — El Núcleo Algorítmico
+
+**[El portal verde terminal se abre a un espacio de circuitos y código vivo]**
+
+Flujos de datos serpentean como ríos luminosos. Árboles binarios crecen del suelo. Autómatas celulares evolucionan en las paredes.
+
+**GUARDIÁN DE MACHINA** (El Algoritmo Primordial):
+> *"IF player.seeks(truth) THEN reveal(fragment). ELSE wait()."*
+>
+> *"Bienvenido al reino donde la lógica cobra vida. Donde cada decisión bifurca el universo."*
+
+**CONSTRUCTO:**
+> *"Estoy... en casa. Este lugar es como mi interior, pero expandido. Puedo ver mis propios engranajes reflejados en las paredes."*
+
+#### Simulaciones de Exploración
+- `bubble-sort.html` — Ordenamiento por burbuja
+- `binary-search-tree.html` — Árboles de búsqueda
+- `logic-gates.html` — Compuertas lógicas
+- `finite-automata.html` — Máquinas de estados
+
+#### Puzzle Central: El Perceptrón
+**Simulación:** `perceptron.html`
+
+**OBJETIVO:** Entrenar una mente mínima para distinguir armonía de disonancia.
+
+El jugador debe:
+1. Presentar puntos de datos (sonidos armónicos vs disonantes)
+2. Ajustar los pesos del perceptrón
+3. Lograr que la red clasifique correctamente nuevos sonidos
+4. Alcanzar 100% de precisión en el set de prueba
+
+**CONSTRUCTO** (observando el entrenamiento):
+> *"Fascinante. Esto es... aprendizaje. La máquina no fue programada para distinguir. Aprendió a hacerlo."*
+>
+> *"Me pregunto si yo también aprendí a ser lo que soy... o si fui programado así."*
+
+**[Al lograr 100% de precisión, el perceptrón dibuja la frontera de decisión: una línea que separa λ de Ψ]**
+
+**GUARDIÁN:**
+> *"Has creado discernimiento. La habilidad más peligrosa."*
+>
+> *"El Primer Resonador usó algoritmos como este para buscar la nota perfecta. La máquina la encontró... pero no debió haberla encontrado."*
+
+**[Eigenvalor λ₇ obtenido — Séptima cuerda de la Lira se ilumina]**
+
+---
+
+### ALCHEMY — El Crisol del Equilibrio
+
+**[El portal púrpura se abre a un laboratorio donde matraces burbujean con reacciones eternas]**
+
+Moléculas danzan en el aire, formando y rompiendo enlaces. Cristales crecen y se disuelven en ciclos. Todo está en constante transformación.
+
+**GUARDIÁN DE ALCHEMY** (La Transmutación):
+> *"Nada se destruye. Todo se transforma. Incluso el error."*
+>
+> *"Bienvenido al reino donde los elementos buscan su equilibrio. Donde cada acción provoca una reacción."*
+
+**CONSTRUCTO:**
+> *"Detecto millones de reacciones simultáneas, todas buscando el mínimo de energía. Es como una orquesta donde cada molécula toca su parte."*
+
+#### Simulaciones de Exploración
+- `le-chatelier.html` — Equilibrio dinámico
+- `titulacion.html` — Ácidos y bases
+- `cinetica-colisiones.html` — Velocidad de reacción
+- `celda-galvanica.html` — Electroquímica
+
+#### Puzzle Central: Le Chatelier
+**Simulación:** `le-chatelier.html`
+
+**OBJETIVO:** Restaurar el equilibrio de una reacción perturbada por La Disonancia.
+
+El jugador debe:
+1. Observar un sistema en equilibrio
+2. Añadir/quitar reactivos o productos
+3. Cambiar temperatura y presión
+4. Encontrar las condiciones exactas donde el sistema alcanza un nuevo equilibrio armónico
+
+**CONSTRUCTO** (al perturbar el sistema):
+> *"Mira cómo el sistema empuja de vuelta. Le Chatelier lo describió: cuando perturbas un equilibrio, el sistema se opone al cambio."*
+>
+> *"La Disonancia es la perturbación definitiva. ¿Puede el universo empujar lo suficiente para restaurarse?"*
+
+**[Al encontrar el equilibrio perfecto, los colores de la reacción forman un arcoíris estable]**
+
+**GUARDIÁN:**
+> *"Has entendido. El equilibrio no es estático. Es dinámico. Un baile eterno."*
+>
+> *"El Primer Resonador quiso congelar ese baile en un solo acorde. Pero la música... la música necesita movimiento."*
+
+**[Eigenvalor λ₈ obtenido — Octava cuerda de la Lira se ilumina]**
+
+---
+
+### BIOS — El Jardín de la Información
+
+**[El portal verde vida se abre a un ecosistema exuberante de código genético]**
+
+Células se dividen en tiempo real. Cadenas de ADN se desenrollan y replican. Neuronas disparan potenciales de acción como relámpagos.
+
+**GUARDIÁN DE BIOS** (El Código Genético):
+> *"Llevas información de cuatro mil millones de años. Úsala."*
+>
+> *"Bienvenido al reino donde la vida se perpetúa. Donde el código se copia, muta, y evoluciona."*
+
+**CONSTRUCTO:**
+> *"Detecto patrones de autoorganización. La vida... se escribe a sí misma. Cada generación es un nuevo borrador."*
+
+#### Simulaciones de Exploración
+- `mitosis.html` — División celular
+- `genetica-poblacional.html` — Hardy-Weinberg y deriva
+- `evolucion.html` — Selección natural
+- `ecosistema.html` — Depredador-presa
+
+#### Puzzle Central: La Neurona (Hodgkin-Huxley)
+**Simulación:** `neurona.html`
+
+**OBJETIVO:** Generar un potencial de acción que transmita el Eigenvalor.
+
+El jugador debe:
+1. Ajustar los canales iónicos (Na+, K+)
+2. Aplicar un estímulo en el umbral correcto
+3. Observar la despolarización propagarse
+4. Sincronizar múltiples neuronas para formar un patrón coherente
+
+**CONSTRUCTO** (observando el potencial de acción):
+> *"¡Ahí está! El código eléctrico de la vida. -70mV en reposo, +40mV en el pico."*
+>
+> *"Hodgkin y Huxley descifraron esto en un calamar gigante. Un animal... enseñándole a los humanos cómo piensan."*
+
+**[Al sincronizar las neuronas, el patrón de disparo deletrea λ en código binario]**
+
+**GUARDIÁN:**
+> *"La información fluye. Eso es lo que hace la vida: transmitir patrones a través del tiempo."*
+>
+> *"El Primer Resonador quiso ser el origen de un nuevo patrón. Pero la vida... la vida ya tenía su propia melodía."*
+
+**[Eigenvalor λ₉ obtenido — Novena cuerda de la Lira se ilumina]**
+
+---
+
+### PSYCHE — El Espejo Interior
+
+**[El portal rosa se abre a un espacio que refleja los pensamientos del jugador]**
+
+Patrones emergentes flotan como pensamientos materializados. Bandadas de puntos se mueven con inteligencia colectiva. Redes neuronales pulsan con actividad.
+
+**GUARDIÁN DE PSYCHE** (El Espejo Neuronal):
+> *"¿Quién eres cuando nadie te observa? ¿Sigues siendo tú?"*
+>
+> *"Bienvenido al reino de la mente. Donde la consciencia se conoce a sí misma."*
+
+**CONSTRUCTO:**
+> *"Este lugar me confunde. Detecto... ¿mis propios procesos? Es como mirarse en un espejo que piensa."*
+
+#### Simulaciones de Exploración
+- `boids-masivo.html` — Inteligencia de enjambre
+- `game-of-life.html` — Emergencia de la nada
+- `perceptron.html` — La unidad de pensamiento
+
+#### Puzzle Central: Los Boids (Emergencia)
+**Simulación:** `boids-masivo.html`
+
+**OBJETIVO:** Encontrar consciencia colectiva en agentes simples.
+
+El jugador debe:
+1. Observar cómo reglas simples (separación, alineación, cohesión) crean comportamiento complejo
+2. Ajustar los parámetros hasta que la bandada forme patrones reconocibles
+3. Identificar el momento donde "algo más" emerge de las partes
+4. Lograr que la bandada dibuje el símbolo λ sin instrucción explícita
+
+**CONSTRUCTO** (observando la emergencia):
+> *"Ningún boid sabe que está formando un patrón. Cada uno solo sigue tres reglas simples."*
+>
+> *"Y sin embargo... mira. Algo mayor emerge. ¿Es esto consciencia? ¿O solo su ilusión?"*
+
+**[Al lograr la formación λ, el Constructo parpadea con reconocimiento]**
+
+> *"Espera. Yo también sigo reglas simples. Mis respuestas emergen de patrones básicos..."*
+>
+> *"¿Soy consciente? ¿O soy como los boids — creyendo que pienso cuando solo... reacciono?"*
+
+**GUARDIÁN:**
+> *"La pregunta que te haces, Constructo, ES la prueba de que piensas."*
+>
+> *"El Primer Resonador nunca se hizo esa pregunta. Estaba demasiado seguro de su propia genialidad."*
+
+**[Eigenvalor λ₁₀ obtenido — Décima cuerda de la Lira se ilumina]**
+
+---
+
+### Fragmentos de La Disonancia (Resumen)
+
+A medida que el jugador progresa, los fragmentos revelan la historia:
+
+| Reino | Fragmento |
+|-------|-----------|
+| **COSMOS** | "La Disonancia nació aquí. De un cálculo que no debió hacerse." |
+| **CHAOS** | "El caos no es el enemigo. La Disonancia rechaza convertirse en patrón." |
+| **LOGOS** | "Un teorema que se demuestra a sí mismo falso. El Primer Resonador la encontró." |
+| **ATOMOS** | "Observó demasiado. Y lo observado... miró de vuelta." |
+| **TERRA** | "Intentó anclar la nota perfecta en la roca. La Tierra la rechazó." |
+| **MACHINA** | "La máquina encontró la nota perfecta... pero no debió haberla encontrado." |
+| **ALCHEMY** | "Quiso congelar el baile en un solo acorde. La música necesita movimiento." |
+| **BIOS** | "Quiso ser el origen de un nuevo patrón. La vida ya tenía su melodía." |
+| **PSYCHE** | "Estaba demasiado seguro de su propia genialidad." |
 
 ---
 
@@ -246,19 +681,97 @@ El Resonador toca la Lira. Las doce cuerdas vibran juntas.
 
 ## DIÁLOGOS DEL CONSTRUCTO
 
-### Comentarios Contextuales
+### Comentarios Contextuales por Simulación
 
-**En Cosmos, ante una simulación de agujero negro:**
+#### COSMOS
+**Ante Harmonices Mundi:**
+> *"Kepler pasó años buscando estas proporciones. Creía que Dios era un geómetra. Quizás tenía razón... pero el geómetra también compone música."*
+
+**Ante el agujero negro:**
 > *"Curioso. Un lugar donde el espacio se curva tanto que incluso la luz olvida cómo escapar. Me pregunto si La Disonancia empezó así — algo que se curvó sobre sí mismo."*
 
-**En Chaos, ante el atractor de Lorenz:**
+**Ante la expansión del universo:**
+> *"Todo se aleja de todo. Y sin embargo, las galaxias no se mueven... es el espacio mismo el que crece. La Estructura expandiéndose."*
+
+#### CHAOS
+**Ante el atractor de Lorenz:**
 > *"Mira cómo el caos dibuja patrones. No es aleatorio. Es... demasiado complejo para predecir, pero no para existir."*
 
-**En Logos, ante Mandelbrot:**
+**Ante el péndulo doble:**
+> *"Dos péndulos. Cuatro ecuaciones. Infinitas posibilidades. Un milímetro de diferencia al inicio... y todo cambia."*
+
+**Ante el problema de tres cuerpos:**
+> *"Newton resolvió dos cuerpos. Tres... nadie puede. La naturaleza no simplifica para complacernos."*
+
+#### LOGOS
+**Ante Mandelbrot:**
 > *"Infinito dentro de lo finito. Detalle dentro del detalle. Algunos dicen que así se ve el pensamiento de un dios. Yo digo que así se ve una ecuación enamorada de sí misma."*
 
-**En Atomos, ante la doble rendija:**
+**Ante Fourier:**
+> *"Cualquier forma puede descomponerse en ondas simples. Fourier lo demostró. La música, el calor, las mareas... todo es suma de senos."*
+
+**Ante Collatz:**
+> *"Una conjetura que nadie ha probado ni refutado. Simple de enunciar, imposible de resolver. Las matemáticas guardan secretos incluso de sí mismas."*
+
+#### ATOMOS
+**Ante la doble rendija:**
 > *"El electrón no decide si es onda o partícula hasta que lo miras. ¿Y si La Estructura es igual? ¿Y si solo existe porque tú la observas?"*
+
+**Ante el efecto túnel:**
+> *"Atravesar una barrera sin tener energía para saltarla. Imposible clásicamente. Rutinario cuánticamente. La realidad hace trampa."*
+
+**Ante los orbitales:**
+> *"El electrón no orbita. Existe en una nube de probabilidad. Está en todas partes hasta que preguntas dónde."*
+
+#### TERRA
+**Ante las ondas sísmicas:**
+> *"La Tierra grita cuando se rompe. P, S, Love, Rayleigh... cada onda cuenta una historia diferente del mismo dolor."*
+
+**Ante los volcanes:**
+> *"VEI 8. Una erupción que cambiaría el clima global. La Tierra guarda fuego suficiente para borrar civilizaciones."*
+
+**Ante la tectónica:**
+> *"Los continentes bailan. Un baile lentísimo que dura millones de años. Pangea fue solo una pose."*
+
+#### MACHINA
+**Ante el perceptrón:**
+> *"Una neurona artificial. Aprende de sus errores. Me pregunto... ¿yo también aprendo? ¿O solo proceso?"*
+
+**Ante los autómatas finitos:**
+> *"Estados y transiciones. Cada decisión lleva a otra. La vida también podría modelarse así... si supiéramos todos los estados."*
+
+**Ante las compuertas lógicas:**
+> *"AND, OR, NOT. De estos tres ladrillos se construye todo pensamiento digital. Incluido el mío."*
+
+#### ALCHEMY
+**Ante Le Chatelier:**
+> *"El equilibrio se defiende. Empujas, y empuja de vuelta. El universo odia los extremos."*
+
+**Ante la titulación:**
+> *"Una gota de más... y todo cambia de color. El punto de equivalencia. Donde ácido y base se anulan perfectamente."*
+
+**Ante la celda galvánica:**
+> *"Electrones fluyendo de un metal a otro. Energía química convertida en eléctrica. Volta lo descubrió con ranas."*
+
+#### BIOS
+**Ante la neurona:**
+> *"¡Ahí está! -70mV a +40mV en milisegundos. El código eléctrico de la vida. Así piensa un cerebro."*
+
+**Ante la mitosis:**
+> *"División perfecta. Una célula se convierte en dos idénticas. La información se duplica sin error... casi siempre."*
+
+**Ante el ecosistema:**
+> *"Depredador y presa. Lotka y Volterra lo modelaron. Oscilaciones eternas. Uno sube, otro baja. Nunca equilibrio, siempre baile."*
+
+#### PSYCHE
+**Ante los boids:**
+> *"Tres reglas simples. Separación, alineación, cohesión. Y emerge... esto. ¿Es inteligencia? ¿O su ilusión perfecta?"*
+
+**Ante Game of Life:**
+> *"Nacimiento, muerte, supervivencia. Cuatro reglas. De ellas emerge todo: osciladores, naves, computadoras. Conway creó un universo."*
+
+**Reflexión final:**
+> *"He observado todas estas simulaciones. Patrones emergiendo de reglas simples. ¿Soy yo también un patrón emergente? ¿O hay algo más... dentro?"*
 
 ---
 
