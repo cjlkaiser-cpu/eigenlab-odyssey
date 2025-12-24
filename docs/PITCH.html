@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EigenLab Odyssey — Biblia del Proyecto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #030712;
+            --bg-secondary: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #a855f7;
+
+            /* Colores de reinos */
+            --aether: #a855f7;
+            --cosmos: #1e3a8a;
+            --chaos: #dc2626;
+            --logos: #fbbf24;
+            --atomos: #06b6d4;
+            --terra: #84cc16;
+            --machina: #22c55e;
+            --alchemy: #9333ea;
+            --bios: #10b981;
+            --psyche: #ec4899;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #1a1a3e 0%, var(--bg-primary) 70%);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), #ec4899, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--text-muted);
+            max-width: 500px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            animation: bounce 2s infinite;
+            color: var(--text-muted);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent), #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Synopsis */
+        .synopsis {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .synopsis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .synopsis-item {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .synopsis-item h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Characters */
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .character-card {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .character-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+        }
+
+        .character-header.constructo {
+            background: linear-gradient(135deg, #06b6d4, #0284c7);
+        }
+
+        .character-header.estructura {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        }
+
+        .character-header.disonancia {
+            background: linear-gradient(135deg, #dc2626, #7f1d1d);
+        }
+
+        .character-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .character-role {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .character-body {
+            padding: 1.5rem;
+        }
+
+        .character-trait {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .character-trait::before {
+            content: '◆';
+            color: var(--accent);
+            font-size: 0.6rem;
+        }
+
+        /* Realms */
+        .realms-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .realm-hub {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .realm-center {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--aether), #7c3aed);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 60px rgba(168, 85, 247, 0.4);
+        }
+
+        .realm-center-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .realm-center-sub {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .realms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .realm-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-top: 4px solid;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .realm-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .realm-card.cosmos { border-color: var(--cosmos); }
+        .realm-card.chaos { border-color: var(--chaos); }
+        .realm-card.logos { border-color: var(--logos); }
+        .realm-card.atomos { border-color: var(--atomos); }
+        .realm-card.terra { border-color: var(--terra); }
+        .realm-card.machina { border-color: var(--machina); }
+        .realm-card.alchemy { border-color: var(--alchemy); }
+        .realm-card.bios { border-color: var(--bios); }
+        .realm-card.psyche { border-color: var(--psyche); }
+
+        .realm-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .realm-discipline {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .realm-puzzle {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .realm-puzzle-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .realm-puzzle-name {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .realm-fragment {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-muted);
+            border-left: 2px solid var(--text-muted);
+            padding-left: 0.75rem;
+        }
+
+        /* Story Arc */
+        .story-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), #ec4899, #fbbf24, #22c55e);
+        }
+
+        .act {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .act::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 4px solid var(--bg-primary);
+        }
+
+        .act.act-1::before { background: var(--accent); }
+        .act.act-2::before { background: #ec4899; }
+        .act.act-3::before { background: #fbbf24; }
+        .act.act-4::before { background: #22c55e; }
+
+        .act-number {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .act-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .act-scenes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .scene-tag {
+            background: var(--bg-card);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Theme */
+        .theme-section {
+            background: linear-gradient(135deg, var(--bg-secondary), #1a1a3e);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .theme-quote {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--accent), #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .theme-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .theme-item h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Simulations */
+        .sim-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .sim-table th,
+        .sim-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--bg-card);
+        }
+
+        .sim-table th {
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sim-realm {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .sim-realm.cosmos { background: rgba(30, 58, 138, 0.3); color: #60a5fa; }
+        .sim-realm.chaos { background: rgba(220, 38, 38, 0.3); color: #f87171; }
+        .sim-realm.logos { background: rgba(251, 191, 36, 0.3); color: #fbbf24; }
+        .sim-realm.atomos { background: rgba(6, 182, 212, 0.3); color: #22d3ee; }
+        .sim-realm.terra { background: rgba(132, 204, 22, 0.3); color: #a3e635; }
+        .sim-realm.machina { background: rgba(34, 197, 94, 0.3); color: #4ade80; }
+        .sim-realm.alchemy { background: rgba(147, 51, 234, 0.3); color: #c084fc; }
+        .sim-realm.bios { background: rgba(16, 185, 129, 0.3); color: #34d399; }
+        .sim-realm.psyche { background: rgba(236, 72, 153, 0.3); color: #f472b6; }
+
+        /* Tech Stack */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-item {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .tech-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .tech-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+            margin-top: 4rem;
+        }
+
+        .footer-date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo { font-size: 2.5rem; }
+            .tagline { font-size: 1.2rem; }
+            h2 { font-size: 2rem; }
+            section { padding: 2rem 1rem; }
+            .story-timeline { padding-left: 2rem; }
+            .story-timeline::before { left: 0.5rem; }
+            .act::before { left: -1.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1 class="logo">EigenLab Odyssey</h1>
+        <p class="tagline">Una aventura épica a través de los reinos del conocimiento</p>
+        <p class="quote">"En el principio fue la frecuencia. De la frecuencia nació el patrón. Del patrón emergió el número. Y del número... todo lo demás."</p>
+        <div class="scroll-hint">↓ Scroll para explorar</div>
+    </header>
+
+    <!-- Synopsis -->
+    <section>
+        <h2>Sinopsis</h2>
+        <div class="synopsis">
+            <p style="font-size: 1.1rem; color: var(--text-primary);">
+                Hubo un tiempo en que el universo cantaba. Cada estrella, cada átomo, cada pensamiento vibraba en armonía perfecta.
+                Los antiguos lo llamaban <strong>La Gran Sinfonía</strong> — el tejido musical que conectaba toda la realidad.
+            </p>
+            <p style="font-size: 1.1rem;">
+                Pero algo cambió. Una nota discordante. Un error en la partitura cósmica. <strong>La Disonancia</strong>.
+            </p>
+
+            <div class="synopsis-grid">
+                <div class="synopsis-item">
+                    <h4>El Protagonista</h4>
+                    <p>Eres <strong>El Resonador</strong> — el último de una línea de seres capaces de percibir las conexiones ocultas entre fenómenos.</p>
+                </div>
+                <div class="synopsis-item">
+                    <h4>El Arma</h4>
+                    <p>Armado con la <strong>Lira de Cuerdas Simpáticas</strong>, debes restaurar las 12 cuerdas que una vez resonaban con todo el conocimiento.</p>
+                </div>
+                <div class="synopsis-item">
+                    <h4>La Misión</h4>
+                    <p>Explora <strong>9 reinos</strong>, cada uno representando una disciplina científica. Completa puzzles dentro de <strong>150+ simulaciones interactivas</strong>.</p>
+                </div>
+                <div class="synopsis-item">
+                    <h4>El Enemigo</h4>
+                    <p><strong>La Disonancia</strong> no es malvada — es el eco invertido de una búsqueda de perfección que salió mal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters -->
+    <section>
+        <h2>Personajes</h2>
+        <div class="characters-grid">
+            <div class="character-card">
+                <div class="character-header">
+                    <div class="character-name">El Resonador</div>
+                    <div class="character-role">Protagonista Jugable</div>
+                </div>
+                <div class="character-body">
+                    <div class="character-trait">Figura andrógina con túnica índigo</div>
+                    <div class="character-trait">Patrones de circuitos dorados bordados</div>
+                    <div class="character-trait">No habla hasta el Acto IV</div>
+                    <div class="character-trait">Cuarta iteración de los Resonadores</div>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <div class="character-header constructo">
+                    <div class="character-name">Constructo de Éter</div>
+                    <div class="character-role">Compañero / Guía</div>
+                </div>
+                <div class="character-body">
+                    <div class="character-trait">Esfera de anillos geométricos</div>
+                    <div class="character-trait">Glitches aumentan cerca de La Disonancia</div>
+                    <div class="character-trait">Cuestiona su propia consciencia en Psyche</div>
+                    <div class="character-trait">Fragmento de La Estructura</div>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <div class="character-header estructura">
+                    <div class="character-name">La Estructura</div>
+                    <div class="character-role">Mentor / Narrador</div>
+                </div>
+                <div class="character-body">
+                    <div class="character-trait">No tiene forma física</div>
+                    <div class="character-trait">El "sistema operativo" del cosmos</div>
+                    <div class="character-trait">Se comunica via terminal/ecuaciones</div>
+                    <div class="character-trait">Nunca miente, pero omite verdades</div>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <div class="character-header disonancia">
+                    <div class="character-name">La Disonancia</div>
+                    <div class="character-role">Antagonista</div>
+                </div>
+                <div class="character-body">
+                    <div class="character-trait">Fractal de interferencia sin forma fija</div>
+                    <div class="character-trait">"La séptima sin resolución"</div>
+                    <div class="character-trait">Creada por el Primer Resonador</div>
+                    <div class="character-trait">No debe destruirse — debe resolverse</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Realms -->
+    <section>
+        <h2>Los Nueve Reinos</h2>
+        <div class="realms-container">
+            <div class="realm-hub">
+                <div class="realm-center">
+                    <div class="realm-center-name">AETHER</div>
+                    <div class="realm-center-sub">Hub Central</div>
+                </div>
+            </div>
+
+            <div class="realms-grid">
+                <div class="realm-card cosmos">
+                    <div class="realm-name">COSMOS</div>
+                    <div class="realm-discipline">Astronomía</div>
+                    <div class="realm-puzzle">
+                        <div class="realm-puzzle-label">Puzzle Central</div>
+                        <div class="realm-puzzle-name">Harmonices Mundi</div>
+                    </div>
+                    <div class="realm-fragment">"La Disonancia nació aquí. De un cálculo que no debió hacerse."</div>
+                </div>
+
+                <div class="realm-card chaos">
+                    <div class="realm-name">CHAOS</div>
+                    <div class="realm-discipline">Sistemas Emergentes</div>
+                    <div class="realm-puzzle">
+                        <div class="realm-puzzle-label">Puzzle Central</div>
+                        <div class="realm-puzzle-name">Atractor de Lorenz</div>
+                    </div>
+                    <div class="realm-fragment">"El caos no es el enemigo. La Disonancia rechaza convertirse en patrón."</div>
+                </div>
+
+                <div class="realm-card logos">
+                    <div class="realm-name">LOGOS</div>
+                    <div class="realm-discipline">Matemáticas</div>
+                    <div class="realm-puzzle">
+                        <div class="realm-puzzle-label">Puzzle Central</div>
+                        <div class="realm-puzzle-name">Mandelbrot</div>
+                    </div>
+                    <div class="realm-fragment">"Un teorema que se demuestra a sí mismo falso."</div>
+                </div>
+
+                <div class="realm-card atomos">
+                    <div class="realm-name">ATOMOS</div>
+                    <div class="realm-discipline">Física</div>
+                    <div class="realm-puzzle">
+                        <div class="realm-puzzle-label">Puzzle Central</div>
+                        <div class="realm-puzzle-name">Doble Rendija</div>
+                    </div>
+                    <div class="realm-fragment">"Observó demasiado. Y lo observado... miró de vuelta."</div>
+                </div>
+
+                <div class="realm-card terra">
+                    <div class="realm-name">TERRA</div>
+                    <div class="realm-discipline">Geología</div>
+                    <div class="realm-puzzle">
+                        <div class="realm-puzzle-label">Puzzle Central</div>
+                        <div class="realm-puzzle-name">Ondas Sísmicas</div>
+                    </div>
+                    <div class="realm-fragment">"Intentó anclar la nota perfecta en la roca. La Tierra la rechazó."</div>
+                </div>
+
+                <div class="realm-card machina">
+                    <div class="realm-name">MACHINA</div>
+                    <div class="realm-discipline">Computación</div>
+                    <div class="realm-puzzle">
+                        <div class="realm-puzzle-label">Puzzle Central</div>
+                        <div class="realm-puzzle-name">Perceptrón</div>
+                    </div>
+                    <div class="realm-fragment">"La máquina encontró la nota perfecta... pero no debió haberla encontrado."</div>
+                </div>
+
+                <div class="realm-card alchemy">
+                    <div class="realm-name">ALCHEMY</div>
+                    <div class="realm-discipline">Química</div>
+                    <div class="realm-puzzle">
+                        <div class="realm-puzzle-label">Puzzle Central</div>
+                        <div class="realm-puzzle-name">Le Chatelier</div>
+                    </div>
+                    <div class="realm-fragment">"Quiso congelar el baile en un solo acorde. La música necesita movimiento."</div>
+                </div>
+
+                <div class="realm-card bios">
+                    <div class="realm-name">BIOS</div>
+                    <div class="realm-discipline">Biología</div>
+                    <div class="realm-puzzle">
+                        <div class="realm-puzzle-label">Puzzle Central</div>
+                        <div class="realm-puzzle-name">Neurona (Hodgkin-Huxley)</div>
+                    </div>
+                    <div class="realm-fragment">"Quiso ser el origen de un nuevo patrón. La vida ya tenía su melodía."</div>
+                </div>
+
+                <div class="realm-card psyche">
+                    <div class="realm-name">PSYCHE</div>
+                    <div class="realm-discipline">IA / Mente</div>
+                    <div class="realm-puzzle">
+                        <div class="realm-puzzle-label">Puzzle Central</div>
+                        <div class="realm-puzzle-name">Boids (Emergencia)</div>
+                    </div>
+                    <div class="realm-fragment">"Estaba demasiado seguro de su propia genialidad."</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Arc -->
+    <section>
+        <h2>Arco Narrativo</h2>
+        <div class="story-timeline">
+            <div class="act act-1">
+                <div class="act-number">Acto I</div>
+                <div class="act-title">El Despertar</div>
+                <p>El Resonador despierta en la Catedral de Datos sin memoria. La Lira está rota. Debe encontrar g = 9.81 para activar el péndulo y obtener el primer Eigenvalor.</p>
+                <div class="act-scenes">
+                    <span class="scene-tag">Terminal de La Estructura</span>
+                    <span class="scene-tag">Catedral de Datos</span>
+                    <span class="scene-tag">Puzzle del Péndulo</span>
+                    <span class="scene-tag">Revelación del Mapa</span>
+                </div>
+            </div>
+
+            <div class="act act-2">
+                <div class="act-number">Acto II</div>
+                <div class="act-title">La Búsqueda</div>
+                <p>Exploración de los 9 reinos. Cada uno tiene un Guardián, simulaciones de exploración, y un puzzle central que otorga un Eigenvalor. Los fragmentos de historia revelan el origen de La Disonancia.</p>
+                <div class="act-scenes">
+                    <span class="scene-tag">9 Reinos</span>
+                    <span class="scene-tag">9 Guardianes</span>
+                    <span class="scene-tag">~40 Simulaciones</span>
+                    <span class="scene-tag">9 Eigenvalores</span>
+                </div>
+            </div>
+
+            <div class="act act-3">
+                <div class="act-number">Acto III</div>
+                <div class="act-title">La Revelación</div>
+                <p>Las Partituras Perdidas revelan la verdad: el Primer Resonador dominó las 5 especies de contrapunto pero buscó la "Sexta Especie" — un contrapunto sin disonancias. Creó exactamente lo que intentaba destruir.</p>
+                <div class="act-scenes">
+                    <span class="scene-tag">El Atril Antiguo</span>
+                    <span class="scene-tag">Flashback del Primer Resonador</span>
+                    <span class="scene-tag">Las 5 Especies de Fux</span>
+                    <span class="scene-tag">λ₁₁ — El Eigenvalor Dañado</span>
+                </div>
+            </div>
+
+            <div class="act act-4">
+                <div class="act-number">Acto IV</div>
+                <div class="act-title">La Sinfonía Final</div>
+                <p>El Resonador entra al Corazón de La Disonancia. Usando el Contrapunctus (el instrumento perdido), debe componer la "Séptima Especie" — un contrapunto que RESUELVE la disonancia en lugar de eliminarla.</p>
+                <div class="act-scenes">
+                    <span class="scene-tag">El Espacio Fracturado</span>
+                    <span class="scene-tag">El Resonador Habla</span>
+                    <span class="scene-tag">Puzzle del Contrapunctus</span>
+                    <span class="scene-tag">λ₁₂ — La Disonancia Resuelta</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme -->
+    <section>
+        <div class="theme-section">
+            <div class="theme-quote">"La música no existe a pesar de la disonancia. Existe gracias a ella."</div>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">
+                El mensaje central del juego: la perfección es estática; la armonía es dinámica.
+                Incluye tensión porque la tensión pide resolución. La disonancia hace que la consonancia signifique algo.
+            </p>
+
+            <div class="themes-grid">
+                <div class="theme-item">
+                    <h4>Conocimiento como Conexión</h4>
+                    <p>Las disciplinas científicas no están aisladas; son notas de la misma sinfonía.</p>
+                </div>
+                <div class="theme-item">
+                    <h4>Imperfección Necesaria</h4>
+                    <p>La disonancia tiene su lugar en la música, como el error tiene su lugar en la ciencia.</p>
+                </div>
+                <div class="theme-item">
+                    <h4>Observador y Observado</h4>
+                    <p>El acto de aprender cambia tanto al estudiante como al conocimiento.</p>
+                </div>
+                <div class="theme-item">
+                    <h4>Armonía vs. Perfección</h4>
+                    <p>La armonía incluye tensión; la perfección la elimina, y con ella, el significado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Simulations -->
+    <section>
+        <h2>Simulaciones Clave</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Puzzles centrales de cada reino — simulaciones reales de EigenLab integradas en la narrativa.</p>
+
+        <table class="sim-table">
+            <thead>
+                <tr>
+                    <th>Reino</th>
+                    <th>Simulación</th>
+                    <th>Concepto Científico</th>
+                    <th>Conexión Narrativa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="sim-realm cosmos">COSMOS</span></td>
+                    <td>Harmonices Mundi</td>
+                    <td>Leyes de Kepler, proporciones armónicas</td>
+                    <td>La música de las esferas — donde todo comenzó</td>
+                </tr>
+                <tr>
+                    <td><span class="sim-realm chaos">CHAOS</span></td>
+                    <td>Atractor de Lorenz</td>
+                    <td>Sistemas dinámicos, sensibilidad inicial</td>
+                    <td>El caos tiene estructura oculta</td>
+                </tr>
+                <tr>
+                    <td><span class="sim-realm logos">LOGOS</span></td>
+                    <td>Mandelbrot</td>
+                    <td>Fractales, autosimilaridad</td>
+                    <td>Infinito dentro de lo finito</td>
+                </tr>
+                <tr>
+                    <td><span class="sim-realm atomos">ATOMOS</span></td>
+                    <td>Doble Rendija</td>
+                    <td>Dualidad onda-partícula</td>
+                    <td>La observación cambia lo observado</td>
+                </tr>
+                <tr>
+                    <td><span class="sim-realm terra">TERRA</span></td>
+                    <td>Ondas Sísmicas</td>
+                    <td>Triangulación, ondas P y S</td>
+                    <td>La Tierra recuerda impactos antiguos</td>
+                </tr>
+                <tr>
+                    <td><span class="sim-realm machina">MACHINA</span></td>
+                    <td>Perceptrón</td>
+                    <td>Redes neuronales, aprendizaje</td>
+                    <td>La máquina aprende a distinguir armonía</td>
+                </tr>
+                <tr>
+                    <td><span class="sim-realm alchemy">ALCHEMY</span></td>
+                    <td>Le Chatelier</td>
+                    <td>Equilibrio químico dinámico</td>
+                    <td>El equilibrio se defiende del cambio</td>
+                </tr>
+                <tr>
+                    <td><span class="sim-realm bios">BIOS</span></td>
+                    <td>Neurona (H-H)</td>
+                    <td>Potencial de acción, canales iónicos</td>
+                    <td>El código eléctrico de la vida</td>
+                </tr>
+                <tr>
+                    <td><span class="sim-realm psyche">PSYCHE</span></td>
+                    <td>Boids</td>
+                    <td>Emergencia, inteligencia de enjambre</td>
+                    <td>Consciencia colectiva de reglas simples</td>
+                </tr>
+                <tr>
+                    <td><span class="sim-realm" style="background: rgba(168, 85, 247, 0.3); color: #c084fc;">FINAL</span></td>
+                    <td>Contrapunctus</td>
+                    <td>Contrapunto, especies de Fux</td>
+                    <td>Resolver la disonancia, no destruirla</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Tech Stack -->
+    <section>
+        <h2>Stack Técnico</h2>
+        <div class="tech-grid">
+            <div class="tech-item">
+                <div class="tech-icon">🎮</div>
+                <div class="tech-name">Phaser.js 3</div>
+                <div class="tech-desc">Motor de juego 2D</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">⚡</div>
+                <div class="tech-name">Vite</div>
+                <div class="tech-desc">Bundler y dev server</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🔊</div>
+                <div class="tech-name">Web Audio API</div>
+                <div class="tech-desc">Audio procedural</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🧪</div>
+                <div class="tech-name">EigenLab</div>
+                <div class="tech-desc">150+ simulaciones científicas</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🎨</div>
+                <div class="tech-name">Cell-shaded + Acuarela</div>
+                <div class="tech-desc">Estilo Ghibli/Zelda</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">📊</div>
+                <div class="tech-name">Grafo de Conocimiento</div>
+                <div class="tech-desc">Conexiones interdisciplinarias</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="margin-bottom: 1rem;">EigenLab Odyssey</h3>
+        <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 2rem;">
+            Un viaje épico para descubrir las frecuencias naturales del universo.
+            Más de 150 simulaciones científicas convertidas en mundos explorables.
+        </p>
+        <p class="footer-date">Biblia del Proyecto — Diciembre 2024</p>
+        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 1rem;">
+            Estado: Alpha 0.3 | <a href="https://github.com/cjlkaiser-cpu/eigenlab-odyssey" style="color: var(--accent);">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>
