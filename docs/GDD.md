@@ -343,6 +343,67 @@ El jugador descubre conexiones cuando completa simulaciones relacionadas en dife
 
 **Recompensa por conexión:** Habilidad especial de la Lira + fragmento de historia.
 
+### Sistema de Exploración
+
+Cada reino tiene **1 puzzle central** (obligatorio) y **3-5 simulaciones de exploración** (opcionales).
+
+#### Tipos de Contenido
+
+| Tipo | Obligatorio | Recompensa |
+|------|-------------|------------|
+| **Puzzle Central** | ✓ Sí | Eigenvalor (λ) |
+| **Exploración** | ✗ No | Fragmento + Resonancia + Conexión |
+
+#### Recompensas de Exploración
+
+**1. Fragmentos del Constructo**
+Cada simulación de exploración desbloquea un diálogo único del Constructo. Estos diálogos:
+- Revelan su personalidad y dudas existenciales
+- Conectan conceptos entre disciplinas
+- Añaden contexto científico/histórico
+
+**2. Resonancia Parcial (+5%)**
+Explorar simulaciones aumenta la "salud" de la Lira:
+- Máximo por reino: +25% (5 exploraciones × 5%)
+- Total posible: +225% extra sobre la base
+- Útil para áreas difíciles donde se pierde resonancia
+
+**3. Conexiones del Grafo**
+Cada exploración desbloquea enlaces en el Grafo de Conocimiento:
+- Conexiones intra-reino (ej: Mandelbrot ↔ Fourier en Logos)
+- Conexiones inter-reino (ej: Lorenz ↔ Evolución entre Chaos y Bios)
+- Conexiones a conceptos transversales (ej: RK4, Entropía, Ondas)
+
+#### Lo que NO dan las exploraciones
+
+- ❌ Eigenvalores (solo puzzles centrales)
+- ❌ Progresión de historia principal
+- ❌ Desbloqueo de reinos
+- ❌ Contenido obligatorio para el final
+
+#### Ejemplo: ATOMOS
+
+| Simulación | Tipo | Recompensa |
+|------------|------|------------|
+| `orbitales.html` | **Puzzle Central** | λ₅ + historia |
+| `modelo-bohr.html` | Exploración | Fragmento Constructo + 5% resonancia |
+| `efecto-tunel.html` | Exploración | Conexión Túnel ↔ Radioactividad |
+| `interferencia.html` | Exploración | Conexión Ondas ↔ Cuántica |
+
+#### Diálogo de Exploración (ejemplo)
+
+**[Jugador abre `efecto-tunel.html` en ATOMOS]**
+
+**CONSTRUCTO:**
+> *"Atravesar una barrera sin tener energía para saltarla. Imposible clásicamente. Rutinario cuánticamente."*
+>
+> *"¿Sabes? Sin efecto túnel no habría fusión nuclear. El Sol no brillaría. Nosotros no existiríamos."*
+>
+> *"La realidad hace trampa... a nuestro favor."*
+
+**[+5% Resonancia]**
+**[Conexión desbloqueada: Túnel Cuántico ↔ Fusión Estelar]**
+
 ---
 
 ## XI. PRIMERA TAREA
