@@ -77,10 +77,68 @@ El Resonador no lucha con espadas. Sus armas son instrumentos — herramientas q
 ### 1. Lira de Cuerdas Simpáticas (Sympathetic-12)
 > *"Toca una cuerda, y el universo responde"*
 
-Un instrumento de 12 cuerdas donde cada nota hace resonar a las demás. En el juego:
-- **Revela conexiones ocultas** entre elementos del mundo
-- **Activa mecanismos** que responden a frecuencias específicas
-- **Comunica con entidades** que solo entienden vibración
+Un instrumento de 12 cuerdas donde cada nota hace resonar a las demás. Es el arma principal del Resonador y el símbolo visual de su progresión.
+
+#### Estados de la Lira
+
+| Cuerdas | Estado | Visual | Significado |
+|---------|--------|--------|-------------|
+| 0 | Rota | Marco vacío, oscuro | Inicio del juego |
+| 1-3 | Susurros | Hilos tenues parpadeando | Primeros pasos |
+| 4-6 | Melodía | Cuerdas brillantes, vibración | Mitad del viaje |
+| 7-9 | Armonía | Resonancia entre cuerdas, halo | Casi completa |
+| 10-11 | Inestable | λ₁₁ parpadea con glitch | Verdad revelada |
+| 12 | Sinfonía | Radiancia total | Final |
+
+#### La Lira como Oasis
+
+En momentos específicos, el juego ofrece acceso a la simulación **Sympathetic-12** real. No es un puzzle. No hay objetivo. Es un **momento de contemplación**.
+
+**Cuándo aparece la opción de tocar:**
+- Después de obtener cada Eigenvalor (celebración)
+- Al volver al Hub de Aether (descanso)
+- Antes de entrar al Acto IV (última calma)
+- En los créditos y post-game (libertad)
+
+**Cómo funciona:**
+```
+[Jugador obtiene λ]
+    ↓
+[Aparece prompt: "¿Tocar la Lira?"]
+    ↓
+[Se abre Sympathetic-12 con cuerdas desbloqueadas]
+    ↓
+[Jugador toca libremente, sin tiempo ni puntuación]
+    ↓
+[Cierra cuando quiere, vuelve al juego]
+```
+
+**Implementación técnica:**
+```javascript
+function openLyre() {
+    const strings = gameState.eigenvalues.length;
+    window.open(`sympathetic-12/index.html?strings=${strings}`);
+}
+```
+
+**Lo que NO es:**
+- ❌ Un puzzle con solución
+- ❌ Obligatorio para progresar
+- ❌ Cronometrado o evaluado
+
+**Lo que SÍ es:**
+- ✅ Tu instrumento, tus notas
+- ✅ Contemplación como recompensa
+- ✅ Momento de belleza entre la acción
+- ✅ Las cuerdas activas reflejan tu progreso real
+
+#### Habilidades narrativas (no mecánicas)
+
+La Lira no tiene "poderes" en el sentido de gameplay. Su función es **narrativa y emocional**:
+- Símbolo visual del progreso del jugador
+- Momento de respiro entre puzzles
+- Conexión tangible con el tema musical del juego
+- Recompensa contemplativa, no utilitaria
 
 ### 2. El Contrapunctus
 > *"La armonía tiene reglas. Las reglas tienen excepciones. Las excepciones tienen poder."*
