@@ -275,3 +275,82 @@ No es música en el sentido literal. Es el estado de equilibrio dinámico del un
 ### El Vacío Entre Reinos
 
 El espacio negro entre los nueve reinos no está vacío. Es potencial puro — donde nuevas ideas aún no han cristalizado en conocimiento. La Disonancia crece más fuerte aquí porque no hay estructura que la contenga.
+
+---
+
+## REGLAS DEL UNIVERSO
+
+### Lo que ES La Estructura
+
+La Estructura no es un dios, ni una entidad consciente en el sentido humano. Es el **marco matemático subyacente** de la realidad — las reglas que permiten que existan patrones. Piensa en ella como:
+
+- El "sistema operativo" del cosmos
+- La gramática que permite que existan "frases" (fenómenos)
+- No creó el universo; ES lo que hace que el universo tenga sentido
+
+**La Estructura puede:**
+- Comunicarse a través de patrones (ecuaciones, geometría, frecuencias)
+- Manifestar fragmentos de sí misma (el Constructo)
+- Crear agentes de mantenimiento (los Resonadores)
+
+**La Estructura NO puede:**
+- Actuar directamente en la realidad física
+- Destruir La Disonancia (solo contenerla o integrarla)
+- Existir sin observadores que la perciban
+
+### Lo que ES La Disonancia
+
+La Disonancia no es malvada. Es un **error de retroalimentación** — una corrección que se corrompió. Surgió cuando el Primer Resonador intentó añadir una nota "perfecta" que no encajaba en el sistema.
+
+**La Disonancia puede:**
+- Corromper patrones (hacer que las ecuaciones den resultados incorrectos)
+- Crecer alimentándose de la entropía natural
+- Manifestarse como glitches, ruido visual, estática
+
+**La Disonancia NO puede:**
+- Crear nada nuevo (solo distorsiona lo existente)
+- Destruir completamente (siempre queda un eco)
+- Existir en presencia de armonía perfecta
+
+### Por qué 12 Cuerdas
+
+El número 12 no es arbitrario:
+
+1. **Escala cromática** — 12 semitonos en la octava occidental
+2. **Ciclo de quintas** — 12 pasos para volver a la nota original
+3. **Zodiaco/Meses** — División natural del ciclo solar
+4. **Faces del dodecaedro** — El sólido platónico del cosmos
+
+Narrativamente: La Lira tiene 12 cuerdas porque el Primer Resonador diseñó el instrumento para capturar TODAS las frecuencias fundamentales. La 13ª cuerda que intentó añadir era la "frecuencia de la perfección" — que no existe porque la perfección es estática, y el universo es dinámico.
+
+### Jerarquía de los Reinos
+
+No hay jerarquía de importancia, pero sí de **abstracción**:
+
+```
+AETHER (centro) — La síntesis, donde todo se une
+    │
+    ├── LOGOS (más abstracto) — Verdades puras, sin materia
+    │       └── COSMOS — Logos aplicado a lo grande
+    │       └── CHAOS — Logos en su límite de predicción
+    │
+    ├── ATOMOS (fundamental) — Las leyes básicas
+    │       └── ALCHEMY — Atomos a escala molecular
+    │       └── TERRA — Atomos a escala geológica
+    │
+    └── MACHINA (información) — Patrones procesando patrones
+            └── BIOS — Información que se replica
+            └── PSYCHE — Información que se conoce a sí misma
+```
+
+### Reglas de Consistencia
+
+1. **Las simulaciones son reales** — No son "representaciones" de fenómenos; SON los fenómenos manifestados en ese reino.
+
+2. **El conocimiento es físico** — Los Eigenvalores son objetos tangibles, cristalizaciones de comprensión.
+
+3. **La música es literal** — Las frecuencias de la Lira afectan físicamente la realidad, no son metáfora.
+
+4. **El Constructo tiene límites** — No sabe todo; su conocimiento se degrada cerca de La Disonancia.
+
+5. **Los Guardianes no mienten** — Pueden omitir, pueden hablar en acertijos, pero nunca dicen falsedades.

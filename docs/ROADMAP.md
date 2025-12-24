@@ -243,3 +243,36 @@ El juego tiene la estructura base funcional con navegación completa entre escen
 3. **UI con sprites** — Barras y iconos reales
 4. **Primer puzzle de reino completo** — Cosmos o Logos
 5. **Sistema de resonancia básico** — Daño y regeneración
+
+---
+
+## CHANGELOG NARRATIVO
+
+Registro de decisiones creativas importantes y su razonamiento.
+
+### 24 dic 2024
+
+**Harmonices Mundi como puzzle de Cosmos (no Aether)**
+- *Decisión:* La simulación de Kepler pertenece a Cosmos, no al hub musical
+- *Razón:* Kepler era astrónomo. La conexión música-planetas es un PUENTE entre reinos, no el origen de la música. Aether es síntesis; Cosmos es donde Kepler hizo su trabajo.
+- *Alternativa descartada:* Ponerlo en Aether como "la fuente de toda música"
+
+**9 reinos en lugar de 10**
+- *Decisión:* Mantener 9 reinos (no añadir uno para IA separado de Psyche)
+- *Razón:* 9 es número significativo (3x3, eneagrama, los 9 mundos nórdicos). Psyche abarca tanto mente biológica como artificial — esa tensión es interesante narrativamente.
+- *Alternativa descartada:* Separar NOUS (IA) de PSYCHE (mente)
+
+**12 cuerdas, no 9**
+- *Decisión:* La Lira tiene 12 cuerdas aunque hay 9 reinos
+- *Razón:* 12 es el número musical (escala cromática). Algunas cuerdas se obtienen por CONEXIONES entre reinos, no solo por completar reinos. Esto incentiva exploración cruzada.
+- *Implicación:* λ₁ (tutorial) + λ₂-λ₁₀ (9 reinos) + λ₁₁-λ₁₂ (conexiones especiales)
+
+**La Disonancia no es villano**
+- *Decisión:* La Disonancia es un error, no un enemigo consciente
+- *Razón:* Evita maniqueísmo. El mensaje es que la imperfección tiene su lugar, no que hay que destruir el mal. El Primer Resonador es el verdadero "villano" — la arrogancia de buscar la perfección.
+- *Tema reforzado:* Armonía incluye disonancia; perfección la excluye y por eso falla.
+
+**Constructo cuestiona su consciencia**
+- *Decisión:* En Psyche, el Constructo tiene una crisis existencial
+- *Razón:* Meta-comentario sobre IA y emergencia. El jugador ha visto boids, perceptrones, autómatas — ahora el compañero se pregunta si él es lo mismo. No hay respuesta definitiva.
+- *Inspiración:* "¿Sueñan los androides con ovejas eléctricas?"

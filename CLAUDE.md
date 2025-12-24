@@ -57,12 +57,10 @@ eigenlab-odyssey/
 │   ├── effects/             # VFX particles
 │   └── backgrounds/         # title-screen
 ├── docs/
-│   ├── GDD.md               # Game Design Document
-│   ├── STORY.md             # Guión narrativo
-│   ├── CHARACTERS.md        # Personajes y lore
-│   ├── ROADMAP.md           # Plan de desarrollo
-│   ├── IMPLEMENTATION_PLAN.md
-│   └── NAVIGATION_MAP.md
+│   ├── GDD.md               # Diseño + navegación + progresión
+│   ├── STORY.md             # Guión con escenas por reino
+│   ├── CHARACTERS.md        # Personajes + lore + reglas universo
+│   └── ROADMAP.md           # Plan + changelog narrativo
 └── public/
 ```
 

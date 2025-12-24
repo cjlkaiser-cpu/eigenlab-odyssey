@@ -99,11 +99,10 @@ npm run build
 
 | Documento | Descripción |
 |-----------|-------------|
-| [Game Design Document](docs/GDD.md) | Diseño completo del juego |
-| [Story](docs/STORY.md) | Guión narrativo completo |
-| [Characters](docs/CHARACTERS.md) | Personajes y lore |
-| [Roadmap](docs/ROADMAP.md) | Plan de desarrollo |
-| [Navigation Map](docs/NAVIGATION_MAP.md) | Mapa de navegación |
+| [Game Design Document](docs/GDD.md) | Diseño, mecánicas, navegación y progresión |
+| [Story](docs/STORY.md) | Guión narrativo con escenas por reino |
+| [Characters](docs/CHARACTERS.md) | Personajes, lore y reglas del universo |
+| [Roadmap](docs/ROADMAP.md) | Plan de desarrollo y changelog narrativo |
 
 ---
 

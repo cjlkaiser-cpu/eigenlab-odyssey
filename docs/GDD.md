@@ -279,7 +279,73 @@ Alternativas consideradas:
 
 ---
 
-## X. PRIMERA TAREA
+## X. NAVEGACIÓN Y PROGRESIÓN
+
+### Estructura de Pantallas
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ NIVEL 1: HUB CENTRAL (Aether)                               │
+│                                                             │
+│   Portales a 9 reinos dispuestos en círculo                │
+│   Lira en el centro (muestra cuerdas restauradas)          │
+│   Constructo siguiendo al jugador                          │
+│                                                             │
+│   [Portal] → Transición con fade → [Reino]                 │
+└─────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│ NIVEL 2: INTERIOR DE REINO                                  │
+│                                                             │
+│   Grid de 4-6 simulaciones como "nodos"                    │
+│   ★ Completada  ○ Disponible  ● Bloqueada                  │
+│   Guardián como presencia ambiental                        │
+│                                                             │
+│   [Nodo] → Diálogo opcional → [Simulación]                 │
+└─────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│ NIVEL 3: SIMULACIÓN ACTIVA                                  │
+│                                                             │
+│   Simulación de EigenLab embebida (iframe o integrada)     │
+│   Panel de objetivo visible                                 │
+│   Comentarios del Constructo contextuales                  │
+│                                                             │
+│   [Completar objetivo] → Eigenvalor → [Volver a Reino]     │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Sistema de Desbloqueo
+
+| Acto | Reinos Accesibles | Requisito |
+|------|-------------------|-----------|
+| I | Aether + Cosmos, Chaos, Logos | Completar tutorial (péndulo) |
+| II | + Atomos, Terra, Machina | 3 Eigenvalores |
+| III | + Alchemy, Bios, Psyche | 6 Eigenvalores |
+| IV | Corazón de La Disonancia | 10 Eigenvalores |
+
+### Conexiones Entre Reinos
+
+El jugador descubre conexiones cuando completa simulaciones relacionadas en diferentes reinos:
+
+| Conexión | Reinos | Fenómeno Compartido |
+|----------|--------|---------------------|
+| Música de las Esferas | Cosmos ↔ Aether | Órbitas = frecuencias (Kepler) |
+| Atractores Armónicos | Chaos ↔ Aether | Lorenz tiene periodicidad oculta |
+| Fractales Cósmicos | Logos ↔ Cosmos | Galaxias siguen patrones fractales |
+| Ondas Universales | Atomos ↔ Aether | Fourier une sonido y cuántica |
+| Tiempo Profundo | Terra ↔ Logos | Estratos = secuencias matemáticas |
+| Vida Emergente | Bios ↔ Chaos | Conway ↔ Evolución |
+| Mente Artificial | Psyche ↔ Machina | Perceptrón ↔ Neurona |
+| Transmutación | Alchemy ↔ Atomos | Química = física de electrones |
+
+**Recompensa por conexión:** Habilidad especial de la Lira + fragmento de historia.
+
+---
+
+## XI. PRIMERA TAREA
 
 Crear el **Hub de Aether** — el mundo central desde donde todo comienza:
 - Un espacio navegable en 2D
