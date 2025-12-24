@@ -1,0 +1,26 @@
+{
+  "name": "eigenlab-odyssey",
+  "version": "0.1.0",
+  "description": "Aventura épica a través de los reinos del conocimiento",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "phaser": "^3.80.1"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "keywords": [
+    "game",
+    "phaser",
+    "educational",
+    "science",
+    "music"
+  ],
+  "author": "Carlos",
+  "license": "MIT"
+}

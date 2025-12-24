@@ -1,0 +1,295 @@
+# EIGENLAB ODYSSEY
+
+## Documento de Fundación v0.1
+
+> *"En el principio fue el patrón. Y el patrón se hizo número. Y el número se hizo mundo."*
+
+---
+
+## I. VISIÓN
+
+### La Premisa
+
+Hubo un tiempo en que todo el conocimiento estaba conectado. Las estrellas cantaban en frecuencias que los átomos reconocían. Las ecuaciones de la gravedad eran melodías. Los fractales eran mapas de territorios reales. La química era alquimia verdadera.
+
+Ese tiempo existió. Y puede volver a existir.
+
+**EigenLab Odyssey** es un viaje a través de los reinos del conocimiento — no como disciplinas separadas, sino como un único organismo vivo donde la física susurra a la música, donde las matemáticas sueñan galaxias, donde la biología compone sinfonías moleculares.
+
+### El Jugador
+
+Eres **El Resonador** — un ser capaz de percibir las conexiones ocultas entre fenómenos. Donde otros ven ecuaciones, tú ves puentes. Donde otros oyen ruido, tú detectas armonía. Tu misión: restaurar la Gran Sinfonía del Conocimiento, fragmentada hace eones por La Entropía.
+
+### El Mundo
+
+EigenLab no es un laboratorio. Es un **universo de universos** — cada simulación es un reino con sus propias leyes, habitantes y secretos. Más de 150 mundos esperan ser explorados, comprendidos y reconectados.
+
+---
+
+## II. LOS NUEVE REINOS
+
+```
+                         ╭──────────────╮
+                         │   AETHER     │
+                         │   [Música]   │
+                         │   El Reino   │
+                         │   Central    │
+                         ╰──────┬───────╯
+                                │
+        ╭───────────────────────┼───────────────────────╮
+        │                       │                       │
+╭───────┴───────╮       ╭───────┴───────╮       ╭───────┴───────╮
+│    COSMOS     │       │    CHAOS      │       │   LOGOS       │
+│  [Astronomía] │       │  [Emergencia] │       │ [Matemáticas] │
+│               │       │               │       │               │
+│ Donde nacen   │       │ Donde el      │       │ Donde las     │
+│ las estrellas │       │ orden emerge  │       │ verdades son  │
+│ y mueren      │       │ del desorden  │       │ eternas       │
+╰───────┬───────╯       ╰───────┬───────╯       ╰───────┬───────╯
+        │                       │                       │
+╭───────┴───────╮       ╭───────┴───────╮       ╭───────┴───────╮
+│    ATOMOS     │       │    TERRA      │       │   MACHINA     │
+│   [Física]    │       │  [Geología]   │       │ [Computación] │
+│               │       │               │       │               │
+│ Las leyes     │       │ El tiempo     │       │ La lógica     │
+│ fundamentales │       │ hecho piedra  │       │ hecha materia │
+╰───────┬───────╯       ╰───────┬───────╯       ╰───────┬───────╯
+        │                       │                       │
+        ╰───────────────────────┼───────────────────────╯
+                                │
+                ╭───────────────┼───────────────╮
+                │               │               │
+        ╭───────┴───────╮╭──────┴───────╮╭──────┴───────╮
+        │   ALCHEMY     ││    BIOS      ││   PSYCHE     │
+        │  [Química]    ││  [Biología]  ││  [Mente/IA]  │
+        │               ││              ││              │
+        │ Transmutación ││ La danza de  ││ Donde la     │
+        │ y equilibrio  ││ la vida      ││ consciencia  │
+        ╰───────────────╯╰──────────────╯╰──────────────╯
+```
+
+---
+
+## III. LOS INSTRUMENTOS SAGRADOS
+
+El Resonador no lucha con espadas. Sus armas son instrumentos — herramientas que manipulan la realidad a través del sonido y la vibración.
+
+### 1. Lira de Cuerdas Simpáticas (Sympathetic-12)
+> *"Toca una cuerda, y el universo responde"*
+
+Un instrumento de 12 cuerdas donde cada nota hace resonar a las demás. En el juego:
+- **Revela conexiones ocultas** entre elementos del mundo
+- **Activa mecanismos** que responden a frecuencias específicas
+- **Comunica con entidades** que solo entienden vibración
+
+### 2. El Contrapunctus
+> *"La armonía tiene reglas. Las reglas tienen excepciones. Las excepciones tienen poder."*
+
+Un sistema de composición que genera música siguiendo las leyes del contrapunto barroco:
+- **Resuelve puzzles** que requieren múltiples voces coordinadas
+- **Negocia con guardianes** que exigen demostraciones de orden
+- **Estabiliza sistemas caóticos** imponiendo estructura
+
+### 3. El Diapasón del Vacío
+> *"El silencio entre las notas es tan importante como las notas mismas"*
+
+Una herramienta que detecta lo que falta:
+- **Encuentra anomalías** en las simulaciones
+- **Identifica variables ocultas** en sistemas
+- **Percibe la entropía** antes de que destruya
+
+### 4. La Partitura Cósmica (Por crear)
+> *"El universo ya está escrito. Solo hay que aprender a leer."*
+
+Un mapa musical del conocimiento que se completa a medida que avanzas:
+- **Registra descubrimientos** como temas musicales
+- **Muestra conexiones** entre reinos como armonías
+- **Predice fenómenos** cuando se completan secciones
+
+---
+
+## IV. MECÁNICAS CENTRALES
+
+### Exploración
+Cada reino es un mundo 2D navegable con múltiples simulaciones accesibles. El jugador:
+- Camina por paisajes que reflejan la disciplina (nebulosas en Cosmos, cristales en Atomos)
+- Encuentra **portales a simulaciones** que son los "dungeons" del juego
+- Descubre **fragmentos de la Gran Sinfonía** escondidos en cada mundo
+
+### Comprensión
+Las simulaciones no son solo visuales — son puzzles:
+- Debes **manipular parámetros** para alcanzar estados objetivo
+- Algunas requieren **usar instrumentos** para resolver
+- Completar una simulación otorga un **Eigenvalor** — conocimiento cristalizado
+
+### Conexión
+El meta-juego es descubrir cómo los reinos se relacionan:
+- Las **ondas gravitacionales** de Cosmos afectan las **cuerdas simpáticas** en Aether
+- Los **atractores extraños** de Chaos siguen **patrones fractales** de Logos
+- La **síntesis de proteínas** en Bios usa **lógica de autómatas** de Machina
+
+Cada conexión descubierta **desbloquea nuevas habilidades** y **revela más de la narrativa**.
+
+### Resonancia
+El sistema de progresión:
+```
+EIGENVALORES (conocimiento)
+    │
+    ▼
+RESONANCIA (poder de los instrumentos)
+    │
+    ▼
+ARMONÍA (conexiones entre reinos)
+    │
+    ▼
+SINFONÍA (progreso narrativo)
+```
+
+---
+
+## V. ESTRUCTURA NARRATIVA
+
+### Acto I: El Despertar
+El Resonador despierta en **Aether**, el reino central, sin memoria. Los instrumentos están rotos. Solo el Diapasón funciona parcialmente.
+
+Debe visitar los tres reinos más cercanos (Cosmos, Chaos, Logos) para recuperar fragmentos de la Lira Simpática.
+
+**Simulaciones clave:**
+- `formacion-galaxias` — Primer encuentro con la creación
+- `lorenz-attractor` — Primer contacto con el caos
+- `mandelbrot` — Primera visión del infinito
+
+### Acto II: La Restauración
+Con la Lira parcialmente restaurada, el Resonador puede acceder a los reinos medios (Atomos, Terra, Machina) y comenzar a reconstruir el Contrapunctus.
+
+Aquí descubre que La Entropía no es un enemigo — es una fuerza natural que fue **corrompida** por algo más.
+
+**Simulaciones clave:**
+- `double-pendulum` — El caos en las leyes simples
+- `tectonica-placas` — El tiempo geológico
+- `game-of-life` — La vida emergente de reglas
+
+### Acto III: La Revelación
+Los reinos profundos (Alchemy, Bios, Psyche) revelan la verdad: La Gran Sinfonía no fue destruida — fue **silenciada** por seres que temían su poder de conexión.
+
+El Resonador debe elegir: ¿restaurar la Sinfonía completa (unificando todo el conocimiento) o mantener los reinos separados (preservando la especialización)?
+
+**Simulaciones clave:**
+- `sintesis-proteinas` — La música de la vida
+- `perceptron` — El nacimiento de la mente artificial
+- `reaccion-difusion` — Patrones que crean patrones
+
+### Acto IV: La Sinfonía
+El final depende de las elecciones y conexiones descubiertas. Múltiples finales basados en:
+- Cuántos Eigenvalores se recolectaron
+- Qué conexiones entre reinos se establecieron
+- Cómo se usaron los instrumentos (armonía vs disonancia)
+
+---
+
+## VI. ESTÉTICA
+
+### Visual
+- **Minimalista científica** — El estilo actual de EigenLab
+- **Fondos oscuros** con elementos luminosos (estrellas, partículas, líneas)
+- **Código de colores por reino:**
+  ```
+  Aether:   Violeta (#a855f7) — Creatividad, síntesis
+  Cosmos:   Azul profundo (#1e3a8a) — Infinito, misterio
+  Chaos:    Rojo/Naranja (#dc2626) — Energía, impredecibilidad
+  Logos:    Blanco/Oro (#fbbf24) — Verdad, eternidad
+  Atomos:   Cian (#06b6d4) — Precisión, ley
+  Terra:    Marrón/Verde (#84cc16) — Tiempo, paciencia
+  Machina:  Verde terminal (#22c55e) — Lógica, proceso
+  Alchemy:  Púrpura (#9333ea) — Transformación
+  Bios:     Verde vida (#10b981) — Crecimiento, evolución
+  Psyche:   Rosa (#ec4899) — Consciencia, percepción
+  ```
+
+### Sonoro
+- **Soundtrack generativo** — Los instrumentos del juego SON la música
+- **Cada reino tiene una firma tonal** basada en sus fenómenos
+- **Las simulaciones suenan** — partículas, ondas, reacciones = sonido
+
+### Tono
+- **Asombro científico** — La realidad es más extraña que la ficción
+- **Melancolía cósmica** — Somos pequeños, pero podemos comprender
+- **Esperanza epistémica** — El conocimiento conecta, no separa
+
+---
+
+## VII. ALCANCE TÉCNICO
+
+### Fase 1: Prototipo Vertical (1 reino completo)
+```
+Objetivo: Aether jugable con 3 simulaciones integradas
+Stack: Phaser.js + simulaciones existentes (iframe/integradas)
+Entregable: Demo de 15-20 minutos
+```
+
+### Fase 2: Expansión Horizontal (3 reinos)
+```
+Objetivo: Cosmos, Chaos, Logos accesibles desde Aether
+Stack: Mismo + sistema de navegación entre reinos
+Entregable: Demo de 1-2 horas
+```
+
+### Fase 3: Profundización (instrumentos)
+```
+Objetivo: Lira Simpática y Contrapunctus integrados como mecánicas
+Stack: Rust/WASM para audio DSP si es necesario
+Entregable: Versión alpha con loop completo
+```
+
+### Fase 4: Completar (todos los reinos)
+```
+Objetivo: Los 9 reinos navegables con narrativa
+Stack: Optimización según necesidades
+Entregable: Versión beta
+```
+
+---
+
+## VIII. POR QUÉ ESTE JUEGO
+
+### Para el jugador
+Un juego donde **aprender es la mecánica central**, no un efecto secundario. Donde la curiosidad es recompensada con belleza y comprensión.
+
+### Para el desarrollador
+Una forma de **dar vida a EigenLab** — transformar simulaciones educativas en experiencias memorables.
+
+### Para el mundo
+Una demostración de que **el conocimiento puede ser aventura**. Que la física, la música, las matemáticas y la biología son capítulos del mismo libro.
+
+---
+
+## IX. NOMBRE
+
+**EigenLab Odyssey**
+- *Eigen*: Propio, característico (del alemán). En matemáticas, los eigenvalores son las "frecuencias naturales" de un sistema.
+- *Lab*: Laboratorio, lugar de descubrimiento.
+- *Odyssey*: Viaje épico de regreso a casa.
+
+El nombre sugiere: *Un viaje épico para descubrir las frecuencias naturales del universo.*
+
+Alternativas consideradas:
+- *The Resonance* — Demasiado genérico
+- *Cosmophonia* — Solo captura el aspecto musical
+- *EigenWorlds* — Pierde la connotación de viaje
+
+---
+
+## X. PRIMERA TAREA
+
+Crear el **Hub de Aether** — el mundo central desde donde todo comienza:
+- Un espacio navegable en 2D
+- Portales visuales a los 3 reinos iniciales (Cosmos, Chaos, Logos)
+- La Lira Simpática rota como objeto interactuable
+- Un NPC o inscripción que introduce la premisa
+
+---
+
+*"El universo no guarda secretos. Solo espera a quien sepa hacer las preguntas correctas."*
+
+— Documento fundacional de EigenLab Odyssey
+   Versión 0.1 | Diciembre 2024
