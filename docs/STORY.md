@@ -646,13 +646,51 @@ El hub central ha cambiado. Los portales pulsan con luz estable. Pero en el cent
 
 ### Escena 2: Las Partituras Perdidas
 
-**[El jugador interactúa con el atril. Las partituras cobran vida, proyectando una visión del pasado]**
+**[El jugador interactúa con el atril. Las partituras cobran vida, pero no como texto — como una MÁQUINA]**
+
+#### La Rameau Machine del Primer Resonador
+**Simulación:** `rameau-machine/index.html` (modo "Obsesión")
+
+Una visualización holográfica emerge del atril: círculos concéntricos con acordes orbitando. En el centro, la **Tónica**. Alrededor, la **Subdominante**. En el anillo exterior, la **Dominante**. Líneas de luz conectan los acordes, mostrando las progresiones posibles.
+
+**CONSTRUCTO:**
+> *"La Rameau Machine. Él la construyó para entender la armonía funcional."*
+>
+> *"Jean-Philippe Rameau lo explicó hace trescientos años: cada acorde tiene una FUNCIÓN. Tónica es hogar. Subdominante es partida. Dominante es tensión que exige volver."*
+
+**[La máquina genera progresiones automáticamente: I → IV → V → I, I → ii → V → I...]**
+
+> *"Mira el ciclo. Siempre termina en casa. Siempre hay tensión antes de la resolución. Eso es lo que él odiaba."*
+
+**[El jugador observa. En los márgenes de la visualización, anotaciones del Primer Resonador aparecen:]**
+
+> *"¿Por qué V EXIGE resolver a I?"*
+> *"¿Por qué no podemos quedarnos en la Tónica para siempre?"*
+> *"La Dominante es DOLOR. La Subdominante es ANHELO. Solo la Tónica es PAZ."*
+
+**CONSTRUCTO:**
+> *"Ves su lógica. Si la tensión causa sufrimiento... elimina la tensión. Si la resolución es el destino... ¿por qué no empezar ya resuelto?"*
+
+**[La máquina empieza a fallar. Las progresiones se acortan: I → V → I... I → I → I...]**
+
+**[El sonido se vuelve monótono. Un acorde sostenido, sin movimiento]**
+
+**CONSTRUCTO:**
+> *"Esto es lo que intentó. Música sin función. Acordes sin propósito. Solo... estar."*
+
+**[La visualización colapsa. Transición a flashback]**
+
+---
+
+#### El Contrapunto de Fux
 
 **[FLASHBACK — Imágenes en sepia/dorado, como recuerdos antiguos]**
 
-Vemos una figura similar al Resonador, pero con túnica blanca y oro. Trabaja febrilmente sobre un pentagrama gigante que flota en el aire.
+Vemos una figura similar al Resonador, pero con túnica blanca y oro. Trabaja febrilmente sobre un pentagrama gigante que flota en el aire. A su lado, los restos humeantes de la Rameau Machine.
 
 **VOZ DEL PRIMER RESONADOR** (eco distante):
+> *"Rameau explicó la armonía. Pero Fux... Fux explicó la MELODÍA."*
+>
 > *"Primera especie... nota contra nota. Demasiado simple."*
 
 **[La figura escribe. Notas aparecen en el pentagrama]**
@@ -665,10 +703,12 @@ Vemos una figura similar al Resonador, pero con túnica blanca y oro. Trabaja fe
 
 **[La figura se frustra. Rompe la partitura]**
 
+> *"¡En todas partes! ¡En la armonía de Rameau, en el contrapunto de Fux, en cada sistema que invento!"*
+>
 > *"¿Por qué? ¿Por qué la música necesita dolor para existir? ¿Por qué no puede haber solo... consonancia perfecta?"*
 
 **CONSTRUCTO** (susurrando):
-> *"Las cinco especies de Fux. El método clásico para enseñar contrapunto. Pero él quería ir más allá..."*
+> *"Las cinco especies de Fux. El método clásico para enseñar contrapunto. Primero dominó la armonía vertical con Rameau. Luego intentó la melodía horizontal con Fux. En ambas encontró lo mismo: tensión y resolución. No podía escapar."*
 
 ---
 
