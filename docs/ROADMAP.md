@@ -1,278 +1,417 @@
-# EigenLab Odyssey: Roadmap de Desarrollo
+# EigenLab Odyssey: Plan de Producción
+
+> Última actualización: 25 dic 2024
+> Estado: **Alpha 0.4** — Documentación completa, código base funcional
 
 ---
 
-## Estado Actual: Alpha 0.3
+## ESTADO ACTUAL
 
-El juego tiene la estructura base funcional con navegación completa entre escenas, sistema de misiones, y assets visuales. Falta integración de sprites y pulido.
+### Lo que tenemos
 
----
+| Categoría | Completado | Detalles |
+|-----------|------------|----------|
+| **Documentación** | 100% | GDD, STORY, CHARACTERS, PITCH.html |
+| **Escenas base** | 100% | 12 escenas Phaser funcionales |
+| **Navegación** | 90% | Hub → Reinos → Simulaciones |
+| **Sprites** | 46% | 23/50 sprites extraídos |
+| **Puzzles centrales** | 0% | Diseñados, no implementados |
+| **Diálogos** | 0% | Escritos, no implementados |
+| **Audio** | 30% | SynthAudio base, sin temas |
+| **Líneas de código** | 8,534 | Target: 15,000 |
 
-## FASE 1: Fundamentos (Completada)
+### Archivos clave existentes
 
-- [x] Configuración del proyecto (Vite + Phaser)
-- [x] Estructura de carpetas
-- [x] Constantes y colores de reinos
-- [x] TitleScene básica
-- [x] Sistema de estado (GameState.js)
-- [x] AetherHub navegable
-- [x] RealmScene genérica
-- [x] SimulationScene con rutas verificadas
-- [x] Sistema de misiones (~30 misiones)
-
----
-
-## FASE 2: Narrativa Cinematográfica (Completada)
-
-- [x] CinematicIntroScene (terminal + glitch)
-- [x] CathedralScene (puzzle del péndulo)
-- [x] MapRevealScene (9 reinos)
-- [x] Sistema de diálogos (DialogScene)
-- [x] Audio procedural (SynthAudio.js)
-- [x] Integración del flujo narrativo
-
----
-
-## FASE 3: Assets Visuales (Completada)
-
-- [x] Concept art (7 imágenes)
-- [x] Extracción de sprites (23 sprites)
-- [x] Organización de assets
-- [x] Script de extracción automatizado
-
----
-
-## FASE 4: Integración Visual (En Progreso)
-
-### 4.1 Sprites del Jugador
-- [ ] Reemplazar círculo por sprite del Resonador
-- [ ] Implementar animación walk cycle
-- [ ] Añadir sprite idle cuando está quieto
-- [ ] Integrar portrait en diálogos
-
-### 4.2 Entorno
-- [ ] Usar portal sprites en AetherHub
-- [ ] Añadir columnas y plataformas decorativas
-- [ ] Implementar fondo de título con parallax
-- [ ] Partículas ambientales mejoradas
-
-### 4.3 UI
-- [ ] Reemplazar barras de progreso con sprites
-- [ ] Usar icono de Eigenvalor en HUD
-- [ ] Implementar botones con estilo piedra
-- [ ] Caja de diálogo estilizada
-
-### 4.4 Compañero
-- [ ] Añadir Constructo siguiendo al jugador
-- [ ] Sistema de glitch según corrupción del área
-- [ ] Diálogos contextuales del Constructo
+```
+src/
+├── scenes/
+│   ├── TitleScene.js        (12,836 líneas) ✓
+│   ├── CinematicIntroScene.js (16,838) ✓
+│   ├── CathedralScene.js    (24,414) ✓
+│   ├── MapRevealScene.js    (16,461) ✓
+│   ├── AetherHub.js         (16,432) ✓
+│   ├── RealmScene.js        (17,849) ✓
+│   ├── SimulationScene.js   (27,989) ✓
+│   ├── GraphScene.js        (33,504) ✓
+│   ├── DialogScene.js       (5,216) — necesita expansión
+│   └── PauseScene.js        (6,169) ✓
+├── systems/
+│   ├── GameState.js         (371) ✓
+│   └── NavigationSystem.js  (292) ✓
+├── audio/
+│   └── SynthAudio.js        ✓
+└── data/
+    ├── missions.js          (~30 misiones)
+    └── knowledgeGraph.js    ✓
+```
 
 ---
 
-## FASE 5: Gameplay Core
+## MILESTONE 1: VERTICAL SLICE (Prioridad Alta)
 
-### 5.1 Sistema de Resonancia
-- [ ] Barra de resonancia (salud)
-- [ ] Daño por contacto con Disonancia
-- [ ] Regeneración al completar puzzles
-- [ ] Estados de la Lira (1-12 cuerdas)
+**Objetivo:** Un reino completamente jugable de principio a fin.
 
-### 5.2 Puzzles de Sintonización
-- [ ] Mecánica genérica de ajuste de frecuencia
-- [ ] Feedback visual/auditivo de cercanía
-- [ ] Puzzle único por reino
-- [ ] Recompensa de Eigenvalor
+**Reino elegido:** COSMOS (más visual, narrativamente importante)
 
-### 5.3 Interacción con Simulaciones
-- [ ] Objetivos dentro de simulaciones
-- [ ] Detección de logros
-- [ ] Comunicación simulación → juego
-- [ ] Recompensas por completar
+### M1.1 — Sprites del Resonador
+| Tarea | Archivo | Criterio de éxito |
+|-------|---------|-------------------|
+| Cargar spritesheet | `PreloadScene.js` | Sin errores en consola |
+| Sprite en AetherHub | `AetherHub.js` | Resonador visible, no círculo |
+| Animación idle | `AetherHub.js` | Sprite respira/parpadea |
+| Animación walk | `AetherHub.js` | 4 direcciones fluidas |
 
-### 5.4 Progresión
-- [ ] Desbloqueo progresivo de reinos
-- [ ] Árbol de habilidades de la Lira
-- [ ] Coleccionables secundarios
-- [ ] Logros/Achievements
+**Verificación:** `npm run dev` → mover con WASD → sprite animado visible
 
----
+### M1.2 — Constructo Compañero
+| Tarea | Archivo | Criterio de éxito |
+|-------|---------|-------------------|
+| Crear entidad | `src/entities/Constructo.js` | Clase con follow behavior |
+| Añadir a Hub | `AetherHub.js` | Sigue al Resonador suavemente |
+| Sprite normal/glitch | Assets | Alternar según contexto |
+| Bobbing animation | `Constructo.js` | Flotación vertical sutil |
 
-## FASE 6: Contenido por Reino
+**Verificación:** Constructo visible, sigue al jugador, flota
 
-### Cosmos (Astronomía)
-- [ ] Ambiente visual espacial
-- [ ] Puzzle: Alinear órbitas
-- [ ] 13 simulaciones integradas
-- [ ] Fragmento de historia
+### M1.3 — Portal a Cosmos funcional
+| Tarea | Archivo | Criterio de éxito |
+|-------|---------|-------------------|
+| Sprite portal activo | `AetherHub.js` | Portal animado con glow |
+| Colisión con portal | `AetherHub.js` | Detecta proximidad |
+| Transición a RealmScene | `NavigationSystem.js` | Fade suave a COSMOS |
+| Cargar datos de Cosmos | `RealmScene.js` | Simulaciones correctas |
 
-### Chaos (Emergencia)
-- [ ] Ambiente visual fractal
-- [ ] Puzzle: Encontrar atractor
-- [ ] 10 simulaciones integradas
-- [ ] Fragmento de historia
+**Verificación:** Caminar al portal → transición → ver reino COSMOS
 
-### Logos (Matemáticas)
-- [ ] Ambiente visual geométrico
-- [ ] Puzzle: Completar secuencia
-- [ ] 20 simulaciones integradas
-- [ ] Fragmento de historia
+### M1.4 — Puzzle central: Harmonices Mundi
+| Tarea | Archivo | Criterio de éxito |
+|-------|---------|-------------------|
+| Detectar simulación clave | `RealmScene.js` | Mostrar distintivo |
+| Abrir Harmonices Mundi | `SimulationScene.js` | Simulación carga correcta |
+| Definir objetivo | `src/data/puzzles.js` | Alinear órbitas planetarias |
+| Detectar completado | `SimulationScene.js` | Comunicación con juego |
+| Otorgar λ₂ | `GameState.js` | Eigenvalor guardado |
 
-### Atomos (Física)
-- [ ] Ambiente visual cuántico
-- [ ] Puzzle: Interferencia constructiva
-- [ ] 15 simulaciones integradas
-- [ ] Fragmento de historia
+**Verificación:** Completar puzzle → λ₂ aparece → guardado en localStorage
 
-### Terra (Geología)
-- [ ] Ambiente visual rocoso
-- [ ] Puzzle: Estratos correctos
-- [ ] 7 simulaciones integradas
-- [ ] Fragmento de historia
+### M1.5 — Lira visual progresiva
+| Tarea | Archivo | Criterio de éxito |
+|-------|---------|-------------------|
+| HUD con Lira | `src/ui/LyreHUD.js` | Marco de 12 cuerdas visible |
+| Cuerdas según λ | `LyreHUD.js` | 2 cuerdas brillan (λ₁ + λ₂) |
+| Animación al obtener | `LyreHUD.js` | Nueva cuerda aparece con glow |
 
-### Machina (Computación)
-- [ ] Ambiente visual terminal
-- [ ] Puzzle: Algoritmo
-- [ ] 7 simulaciones integradas
-- [ ] Fragmento de historia
+**Verificación:** Obtener eigenvalor → animación → cuerda nueva en HUD
 
-### Alchemy (Química)
-- [ ] Ambiente visual molecular
-- [ ] Puzzle: Equilibrio químico
-- [ ] 16 simulaciones integradas
-- [ ] Fragmento de historia
+### M1.6 — Diálogo del Guardián
+| Tarea | Archivo | Criterio de éxito |
+|-------|---------|-------------------|
+| Trigger al entrar | `RealmScene.js` | Detectar primera visita |
+| Cargar diálogo | `DialogScene.js` | Texto del Guardián de Cosmos |
+| Portrait del Guardián | Assets | Placeholder si no existe |
+| Opciones de respuesta | `DialogScene.js` | Si aplica |
 
-### Bios (Biología)
-- [ ] Ambiente visual orgánico
-- [ ] Puzzle: Secuencia genética
-- [ ] 14 simulaciones integradas
-- [ ] Fragmento de historia
+**Verificación:** Entrar a Cosmos → diálogo automático → cerrar con Space
 
-### Psyche (IA/Mente)
-- [ ] Ambiente visual neural
-- [ ] Puzzle: Patrón de red
-- [ ] 3 simulaciones integradas
-- [ ] Fragmento de historia
+### Autoevaluación M1
+
+```
+□ Resonador animado reemplaza placeholder
+□ Constructo sigue al jugador
+□ Portal a Cosmos funciona
+□ Harmonices Mundi jugable con objetivo
+□ λ₂ se obtiene y guarda
+□ Lira muestra 2 cuerdas
+□ Guardián habla al entrar
+□ Flujo completo sin crashes
+```
+
+**Criterio de éxito global:** Un playtester puede jugar desde título hasta obtener λ₂ sin intervención.
 
 ---
 
-## FASE 7: La Disonancia
+## MILESTONE 2: SISTEMA DE EXPLORACIÓN
 
-- [ ] Enemigos básicos (fragmentos)
-- [ ] Zonas corruptas con efectos visuales
-- [ ] Ecos corruptos (mini-bosses)
-- [ ] Jefe final (Disonancia concentrada)
-- [ ] Mecánica de "armonización" vs "destrucción"
+**Objetivo:** Implementar las recompensas de exploración diseñadas.
+
+### M2.1 — Fragmentos del Constructo
+| Tarea | Archivo | Criterio de éxito |
+|-------|---------|-------------------|
+| Crear data de fragmentos | `src/data/constructoFragments.js` | 30+ diálogos por simulación |
+| Trigger al abrir exploración | `SimulationScene.js` | Detectar tipo de simulación |
+| Mostrar diálogo | `DialogScene.js` | Constructo habla |
+| Marcar como visto | `GameState.js` | No repetir fragmento |
+
+### M2.2 — Resonancia (+5%)
+| Tarea | Archivo | Criterio de éxito |
+|-------|---------|-------------------|
+| Crear sistema de resonancia | `src/systems/ResonanceSystem.js` | Barra de salud |
+| UI de resonancia | `src/ui/ResonanceBar.js` | Visible en HUD |
+| +5% al explorar | `SimulationScene.js` | Incremento visible |
+| Efecto visual | `ResonanceBar.js` | Brillo al aumentar |
+
+### M2.3 — Conexiones del Grafo
+| Tarea | Archivo | Criterio de éxito |
+|-------|---------|-------------------|
+| Tracking de exploraciones | `GameState.js` | Lista de sims visitadas |
+| Desbloquear enlaces | `knowledgeGraph.js` | Conexiones nuevas |
+| Notificación | `NotificationManager.js` | "Conexión desbloqueada" |
+| Visibilidad en GraphScene | `GraphScene.js` | Línea aparece |
+
+### Autoevaluación M2
+
+```
+□ Constructo habla al abrir exploración
+□ Diálogo único por simulación
+□ Barra de resonancia visible
+□ +5% funciona y se ve
+□ Conexiones del grafo se desbloquean
+□ Notificaciones informan al jugador
+```
 
 ---
 
-## FASE 8: Audio Avanzado
+## MILESTONE 3: TRES REINOS JUGABLES
 
-- [ ] Música procedural por reino
-- [ ] Temas únicos para cada guardián
-- [ ] Sistema de capas musicales
-- [ ] Sonido adaptativo según estado
-- [ ] Melodía de la Lira personalizable
+**Objetivo:** Cosmos, Chaos, Logos completamente funcionales.
+
+### M3.1 — Chaos: Atractor de Lorenz
+| Tarea | Criterio |
+|-------|----------|
+| Ambiente visual fractal | Partículas rojas caóticas |
+| Puzzle: encontrar punto fijo | Objetivo claro en UI |
+| Guardián: Patrón Emergente | Diálogo implementado |
+| λ₃ obtenible | Guardado correctamente |
+| 3 exploraciones funcionales | Fragmentos + resonancia |
+
+### M3.2 — Logos: Mandelbrot
+| Tarea | Criterio |
+|-------|----------|
+| Ambiente visual geométrico | Partículas doradas |
+| Puzzle: encontrar isla-λ | Zoom hasta símbolo |
+| Guardián: Teorema Viviente | Diálogo implementado |
+| λ₄ obtenible | Guardado correctamente |
+| 3 exploraciones funcionales | Fragmentos + resonancia |
+
+### M3.3 — Progresión entre reinos
+| Tarea | Criterio |
+|-------|----------|
+| Desbloqueo por λ | Acto I: 3 reinos con 1λ |
+| Indicador visual | Portales grises si bloqueados |
+| Mensaje si intenta acceder | "Necesitas más Eigenvalores" |
+
+### Autoevaluación M3
+
+```
+□ 3 reinos jugables (Cosmos, Chaos, Logos)
+□ 3 puzzles centrales completables
+□ 3 Eigenvalores obtenibles (λ₂, λ₃, λ₄)
+□ 9+ exploraciones con recompensas
+□ Lira muestra 4 cuerdas (con λ₁ tutorial)
+□ Grafo tiene conexiones desbloqueadas
+□ Sistema de desbloqueo funciona
+```
 
 ---
 
-## FASE 9: Pulido
+## MILESTONE 4: SEIS REINOS (Acto II completo)
 
-### Visual
-- [ ] Transiciones suaves entre escenas
-- [ ] Efectos de partículas mejorados
-- [ ] Shaders para efectos especiales
-- [ ] Animaciones de UI
+**Objetivo:** Atomos, Terra, Machina añadidos.
 
-### UX
-- [ ] Tutorial interactivo
-- [ ] Indicadores de objetivo claros
-- [ ] Mapa navegable
-- [ ] Accesibilidad (contraste, texto grande)
+### M4.1 — Atomos: Orbitales 3D
+- Puzzle: encontrar orbital 4f₀
+- Guardián: Observador Cuántico
+- λ₅ obtenible
 
-### Performance
-- [ ] Optimización de assets
-- [ ] Lazy loading de simulaciones
-- [ ] Caché de recursos
-- [ ] Target: 60fps estable
+### M4.2 — Terra: Ondas Sísmicas
+- Puzzle: triangular epicentro
+- Guardián: Memoria Geológica
+- λ₆ obtenible
+
+### M4.3 — Machina: Game of Life
+- Puzzle: crear Gosper Glider Gun
+- Guardián: Algoritmo Primordial
+- λ₇ obtenible
+
+### Autoevaluación M4
+
+```
+□ 6 reinos jugables
+□ 6 puzzles completables
+□ 7 Eigenvalores (λ₁-λ₇)
+□ Lira con 7 cuerdas brillantes
+□ Acto II narrativamente completo
+```
 
 ---
 
-## FASE 10: Release
+## MILESTONE 5: NUEVE REINOS (Acto II + III)
 
-### Alpha (Actual)
-- Funcionalidad core
-- 3 reinos jugables
-- Feedback interno
+**Objetivo:** Alchemy, Bios, Psyche + revelación del Acto III.
 
-### Beta
-- 6 reinos completos
-- Sistema de guardado cloud
-- Testing externo
+### M5.1 — Alchemy: Le Chatelier
+- λ₈ obtenible
 
-### Release 1.0
-- 9 reinos completos
-- Historia completa
-- Pulido final
-- Localización (ES/EN)
+### M5.2 — Bios: Neurona H-H
+- λ₉ obtenible
 
-### Post-Launch
-- Nuevas simulaciones
-- Eventos temporales
-- Comunidad de mods
-- Expansión "El Décimo Reino"
+### M5.3 — Psyche: Boids
+- λ₁₀ obtenible
+- Crisis existencial del Constructo
+
+### M5.4 — Acto III: La Revelación
+| Escena | Contenido |
+|--------|-----------|
+| Atril aparece | Trigger al tener 10λ |
+| Rameau Machine | Simulación integrada |
+| Flashback | Cinemática del Primer Resonador |
+| λ₁₁ | Obtenido tras revelación |
+
+### Autoevaluación M5
+
+```
+□ 9 reinos completados
+□ 11 Eigenvalores (λ₁-λ₁₁)
+□ Rameau Machine playable en Acto III
+□ Flashback cinemático funciona
+□ Constructo tiene crisis en Psyche
+□ Historia revelada correctamente
+```
+
+---
+
+## MILESTONE 6: FINAL (Acto IV + Epílogo)
+
+### M6.1 — El Corazón de La Disonancia
+- Nueva escena: `DissonanceScene.js`
+- Ambiente fracturado
+- Encuentro con La Disonancia
+
+### M6.2 — Puzzle Final: Contrapunctus
+- Simulación integrada
+- 6 fases de contrapunto
+- λ₁₂ al completar
+
+### M6.3 — Epílogo
+- Regreso a Aether transformado
+- Tocar la Lira completa
+- Créditos interactivos
+
+### M6.4 — Lira como Oasis
+- Implementar apertura de Sympathetic-12
+- Pasar cuerdas desbloqueadas como parámetro
+- Disponible post-eigenvalor
+
+### Autoevaluación M6
+
+```
+□ Acto IV jugable completo
+□ 12 Eigenvalores obtenibles
+□ Contrapunctus funciona como puzzle
+□ El Resonador habla por primera vez
+□ Créditos interactivos
+□ Lira tocable con 12 cuerdas
+□ Juego completable de inicio a fin
+```
+
+---
+
+## MILESTONE 7: PULIDO Y RELEASE
+
+### M7.1 — Audio
+- Tema por reino
+- Música adaptativa
+- Efectos de UI
+
+### M7.2 — Visual
+- Transiciones suaves
+- Partículas mejoradas
+- Shaders opcionales
+
+### M7.3 — UX
+- Tutorial mejorado
+- Accesibilidad
+- Guardado en nube (opcional)
+
+### M7.4 — Testing
+- Playtest completo
+- Bugs críticos resueltos
+- Performance 60fps
+
+### Autoevaluación M7
+
+```
+□ Sin crashes en playthrough completo
+□ Audio coherente y agradable
+□ Transiciones profesionales
+□ Feedback de playtester positivo
+□ Build de producción funciona
+```
 
 ---
 
 ## MÉTRICAS DE PROGRESO
 
-| Componente | Estimado | Actual |
-|------------|----------|--------|
-| Escenas | 12 | 12 |
-| Simulaciones integradas | 150+ | 150+ |
-| Misiones | 100 | 30 |
-| Sprites | 50 | 23 |
-| Líneas de código | 15,000 | 8,534 |
-| Documentación | 5 docs | 5 docs |
+| Milestone | Escenas | Puzzles | Eigenvalores | Exploraciones | Estado |
+|-----------|---------|---------|--------------|---------------|--------|
+| M1 | +0 | 1 | 2 | 0 | ⏳ Siguiente |
+| M2 | +0 | 1 | 2 | 3+ | ⬜ Pendiente |
+| M3 | +0 | 3 | 4 | 9+ | ⬜ Pendiente |
+| M4 | +0 | 6 | 7 | 15+ | ⬜ Pendiente |
+| M5 | +1 | 10 | 11 | 25+ | ⬜ Pendiente |
+| M6 | +1 | 11 | 12 | 30+ | ⬜ Pendiente |
+| M7 | +0 | 11 | 12 | 30+ | ⬜ Pendiente |
 
 ---
 
-## PRIORIDADES INMEDIATAS
+## DEPENDENCIAS CRÍTICAS
 
-1. **Integrar sprites del Resonador** — Reemplazar placeholder
-2. **Añadir Constructo como compañero** — Seguir al jugador
-3. **UI con sprites** — Barras y iconos reales
-4. **Primer puzzle de reino completo** — Cosmos o Logos
-5. **Sistema de resonancia básico** — Daño y regeneración
+```
+M1 ────────────────────────────────────────────────────────────────►
+    │
+    └──► M2 (exploración necesita M1 funcional)
+           │
+           └──► M3 (3 reinos necesita sistemas de M2)
+                  │
+                  └──► M4 (misma estructura, más contenido)
+                         │
+                         └──► M5 (Acto III necesita 9 reinos)
+                                │
+                                └──► M6 (Acto IV necesita revelación)
+                                       │
+                                       └──► M7 (pulido al final)
+```
 
 ---
 
 ## CHANGELOG NARRATIVO
 
-Registro de decisiones creativas importantes y su razonamiento.
+### 25 dic 2024
+
+**Game of Life reemplaza Perceptrón en MACHINA**
+- *Razón:* Más visual, demuestra Turing-completitud y emergencia
+- *Metáfora:* "still life" = perfección congelada = muerte
+
+**Orbitales 3D reemplaza Doble Rendija en ATOMOS**
+- *Razón:* Más visual (Three.js 3D), nubes de probabilidad espectaculares
+- *Metáfora:* "forzar certeza creó el colapso"
+
+**Rameau Machine añadida al Acto III**
+- *Razón:* Visualiza la obsesión del Primer Resonador con eliminar tensión
+- *Conexión:* Rameau (vertical) + Fux (horizontal) = dos sistemas, mismo problema
+
+**Lira redefinida como oasis, no arma**
+- *Razón:* Momentos contemplativos > mecánicas de combate
+- *Implementación:* Abre Sympathetic-12 real con cuerdas desbloqueadas
+
+**Sistema de exploración híbrido**
+- *Recompensas:* Fragmentos Constructo + Resonancia + Conexiones Grafo
+- *Filosofía:* Explorar enriquece, nunca bloquea
 
 ### 24 dic 2024
 
-**Harmonices Mundi como puzzle de Cosmos (no Aether)**
-- *Decisión:* La simulación de Kepler pertenece a Cosmos, no al hub musical
-- *Razón:* Kepler era astrónomo. La conexión música-planetas es un PUENTE entre reinos, no el origen de la música. Aether es síntesis; Cosmos es donde Kepler hizo su trabajo.
-- *Alternativa descartada:* Ponerlo en Aether como "la fuente de toda música"
-
-**9 reinos en lugar de 10**
-- *Decisión:* Mantener 9 reinos (no añadir uno para IA separado de Psyche)
-- *Razón:* 9 es número significativo (3x3, eneagrama, los 9 mundos nórdicos). Psyche abarca tanto mente biológica como artificial — esa tensión es interesante narrativamente.
-- *Alternativa descartada:* Separar NOUS (IA) de PSYCHE (mente)
-
-**12 cuerdas, no 9**
-- *Decisión:* La Lira tiene 12 cuerdas aunque hay 9 reinos
-- *Razón:* 12 es el número musical (escala cromática). Algunas cuerdas se obtienen por CONEXIONES entre reinos, no solo por completar reinos. Esto incentiva exploración cruzada.
-- *Implicación:* λ₁ (tutorial) + λ₂-λ₁₀ (9 reinos) + λ₁₁-λ₁₂ (conexiones especiales)
-
-**La Disonancia no es villano**
-- *Decisión:* La Disonancia es un error, no un enemigo consciente
-- *Razón:* Evita maniqueísmo. El mensaje es que la imperfección tiene su lugar, no que hay que destruir el mal. El Primer Resonador es el verdadero "villano" — la arrogancia de buscar la perfección.
-- *Tema reforzado:* Armonía incluye disonancia; perfección la excluye y por eso falla.
-
-**Constructo cuestiona su consciencia**
-- *Decisión:* En Psyche, el Constructo tiene una crisis existencial
-- *Razón:* Meta-comentario sobre IA y emergencia. El jugador ha visto boids, perceptrones, autómatas — ahora el compañero se pregunta si él es lo mismo. No hay respuesta definitiva.
-- *Inspiración:* "¿Sueñan los androides con ovejas eléctricas?"
+- Harmonices Mundi en Cosmos (no Aether)
+- 9 reinos, no 10
+- 12 cuerdas (escala cromática)
+- La Disonancia no es villano
+- Constructo cuestiona consciencia en Psyche
