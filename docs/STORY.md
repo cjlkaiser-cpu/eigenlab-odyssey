@@ -309,44 +309,53 @@ El jugador debe:
 
 **[El portal cian se abre a un espacio donde las partículas parpadean entre existencia y probabilidad]**
 
-Electrones orbitan núcleos en nubes borrosas. Fotones atraviesan rendijas y se interfieren consigo mismos. La realidad aquí es sugerencia, no certeza.
+Nubes de luz giran en el vacío — no son planetas, son **electrones**. Formas imposibles: esferas, lóbulos, tréboles, flores de ocho pétalos. La realidad aquí es sugerencia, no certeza.
 
 **GUARDIÁN DE ATOMOS** (El Observador Cuántico):
 > *"¿Estás seguro de que me estás observando? ¿O soy yo quien te observa a ti?"*
 >
-> *"Bienvenido al reino donde la materia danza entre ser y no ser. Donde tu mirada decide qué es real."*
+> *"Bienvenido al reino donde la materia danza entre ser y no ser. Donde el electrón está en todas partes... hasta que preguntas dónde."*
 
 **CONSTRUCTO:**
-> *"Advertencia: mis cálculos se vuelven probabilísticos aquí. No puedo garantizar resultados... solo tendencias."*
+> *"Advertencia: mis cálculos se vuelven probabilísticos aquí. No puedo garantizar posiciones... solo densidades de probabilidad."*
 
 #### Simulaciones de Exploración
-- `modelo-bohr.html` — Órbitas cuantizadas
-- `orbitales.html` — Nubes de probabilidad
+- `modelo-bohr.html` — Órbitas cuantizadas (el modelo antiguo)
 - `efecto-tunel.html` — Atravesar lo imposible
 - `interferencia.html` — Ondas que se suman y cancelan
 
-#### Puzzle Central: La Doble Rendija
-**Simulación:** `interferencia.html` (modo doble rendija)
+#### Puzzle Central: Los Orbitales Atómicos
+**Simulación:** `orbitales.html`
 
-**OBJETIVO:** Demostrar la dualidad onda-partícula.
+**OBJETIVO:** Encontrar el orbital que contiene el eigenvalor oculto.
+
+**Contexto narrativo:**
+El Guardián muestra el átomo corrupto de La Disonancia. Sus electrones han colapsado en órbitas clásicas (como el modelo de Bohr), perdiendo su naturaleza cuántica. El jugador debe restaurar los orbitales correctos.
 
 El jugador debe:
-1. Disparar electrones uno a uno hacia las dos rendijas
-2. Observar cómo se acumula el patrón de interferencia
-3. Activar el "detector" y ver cómo el patrón colapsa
-4. Desactivar el detector y restaurar la interferencia
+1. Explorar los orbitales s (esféricos), p (lóbulos), d (tréboles), f (flores)
+2. Entender los números cuánticos: n (nivel), l (forma), m (orientación)
+3. Encontrar el orbital específico donde se oculta el símbolo λ
+4. Navegar la nube de probabilidad 3D hasta localizar el eigenvalor
 
-**CONSTRUCTO** (al ver el patrón colapsar):
-> *"El electrón no decide si es onda o partícula hasta que lo miras."*
+**CONSTRUCTO** (al explorar los orbitales):
+> *"Mira estas formas. No son órbitas como pensaba Bohr. Son NUBES. Probabilidades."*
 >
-> *"¿Y si La Estructura es igual? ¿Y si solo existe porque tú la observas?"*
+> *"El electrón no está en un punto. Está... difuminado. Existe como posibilidad hasta que interactúas con él."*
 
-**[Al completar el ciclo observación/no-observación, el patrón forma el símbolo λ]**
+**[El jugador rota el orbital 3D. Los colores indican densidad de probabilidad]**
+
+**CONSTRUCTO** (al encontrar un orbital d o f):
+> *"Orbital d. Cuatro lóbulos. O f... ocho pétalos como una flor cuántica."*
+>
+> *"Schrödinger describió estas formas con una ecuación. Una sola ecuación... y de ella emergen todas estas geometrías imposibles."*
+
+**[Al encontrar el orbital correcto (4f₀), el eigenvalor λ brilla en el centro de la nube]**
 
 **GUARDIÁN:**
-> *"Ahora entiendes. La observación cambia lo observado."*
+> *"Has encontrado certeza en la incertidumbre. Eso es lo que significa entender lo cuántico."*
 >
-> *"El Primer Resonador observó demasiado. Quiso ver la nota perfecta antes de tocarla. Y lo observado... miró de vuelta."*
+> *"El Primer Resonador quiso eliminar la incertidumbre. Quiso que el electrón estuviera en UN lugar, tocando UNA nota. Pero al forzar la certeza... creó el colapso."*
 
 **[Eigenvalor λ₅ obtenido — Quinta cuerda de la Lira se ilumina]**
 
@@ -617,7 +626,7 @@ A medida que el jugador progresa, los fragmentos revelan la historia:
 | **COSMOS** | "La Disonancia nació aquí. De un cálculo que no debió hacerse." |
 | **CHAOS** | "El caos no es el enemigo. La Disonancia rechaza convertirse en patrón." |
 | **LOGOS** | "Un teorema que se demuestra a sí mismo falso. El Primer Resonador la encontró." |
-| **ATOMOS** | "Observó demasiado. Y lo observado... miró de vuelta." |
+| **ATOMOS** | "Quiso eliminar la incertidumbre. Al forzar la certeza... creó el colapso." |
 | **TERRA** | "Intentó anclar la nota perfecta en la roca. La Tierra la rechazó." |
 | **MACHINA** | "Buscó la nota perfecta con algoritmos. La encontró en un still life eterno — una nota que nunca cambia." |
 | **ALCHEMY** | "Quiso congelar el baile en un solo acorde. La música necesita movimiento." |
@@ -1059,14 +1068,14 @@ Un nuevo portal aparece en Aether. Blanco puro.
 > *"Una conjetura que nadie ha probado ni refutado. Simple de enunciar, imposible de resolver. Las matemáticas guardan secretos incluso de sí mismas."*
 
 #### ATOMOS
-**Ante la doble rendija:**
-> *"El electrón no decide si es onda o partícula hasta que lo miras. ¿Y si La Estructura es igual? ¿Y si solo existe porque tú la observas?"*
+**Ante los orbitales (puzzle central):**
+> *"Mira el orbital f. Ocho lóbulos, como una flor cuántica. Schrödinger lo describió con una ecuación. Una sola ecuación... infinitas formas."*
 
-**Ante el efecto túnel:**
-> *"Atravesar una barrera sin tener energía para saltarla. Imposible clásicamente. Rutinario cuánticamente. La realidad hace trampa."*
+**Ante el orbital 1s:**
+> *"La forma más simple. Una esfera de probabilidad. El electrón podría estar en cualquier punto de esta nube... pero es MÁS PROBABLE encontrarlo cerca del centro."*
 
-**Ante los orbitales:**
-> *"El electrón no orbita. Existe en una nube de probabilidad. Está en todas partes hasta que preguntas dónde."*
+**Ante los números cuánticos:**
+> *"n, l, m. Tres números que definen la forma del espacio donde PODRÍA estar el electrón. No donde ESTÁ. Donde podría estar. La mecánica cuántica no da certezas."*
 
 #### TERRA
 **Ante las ondas sísmicas:**
