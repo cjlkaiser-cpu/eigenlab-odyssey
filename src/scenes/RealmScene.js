@@ -15,6 +15,7 @@ import {
 } from '../core/constants.js';
 import ProgressUI from '../ui/ProgressUI.js';
 import LyreHUD from '../ui/LyreHUD.js';
+import ResonanceBar from '../ui/ResonanceBar.js';
 import gameState from '../systems/GameState.js';
 import { getMission } from '../data/missions.js';
 import { getGuardianIntro } from '../data/guardians.js';
@@ -172,6 +173,7 @@ export default class RealmScene extends Phaser.Scene {
         this.simNodes = [];
         this.progressUI = null;
         this.lyreHUD = null;
+        this.resonanceBar = null;
     }
 
     init(data) {
@@ -200,6 +202,9 @@ export default class RealmScene extends Phaser.Scene {
 
         // Lyre HUD
         this.lyreHUD = new LyreHUD(this);
+
+        // M2: Barra de resonancia
+        this.resonanceBar = new ResonanceBar(this, width - 200, 30);
 
         // Fade in
         this.cameras.main.fadeIn(500);
@@ -526,6 +531,9 @@ export default class RealmScene extends Phaser.Scene {
         }
         if (this.lyreHUD) {
             this.lyreHUD.destroy();
+        }
+        if (this.resonanceBar) {
+            this.resonanceBar.destroy();
         }
     }
 }

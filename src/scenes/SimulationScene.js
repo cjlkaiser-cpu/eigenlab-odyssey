@@ -11,6 +11,8 @@
 import Phaser from 'phaser';
 import { GAME_WIDTH, GAME_HEIGHT, REALM_COLORS, UI_COLORS } from '../core/constants.js';
 import { getMission } from '../data/missions.js';
+import { getFragment, isCentralPuzzle } from '../data/constructoFragments.js';
+import gameState from '../systems/GameState.js';
 
 // Rutas de simulaciones - VERIFICADAS contra estructura real de EigenLab
 const SIMULATION_PATHS = {
@@ -198,6 +200,9 @@ export default class SimulationScene extends Phaser.Scene {
         this.canComplete = false;
         this.timerText = null;
         this.completeBtn = null;
+        this.isExploration = false;
+        this.fragment = null;
+        this.hasShownFragment = false;
     }
 
     init(data) {
@@ -207,6 +212,11 @@ export default class SimulationScene extends Phaser.Scene {
         this.mission = getMission(this.simulation);
         this.timeRemaining = this.mission.minTime;
         this.canComplete = false;
+
+        // M2: Detectar si es exploración (no puzzle central)
+        this.isExploration = !isCentralPuzzle(this.simulation);
+        this.fragment = getFragment(this.simulation);
+        this.hasShownFragment = gameState.hasSeenFragment(this.simulation);
     }
 
     create() {
@@ -216,6 +226,21 @@ export default class SimulationScene extends Phaser.Scene {
         // Overlay oscuro
         this.add.rectangle(width / 2, height / 2, width, height, 0x000000, 0.92);
 
+        // M2: Mostrar fragmento del Constructo si es exploración nueva
+        if (this.isExploration && this.fragment && !this.hasShownFragment) {
+            this.showConstructoFragment(color, () => {
+                gameState.markFragmentSeen(this.simulation);
+                this.startSimulationUI(color);
+            });
+        } else {
+            this.startSimulationUI(color);
+        }
+
+        // ESC para salir
+        this.input.keyboard.on('keydown-ESC', () => this.closeSimulation(false));
+    }
+
+    startSimulationUI(color) {
         // Header con misión
         this.createHeader(color);
 
@@ -230,9 +255,134 @@ export default class SimulationScene extends Phaser.Scene {
 
         // Timer
         this.startTimer();
+    }
 
-        // ESC para salir
-        this.input.keyboard.on('keydown-ESC', () => this.closeSimulation(false));
+    showConstructoFragment(color, onComplete) {
+        const { width, height } = this.cameras.main;
+        const colorHex = `#${color.primary.toString(16).padStart(6, '0')}`;
+
+        // Container del fragmento
+        const fragmentContainer = this.add.container(width / 2, height / 2);
+        fragmentContainer.setDepth(100);
+
+        // Fondo con gradiente
+        const bg = this.add.graphics();
+        bg.fillStyle(0x0f172a, 0.98);
+        bg.fillRoundedRect(-300, -120, 600, 240, 16);
+        bg.lineStyle(2, color.primary, 0.6);
+        bg.strokeRoundedRect(-300, -120, 600, 240, 16);
+        fragmentContainer.add(bg);
+
+        // Glow pulsante
+        const glow = this.add.graphics();
+        glow.fillStyle(color.primary, 0.1);
+        glow.fillRoundedRect(-310, -130, 620, 260, 20);
+        fragmentContainer.add(glow);
+
+        // Icono del Constructo
+        const icon = this.add.text(0, -80, '🔮', {
+            fontSize: '36px'
+        }).setOrigin(0.5);
+        fragmentContainer.add(icon);
+
+        // Título
+        const title = this.add.text(0, -40, 'FRAGMENTO DEL CONSTRUCTO', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '12px',
+            fontWeight: '700',
+            color: colorHex
+        }).setOrigin(0.5);
+        fragmentContainer.add(title);
+
+        // Línea del fragmento (seleccionar una aleatoria)
+        const randomLine = Phaser.Utils.Array.GetRandom(this.fragment.lines);
+        const text = this.add.text(0, 10, `"${randomLine}"`, {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '16px',
+            fontStyle: 'italic',
+            color: '#f8fafc',
+            align: 'center',
+            wordWrap: { width: 500 }
+        }).setOrigin(0.5);
+        fragmentContainer.add(text);
+
+        // Mood indicator
+        const moodText = this.add.text(0, 60, `— Estado: ${this.fragment.mood}`, {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '10px',
+            color: '#64748b'
+        }).setOrigin(0.5);
+        fragmentContainer.add(moodText);
+
+        // Indicador de continuar
+        const continueText = this.add.text(0, 95, '▼ Presiona ESPACIO para explorar', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '11px',
+            color: '#94a3b8'
+        }).setOrigin(0.5);
+        fragmentContainer.add(continueText);
+
+        // Animación de entrada
+        fragmentContainer.setAlpha(0);
+        fragmentContainer.setScale(0.9);
+        this.tweens.add({
+            targets: fragmentContainer,
+            alpha: 1,
+            scale: 1,
+            duration: 400,
+            ease: 'Back.out'
+        });
+
+        // Pulso del glow
+        this.tweens.add({
+            targets: glow,
+            alpha: { from: 1, to: 0.5 },
+            duration: 1000,
+            yoyo: true,
+            repeat: -1
+        });
+
+        // Pulso del indicador
+        this.tweens.add({
+            targets: continueText,
+            alpha: { from: 1, to: 0.5 },
+            duration: 600,
+            yoyo: true,
+            repeat: -1
+        });
+
+        // Rotación suave del icono
+        this.tweens.add({
+            targets: icon,
+            angle: { from: -5, to: 5 },
+            duration: 2000,
+            yoyo: true,
+            repeat: -1,
+            ease: 'Sine.inOut'
+        });
+
+        // Input para continuar
+        const handleContinue = () => {
+            this.input.keyboard.off('keydown-SPACE', handleContinue);
+            this.input.keyboard.off('keydown-ENTER', handleContinue);
+            this.input.off('pointerdown', handleContinue);
+
+            // Animación de salida
+            this.tweens.add({
+                targets: fragmentContainer,
+                alpha: 0,
+                scale: 0.9,
+                duration: 250,
+                onComplete: () => {
+                    fragmentContainer.destroy();
+                    onComplete();
+                }
+            });
+        };
+
+        this.input.keyboard.on('keydown-SPACE', handleContinue);
+        this.input.keyboard.on('keydown-ENTER', handleContinue);
+        this.input.on('pointerdown', handleContinue);
     }
 
     createHeader(color) {
@@ -581,7 +731,19 @@ export default class SimulationScene extends Phaser.Scene {
             this.iframe = null;
         }
 
-        this.onComplete(completed);
+        // M2: Si es exploración completada, registrar
+        if (completed && this.isExploration) {
+            const result = gameState.exploreSimulation(this.simulation);
+            // onComplete recibe info adicional para exploraciones
+            this.onComplete(completed, {
+                isExploration: true,
+                resonanceGained: result.resonanceGained,
+                connectionUnlocked: result.connectionUnlocked
+            });
+        } else {
+            this.onComplete(completed);
+        }
+
         this.scene.stop();
     }
 

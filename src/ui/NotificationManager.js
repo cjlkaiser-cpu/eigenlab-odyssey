@@ -50,6 +50,21 @@ export default class NotificationManager {
                 });
             }
         });
+
+        // M2: Notificaciones de exploración
+        gameState.on('exploration-complete', (data) => {
+            this.queueNotification({
+                type: 'exploration',
+                data
+            });
+        });
+
+        gameState.on('graph-connection-unlocked', (connection) => {
+            this.queueNotification({
+                type: 'graph-connection',
+                data: connection
+            });
+        });
     }
 
     queueNotification(notification) {
@@ -77,6 +92,12 @@ export default class NotificationManager {
                 break;
             case 'path-completed':
                 this.showPathCompletedNotification(notification.data);
+                break;
+            case 'exploration':
+                this.showExplorationNotification(notification.data);
+                break;
+            case 'graph-connection':
+                this.showGraphConnectionNotification(notification.data);
                 break;
             default:
                 this.showNext();
@@ -418,10 +439,179 @@ export default class NotificationManager {
         this.currentNotification = container;
     }
 
+    showExplorationNotification(data) {
+        const { width, height } = this.scene.cameras.main;
+
+        // Container
+        const container = this.scene.add.container(width / 2, -150);
+        container.setDepth(1000);
+        container.setScrollFactor(0);
+
+        // Fondo
+        const bg = this.scene.add.graphics();
+        bg.fillStyle(0x0f172a, 0.98);
+        bg.fillRoundedRect(-180, -50, 360, 100, 12);
+        bg.lineStyle(2, 0x22c55e, 0.8);
+        bg.strokeRoundedRect(-180, -50, 360, 100, 12);
+        container.add(bg);
+
+        // Icono
+        const icon = this.scene.add.text(0, -30, '🎵', {
+            fontSize: '24px'
+        }).setOrigin(0.5);
+        container.add(icon);
+
+        // Título
+        const title = this.scene.add.text(0, -5, 'RESONANCIA AUMENTADA', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '11px',
+            fontWeight: '700',
+            color: '#22c55e'
+        }).setOrigin(0.5);
+        container.add(title);
+
+        // Bonus
+        const bonus = this.scene.add.text(0, 18, `+${data.resonanceGained}% Resonancia`, {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '14px',
+            fontWeight: '600',
+            color: '#f8fafc'
+        }).setOrigin(0.5);
+        container.add(bonus);
+
+        // Animación entrada
+        this.scene.tweens.add({
+            targets: container,
+            y: 80,
+            duration: 400,
+            ease: 'Back.out'
+        });
+
+        // Salida después de 2.5 segundos
+        this.scene.time.delayedCall(2500, () => {
+            this.scene.tweens.add({
+                targets: container,
+                y: -150,
+                alpha: 0,
+                duration: 300,
+                ease: 'Power2',
+                onComplete: () => {
+                    container.destroy();
+                    this.showNext();
+                }
+            });
+        });
+
+        this.currentNotification = container;
+    }
+
+    showGraphConnectionNotification(connection) {
+        const { width, height } = this.scene.cameras.main;
+
+        // Colores de los reinos conectados
+        const color1 = REALM_COLORS[connection.realms[0]]?.primary || 0xa855f7;
+        const color2 = REALM_COLORS[connection.realms[1]]?.primary || 0x3b82f6;
+
+        // Container
+        const container = this.scene.add.container(width / 2, -180);
+        container.setDepth(1000);
+        container.setScrollFactor(0);
+
+        // Glow
+        const glow = this.scene.add.graphics();
+        glow.fillStyle(color1, 0.15);
+        glow.fillRoundedRect(-230, -80, 460, 160, 16);
+        container.add(glow);
+
+        // Fondo
+        const bg = this.scene.add.graphics();
+        bg.fillStyle(0x0f172a, 0.98);
+        bg.fillRoundedRect(-210, -70, 420, 140, 12);
+        bg.lineStyle(2, color1, 0.8);
+        bg.strokeRoundedRect(-210, -70, 420, 140, 12);
+        container.add(bg);
+
+        // Línea de conexión decorativa
+        const line = this.scene.add.graphics();
+        line.lineStyle(3, color2, 0.6);
+        line.lineBetween(-100, -40, 100, -40);
+        container.add(line);
+
+        // Icono
+        const icon = this.scene.add.text(0, -40, '🔗', {
+            fontSize: '28px'
+        }).setOrigin(0.5);
+        container.add(icon);
+
+        // Título
+        const title = this.scene.add.text(0, -5, 'CONEXION DESBLOQUEADA', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '11px',
+            fontWeight: '700',
+            color: `#${color1.toString(16).padStart(6, '0')}`
+        }).setOrigin(0.5);
+        container.add(title);
+
+        // Nombre de la conexión
+        const name = this.scene.add.text(0, 18, connection.name, {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '16px',
+            fontWeight: '600',
+            color: '#f8fafc'
+        }).setOrigin(0.5);
+        container.add(name);
+
+        // Descripción
+        const desc = this.scene.add.text(0, 42, connection.description, {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '10px',
+            color: '#94a3b8',
+            align: 'center'
+        }).setOrigin(0.5);
+        container.add(desc);
+
+        // Animación entrada
+        this.scene.tweens.add({
+            targets: container,
+            y: 110,
+            duration: 500,
+            ease: 'Back.out'
+        });
+
+        // Pulso del glow
+        this.scene.tweens.add({
+            targets: glow,
+            alpha: { from: 1, to: 0.5 },
+            scale: { from: 1, to: 1.05 },
+            duration: 800,
+            yoyo: true,
+            repeat: 2
+        });
+
+        // Salida después de 4 segundos
+        this.scene.time.delayedCall(4000, () => {
+            this.scene.tweens.add({
+                targets: container,
+                y: -180,
+                alpha: 0,
+                duration: 400,
+                ease: 'Power2',
+                onComplete: () => {
+                    container.destroy();
+                    this.showNext();
+                }
+            });
+        });
+
+        this.currentNotification = container;
+    }
+
     destroy() {
         gameState.off('connection-discovered');
         gameState.off('realms-unlocked');
         gameState.off('path-completed');
+        gameState.off('exploration-complete');
+        gameState.off('graph-connection-unlocked');
 
         if (this.currentNotification) {
             this.currentNotification.destroy();
