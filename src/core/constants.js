@@ -49,6 +49,7 @@ export const INITIAL_REALMS = ['cosmos', 'chaos', 'logos'];
 // Mapeo de reinos a simulaciones de EigenLab - VERIFICADO
 export const REALM_SIMULATIONS = {
     cosmos: [
+        'harmonices-mundi', // Puzzle central de COSMOS
         'formacion-galaxias',
         'sistema-solar',
         'agujero-negro',

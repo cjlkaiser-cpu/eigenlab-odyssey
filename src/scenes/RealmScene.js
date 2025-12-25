@@ -15,6 +15,7 @@ import {
 } from '../core/constants.js';
 import ProgressUI from '../ui/ProgressUI.js';
 import gameState from '../systems/GameState.js';
+import { getMission } from '../data/missions.js';
 
 // Metadatos de simulaciones
 const SIMULATION_META = {
@@ -129,7 +130,10 @@ const SIMULATION_META = {
     'musica-esferas-moderna': { name: 'Música de las Esferas', desc: 'Armonía celestial' },
     'tonnetz-chromatic': { name: 'Tonnetz Cromático', desc: 'Geometría tonal' },
     'tonnetz-dual': { name: 'Tonnetz Dual', desc: 'Espacios armónicos' },
-    'cadencia-orbital': { name: 'Cadencia Orbital', desc: 'Ritmo planetario' }
+    'cadencia-orbital': { name: 'Cadencia Orbital', desc: 'Ritmo planetario' },
+    'harmonices-mundi': { name: 'Harmonices Mundi', desc: 'La armonía de Kepler' },
+    'rameau-machine': { name: 'Rameau Machine', desc: 'Armonía funcional' },
+    'orbifold-walker': { name: 'Orbifold Walker', desc: 'Espacios armónicos' }
 };
 
 const REALM_NAMES = {
@@ -289,22 +293,25 @@ export default class RealmScene extends Phaser.Scene {
     createSimNode(x, y, w, h, simId, color) {
         const container = this.add.container(x, y);
         const isCompleted = gameState.isSimulationCompleted(simId);
+        const mission = getMission(simId);
+        const isCentralPuzzle = mission.isCentralPuzzle || false;
 
         // Fondo
         const bg = this.add.graphics();
-        this.drawNodeBg(bg, w, h, color, isCompleted, false);
+        this.drawNodeBg(bg, w, h, color, isCompleted, false, isCentralPuzzle);
         container.add(bg);
 
         // Metadata
         const meta = SIMULATION_META[simId] || { name: simId, desc: '' };
 
-        // Indicador de estado
-        const statusColor = isCompleted ? 0x22c55e : color.primary;
-        const statusAlpha = isCompleted ? 1 : 0.4;
-        const statusCircle = this.add.circle(-w / 2 + 18, 0, 5, statusColor, statusAlpha);
+        // Indicador de estado (más grande para puzzles centrales)
+        const statusColor = isCompleted ? 0x22c55e : (isCentralPuzzle ? 0xfbbf24 : color.primary);
+        const statusAlpha = isCompleted ? 1 : (isCentralPuzzle ? 1 : 0.4);
+        const statusSize = isCentralPuzzle ? 8 : 5;
+        const statusCircle = this.add.circle(-w / 2 + 18, 0, statusSize, statusColor, statusAlpha);
         container.add(statusCircle);
 
-        // Checkmark si completada
+        // Símbolo según estado
         if (isCompleted) {
             const check = this.add.text(-w / 2 + 18, 0, '✓', {
                 fontFamily: 'Inter, system-ui, sans-serif',
@@ -312,14 +319,35 @@ export default class RealmScene extends Phaser.Scene {
                 color: '#030712'
             }).setOrigin(0.5);
             container.add(check);
+        } else if (isCentralPuzzle) {
+            // Símbolo lambda para puzzles centrales
+            const lambda = this.add.text(-w / 2 + 18, 0, 'λ', {
+                fontFamily: 'Inter, system-ui, sans-serif',
+                fontSize: '10px',
+                fontWeight: '700',
+                color: '#030712'
+            }).setOrigin(0.5);
+            container.add(lambda);
+        }
+
+        // Badge de puzzle central
+        if (isCentralPuzzle && !isCompleted) {
+            const badge = this.add.text(w / 2 - 10, -h / 2 + 12, '★ PUZZLE CENTRAL', {
+                fontFamily: 'Inter, system-ui, sans-serif',
+                fontSize: '8px',
+                fontWeight: '700',
+                color: '#fbbf24'
+            }).setOrigin(1, 0.5);
+            container.add(badge);
         }
 
         // Nombre
+        const nameColor = isCompleted ? '#22c55e' : (isCentralPuzzle ? '#fbbf24' : '#f8fafc');
         const nameText = this.add.text(-w / 2 + 35, -10, meta.name, {
             fontFamily: 'Inter, system-ui, sans-serif',
             fontSize: '13px',
-            fontWeight: '500',
-            color: isCompleted ? '#22c55e' : '#f8fafc'
+            fontWeight: isCentralPuzzle ? '700' : '500',
+            color: nameColor
         });
         container.add(nameText);
 
@@ -337,11 +365,11 @@ export default class RealmScene extends Phaser.Scene {
         container.add(hitArea);
 
         hitArea.on('pointerover', () => {
-            this.drawNodeBg(bg, w, h, color, isCompleted, true);
+            this.drawNodeBg(bg, w, h, color, isCompleted, true, isCentralPuzzle);
         });
 
         hitArea.on('pointerout', () => {
-            this.drawNodeBg(bg, w, h, color, isCompleted, false);
+            this.drawNodeBg(bg, w, h, color, isCompleted, false, isCentralPuzzle);
         });
 
         hitArea.on('pointerdown', () => {
@@ -350,22 +378,43 @@ export default class RealmScene extends Phaser.Scene {
 
         container.simId = simId;
         container.bg = bg;
+        container.isCentralPuzzle = isCentralPuzzle;
 
         return container;
     }
 
-    drawNodeBg(graphics, w, h, color, isCompleted, isHover) {
+    drawNodeBg(graphics, w, h, color, isCompleted, isHover, isCentralPuzzle = false) {
         graphics.clear();
 
         const bgColor = isHover ? color.primary : 0x0f172a;
         const bgAlpha = isHover ? 0.2 : 0.85;
-        const borderColor = isCompleted ? 0x22c55e : color.primary;
-        const borderAlpha = isHover ? 0.8 : 0.3;
+
+        // Puzzles centrales tienen borde dorado
+        let borderColor, borderAlpha, borderWidth;
+        if (isCompleted) {
+            borderColor = 0x22c55e;
+            borderAlpha = isHover ? 0.8 : 0.5;
+            borderWidth = isHover ? 2 : 1;
+        } else if (isCentralPuzzle) {
+            borderColor = 0xfbbf24; // Dorado
+            borderAlpha = isHover ? 1 : 0.7;
+            borderWidth = 2;
+        } else {
+            borderColor = color.primary;
+            borderAlpha = isHover ? 0.8 : 0.3;
+            borderWidth = isHover ? 2 : 1;
+        }
 
         graphics.fillStyle(bgColor, bgAlpha);
         graphics.fillRoundedRect(-w / 2, -h / 2, w, h, 6);
-        graphics.lineStyle(isHover ? 2 : 1, borderColor, borderAlpha);
+        graphics.lineStyle(borderWidth, borderColor, borderAlpha);
         graphics.strokeRoundedRect(-w / 2, -h / 2, w, h, 6);
+
+        // Glow sutil para puzzles centrales
+        if (isCentralPuzzle && !isCompleted) {
+            graphics.lineStyle(4, 0xfbbf24, 0.1);
+            graphics.strokeRoundedRect(-w / 2 - 2, -h / 2 - 2, w + 4, h + 4, 8);
+        }
     }
 
     createControls() {

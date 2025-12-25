@@ -72,6 +72,23 @@ export const MISSIONS = {
             correct: 1
         }
     },
+    'harmonices-mundi': {
+        objective: 'Alinea las órbitas planetarias para escuchar la armonía cósmica de Kepler',
+        hint: 'Cada planeta tiene una "nota" basada en su velocidad orbital. Busca el momento de consonancia',
+        minTime: 60,
+        isCentralPuzzle: true, // Marca como puzzle central del reino
+        eigenvalorReward: 'cosmos', // Eigenvalor específico que otorga
+        verification: {
+            question: '¿Qué descubrió Kepler sobre las órbitas y la música?',
+            options: [
+                'Los planetas cantan literalmente',
+                'Las proporciones orbitales corresponden a intervalos musicales',
+                'El Sol produce ondas sonoras',
+                'La gravedad es una frecuencia'
+            ],
+            correct: 1
+        }
+    },
 
     // ═══════════════════════════════════════════════════════════════
     // CHAOS - Sistemas Emergentes
