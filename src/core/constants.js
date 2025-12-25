@@ -136,11 +136,11 @@ export const REALM_SIMULATIONS = {
         'perceptron-playground'
     ],
     alchemy: [
+        'le-chatelier', // Puzzle central de ALCHEMY
         'gas-ideal',
         'gases-reales',
         'termodinamica',
         'entropia',
-        'le-chatelier',
         'cinetica-colisiones',
         'titulacion',
         'nernst',
@@ -148,12 +148,12 @@ export const REALM_SIMULATIONS = {
         'diagrama-fases',
         'solubilidad',
         'tabla-periodica',
-        'orbitales',
         'modelo-bohr',
         'enlaces',
         'vsepr'
     ],
     bios: [
+        'neurona', // Puzzle central de BIOS
         'adn-replicacion',
         'sintesis-proteinas',
         'mitosis',
@@ -170,7 +170,7 @@ export const REALM_SIMULATIONS = {
         'plegamiento'
     ],
     psyche: [
-        'neurona',
+        'boids-masivo', // Puzzle central de PSYCHE
         'vision',
         'ritmos-circadianos'
     ],

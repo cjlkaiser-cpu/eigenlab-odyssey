@@ -133,12 +133,19 @@ export const MISSIONS = {
         }
     },
     'boids-masivo': {
-        objective: 'Ajusta los parámetros para crear un comportamiento de "murmuración" como los estorninos',
-        hint: 'Aumenta la cohesión y reduce la separación',
-        minTime: 50,
+        objective: 'Encuentra la consciencia colectiva: ajusta las 3 reglas hasta que emerja un patrón coherente',
+        hint: 'Separación, alineación, cohesión. De la simplicidad emerge la complejidad',
+        minTime: 55,
+        isCentralPuzzle: true,
+        eigenvalorReward: 'psyche',
         verification: {
-            question: '¿Cuáles son las 3 reglas básicas de los boids?',
-            options: ['Comer, dormir, moverse', 'Separación, alineación, cohesión', 'Arriba, abajo, lateral', 'Líder, seguidor, explorador'],
+            question: '¿Qué demuestra la simulación de boids sobre la consciencia?',
+            options: [
+                'La consciencia requiere un líder central',
+                'El comportamiento complejo puede emerger de reglas simples',
+                'Los boids son realmente conscientes',
+                'Nada puede emerger sin programación explícita'
+            ],
             correct: 1
         }
     },
@@ -358,6 +365,23 @@ export const MISSIONS = {
     // ═══════════════════════════════════════════════════════════════
     // ALCHEMY - Química
     // ═══════════════════════════════════════════════════════════════
+    'le-chatelier': {
+        objective: 'Perturba el equilibrio químico y observa cómo el sistema se opone al cambio',
+        hint: 'Cambia concentraciones, temperatura o presión. El sistema siempre empuja de vuelta',
+        minTime: 55,
+        isCentralPuzzle: true,
+        eigenvalorReward: 'alchemy',
+        verification: {
+            question: '¿Qué predice el principio de Le Chatelier?',
+            options: [
+                'Las reacciones siempre van hacia la derecha',
+                'El sistema se opone a las perturbaciones del equilibrio',
+                'Las concentraciones siempre son iguales',
+                'La temperatura no afecta el equilibrio'
+            ],
+            correct: 1
+        }
+    },
     'gas-ideal': {
         objective: 'Verifica la relación PV=nRT cambiando temperatura y volumen',
         hint: 'Si duplicas T manteniendo V, ¿qué pasa con P?',
@@ -382,6 +406,23 @@ export const MISSIONS = {
     // ═══════════════════════════════════════════════════════════════
     // BIOS - Biología
     // ═══════════════════════════════════════════════════════════════
+    'neurona': {
+        objective: 'Genera un potencial de acción ajustando los canales iónicos',
+        hint: 'El umbral está cerca de -55mV. Los canales de Na+ y K+ son la clave',
+        minTime: 55,
+        isCentralPuzzle: true,
+        eigenvalorReward: 'bios',
+        verification: {
+            question: '¿Qué sucede durante un potencial de acción?',
+            options: [
+                'El potencial de membrana baja gradualmente',
+                'Los canales de Na+ se abren causando despolarización rápida',
+                'La célula muere temporalmente',
+                'Solo entra potasio a la célula'
+            ],
+            correct: 1
+        }
+    },
     'evolucion': {
         objective: 'Observa cómo la selección natural favorece ciertos rasgos',
         hint: 'Cambia el entorno y observa qué organismos sobreviven',
@@ -424,6 +465,24 @@ export const MISSIONS = {
             question: '¿Qué intervalo está prohibido en paralelo en contrapunto?',
             options: ['Terceras', 'Sextas', 'Quintas perfectas', 'Octavas'],
             correct: 2
+        }
+    },
+    // M5.4: Rameau Machine - Acto III
+    'rameau-machine': {
+        objective: 'Observa cómo Rameau explicó la armonía funcional: Tónica → Subdominante → Dominante → Tónica',
+        hint: 'El Primer Resonador quería quedarse en Tónica para siempre. Observa qué pasa cuando lo intenta',
+        minTime: 45,
+        isCentralPuzzle: true,
+        eigenvalorReward: 'aether',
+        verification: {
+            question: '¿Qué descubrió el Primer Resonador sobre la consonancia perpetua?',
+            options: [
+                'Funciona perfectamente',
+                'La consonancia perpetua se convierte en disonancia',
+                'La música mejora',
+                'Nada cambia'
+            ],
+            correct: 1
         }
     }
 };
