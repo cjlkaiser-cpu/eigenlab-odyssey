@@ -154,11 +154,14 @@ export default class PauseScene extends Phaser.Scene {
         // Continuar
         this.createButton(width / 2, buttonY, 'CONTINUAR', '#22c55e', () => this.resume());
 
+        // M7.3: Opciones
+        this.createButton(width / 2, buttonY + buttonSpacing, 'OPCIONES', '#a855f7', () => this.openOptions());
+
         // Volver al título
-        this.createButton(width / 2, buttonY + buttonSpacing, 'VOLVER AL TÍTULO', '#94a3b8', () => this.returnToTitle());
+        this.createButton(width / 2, buttonY + buttonSpacing * 2, 'VOLVER AL TÍTULO', '#94a3b8', () => this.returnToTitle());
 
         // Instrucciones
-        this.add.text(width / 2, buttonY + buttonSpacing * 2 + 10, 'ESC para continuar', {
+        this.add.text(width / 2, buttonY + buttonSpacing * 3 + 10, 'ESC para continuar', {
             fontFamily: 'Inter, system-ui, sans-serif',
             fontSize: '11px',
             color: '#475569'
@@ -183,6 +186,12 @@ export default class PauseScene extends Phaser.Scene {
     resume() {
         this.scene.stop();
         this.scene.resume(this.parentScene);
+    }
+
+    // M7.3: Abrir opciones
+    openOptions() {
+        this.scene.pause();
+        this.scene.launch('OptionsScene', { parentScene: 'PauseScene' });
     }
 
     returnToTitle() {

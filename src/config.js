@@ -20,6 +20,7 @@ import GraphScene from './scenes/GraphScene.js';
 import DissonanceScene from './scenes/DissonanceScene.js';
 import EpilogueScene from './scenes/EpilogueScene.js';
 import CreditsScene from './scenes/CreditsScene.js';
+import OptionsScene from './scenes/OptionsScene.js';
 
 export const gameConfig = {
     type: Phaser.AUTO,
@@ -51,7 +52,8 @@ export const gameConfig = {
         GraphScene,           // Grafo de conocimiento navegable
         DissonanceScene,      // Acto IV - El Corazón de La Disonancia
         EpilogueScene,        // Epílogo - La Nueva Sinfonía
-        CreditsScene          // Créditos interactivos
+        CreditsScene,         // Créditos interactivos
+        OptionsScene          // M7.3: Opciones y accesibilidad
     ],
 
     render: {
