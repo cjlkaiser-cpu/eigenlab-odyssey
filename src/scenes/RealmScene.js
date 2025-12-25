@@ -111,6 +111,7 @@ const SIMULATION_META = {
     'solubilidad': { name: 'Solubilidad', desc: 'Disolución' },
 
     // BIOS
+    'neurona': { name: 'Neurona H-H', desc: 'Potencial de acción' },
     'adn-replicacion': { name: 'Replicación ADN', desc: 'Copia del código' },
     'sintesis-proteinas': { name: 'Síntesis de Proteínas', desc: 'Del gen a la proteína' },
     'mitosis': { name: 'Mitosis', desc: 'División celular' },
@@ -124,7 +125,7 @@ const SIMULATION_META = {
     'membrana-fluida': { name: 'Membrana Celular', desc: 'Mosaico fluido' },
 
     // PSYCHE
-    'neurona': { name: 'Neurona', desc: 'Señal nerviosa' },
+    'boids-masivo': { name: 'Boids Masivo', desc: 'Emergencia colectiva' },
     'vision': { name: 'Visión', desc: 'Procesamiento visual' },
     'ritmos-circadianos': { name: 'Ritmos Circadianos', desc: 'Reloj biológico' },
 

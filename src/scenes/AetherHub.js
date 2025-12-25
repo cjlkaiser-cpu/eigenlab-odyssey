@@ -23,6 +23,7 @@ import LyreHUD from '../ui/LyreHUD.js';
 import ResonanceBar from '../ui/ResonanceBar.js';
 import gameState from '../systems/GameState.js';
 import synthAudio from '../audio/SynthAudio.js';
+import { getSpecialDialogue, hasSeenSpecialDialogue, markSpecialDialogueSeen } from '../data/specialDialogues.js';
 
 export default class AetherHub extends Phaser.Scene {
     constructor() {
@@ -37,6 +38,9 @@ export default class AetherHub extends Phaser.Scene {
         this.progressUI = null;
         this.lyreHUD = null;
         this.resonanceBar = null;
+        // M5.4: Atril del Primer Resonador
+        this.atril = null;
+        this.atrilPrompt = null;
     }
 
     init(data) {
@@ -57,6 +61,9 @@ export default class AetherHub extends Phaser.Scene {
 
         // Crear la Lira rota en el centro
         this.createLyra();
+
+        // M5.4: Crear el Atril del Primer Resonador (aparece con 10λ)
+        this.createAtril();
 
         // Crear los portales (todos los reinos)
         this.createPortals();
@@ -181,6 +188,97 @@ export default class AetherHub extends Phaser.Scene {
             fontSize: '14px',
             color: '#94a3b8'
         }).setOrigin(0.5).setAlpha(0);
+    }
+
+    // M5.4: Atril del Primer Resonador - aparece con 10 eigenvalores
+    createAtril() {
+        const eigenvalores = gameState.getEigenvalores();
+
+        // El atril solo aparece con 10+ eigenvalores
+        if (eigenvalores < 10) return;
+
+        const { width, height } = this.cameras.main;
+        const atrilX = width / 2 + 150;
+        const atrilY = height / 2;
+
+        // Crear gráfico procedural del atril (partituras antiguas)
+        const atrilGraphics = this.add.graphics();
+
+        // Base del atril
+        atrilGraphics.fillStyle(0x4a3728, 1); // Madera oscura
+        atrilGraphics.fillRect(atrilX - 3, atrilY - 30, 6, 60);
+
+        // Soporte de partituras
+        atrilGraphics.fillStyle(0x5d4636, 1);
+        atrilGraphics.fillRect(atrilX - 35, atrilY - 50, 70, 45);
+        atrilGraphics.lineStyle(2, 0x8b7355, 1);
+        atrilGraphics.strokeRect(atrilX - 35, atrilY - 50, 70, 45);
+
+        // Partituras (páginas amarillentas)
+        atrilGraphics.fillStyle(0xf5e6c8, 0.9);
+        atrilGraphics.fillRect(atrilX - 28, atrilY - 45, 56, 35);
+
+        // Líneas de pentagrama
+        atrilGraphics.lineStyle(1, 0x3d3d3d, 0.4);
+        for (let i = 0; i < 5; i++) {
+            const y = atrilY - 40 + i * 6;
+            atrilGraphics.lineBetween(atrilX - 25, y, atrilX + 25, y);
+        }
+
+        // Anotaciones del Primer Resonador (garabatos)
+        atrilGraphics.lineStyle(1, 0xcc0000, 0.6);
+        atrilGraphics.lineBetween(atrilX - 20, atrilY - 35, atrilX - 5, atrilY - 25);
+        atrilGraphics.lineBetween(atrilX + 5, atrilY - 38, atrilX + 18, atrilY - 28);
+
+        // Glow dorado (eigenvalor inestable)
+        const atrilGlow = this.add.graphics();
+        atrilGlow.fillStyle(0xfbbf24, 0.15);
+        atrilGlow.fillCircle(atrilX, atrilY - 30, 60);
+
+        // Pulso del glow
+        this.tweens.add({
+            targets: atrilGlow,
+            alpha: { from: 1, to: 0.5 },
+            scale: { from: 1, to: 1.1 },
+            duration: 1500,
+            yoyo: true,
+            repeat: -1
+        });
+
+        // Área de interacción
+        this.atril = this.add.zone(atrilX, atrilY - 20, 80, 80);
+        this.atril.interactionRadius = 80;
+        this.atril.x = atrilX;
+        this.atril.y = atrilY - 20;
+
+        // Prompt
+        this.atrilPrompt = this.add.text(atrilX, atrilY + 45, '[E] Examinar Partituras', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '13px',
+            color: '#fbbf24'
+        }).setOrigin(0.5).setAlpha(0);
+
+        // Label
+        this.add.text(atrilX, atrilY - 75, 'ATRIL DEL PRIMER RESONADOR', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '10px',
+            fontWeight: '600',
+            color: '#fbbf24'
+        }).setOrigin(0.5);
+
+        // Mostrar diálogo de aparición si es la primera vez
+        if (!hasSeenSpecialDialogue('atril-aparece')) {
+            this.time.delayedCall(1500, () => {
+                markSpecialDialogueSeen('atril-aparece');
+                const dialogue = getSpecialDialogue('atril-aparece');
+                if (dialogue) {
+                    this.scene.launch('DialogScene', {
+                        lines: dialogue.lines,
+                        onComplete: () => {}
+                    });
+                }
+            });
+        }
     }
 
     createPortals() {
@@ -395,6 +493,15 @@ export default class AetherHub extends Phaser.Scene {
             return;
         }
 
+        // M5.4: Verificar Atril del Primer Resonador
+        if (this.atril) {
+            const atrilDistance = Phaser.Math.Distance.Between(playerX, playerY, this.atril.x, this.atril.y);
+            if (atrilDistance < this.atril.interactionRadius) {
+                this.interactWithAtril();
+                return;
+            }
+        }
+
         // Verificar portales
         for (const [realm, portal] of Object.entries(this.portals)) {
             const distance = Phaser.Math.Distance.Between(playerX, playerY, portal.x, portal.y);
@@ -428,6 +535,75 @@ export default class AetherHub extends Phaser.Scene {
         }
 
         this.scene.launch('DialogScene', { lines, onComplete: () => {} });
+    }
+
+    // M5.4: Interacción con el Atril del Primer Resonador
+    interactWithAtril() {
+        // Primera interacción: mostrar intro de Rameau
+        if (!hasSeenSpecialDialogue('rameau-intro')) {
+            const dialogue = getSpecialDialogue('rameau-intro');
+            if (dialogue) {
+                this.scene.launch('DialogScene', {
+                    lines: dialogue.lines,
+                    onComplete: () => {
+                        markSpecialDialogueSeen('rameau-intro');
+                        // Lanzar la Rameau Machine
+                        this.launchRameauMachine();
+                    }
+                });
+            }
+        } else {
+            // Ya vio la intro, lanzar directamente
+            this.launchRameauMachine();
+        }
+    }
+
+    launchRameauMachine() {
+        // Lanzar la simulación Rameau Machine
+        this.scene.launch('SimulationScene', {
+            simulation: 'rameau-machine',
+            realm: 'aether',
+            onComplete: (completed) => {
+                if (completed && !hasSeenSpecialDialogue('primer-resonador-flashback')) {
+                    // Mostrar flashback después de usar la Rameau Machine
+                    const flashback = getSpecialDialogue('primer-resonador-flashback');
+                    if (flashback) {
+                        this.scene.launch('DialogScene', {
+                            lines: flashback.lines,
+                            onComplete: () => {
+                                markSpecialDialogueSeen('primer-resonador-flashback');
+                                // Mostrar revelación de la Disonancia
+                                this.showDisonanciaRevelation();
+                            }
+                        });
+                    }
+                }
+            }
+        });
+    }
+
+    showDisonanciaRevelation() {
+        if (hasSeenSpecialDialogue('disonancia-revelation')) return;
+
+        const revelation = getSpecialDialogue('disonancia-revelation');
+        if (revelation) {
+            this.scene.launch('DialogScene', {
+                lines: revelation.lines,
+                onComplete: () => {
+                    markSpecialDialogueSeen('disonancia-revelation');
+                    // Otorgar λ₁₁ (eigenvalor del Primer Resonador)
+                    if (revelation.eigenvalorReward && !gameState.isSimulationCompleted('rameau-machine')) {
+                        gameState.completeSimulation('rameau-machine');
+                        this.notifications.show({
+                            title: 'EIGENVALOR OBTENIDO',
+                            message: 'λ₁₁ — El legado del Primer Resonador',
+                            type: 'eigenvalor',
+                            realm: 'aether'
+                        });
+                    }
+                }
+            });
+        }
     }
 
     enterPortal(realm, portal) {
@@ -516,6 +692,12 @@ export default class AetherHub extends Phaser.Scene {
         // Lira
         const lyraDistance = Phaser.Math.Distance.Between(playerX, playerY, this.lyra.x, this.lyra.y);
         this.lyraPrompt.setAlpha(lyraDistance < this.lyra.interactionRadius ? 1 : 0);
+
+        // M5.4: Atril
+        if (this.atril && this.atrilPrompt) {
+            const atrilDistance = Phaser.Math.Distance.Between(playerX, playerY, this.atril.x, this.atril.y);
+            this.atrilPrompt.setAlpha(atrilDistance < this.atril.interactionRadius ? 1 : 0);
+        }
 
         // Portales
         Object.values(this.portals).forEach(portal => {
