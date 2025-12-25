@@ -458,12 +458,20 @@ export const MISSIONS = {
         }
     },
     'contrapunctus': {
-        objective: 'Crea un contrapunto de primera especie siguiendo las reglas',
-        hint: 'Cada nota contra nota, evita quintas paralelas',
-        minTime: 50,
+        objective: 'Compón un contrapunto que integre a La Disonancia como una suspensión que resuelve',
+        hint: 'Las disonancias no son errores — son tensiones que piden resolución. 7→6, 4→3, tritono→tercera',
+        minTime: 60,
+        isCentralPuzzle: true,
+        eigenvalorReward: 'aether',
+        isFinalPuzzle: true,
         verification: {
-            question: '¿Qué intervalo está prohibido en paralelo en contrapunto?',
-            options: ['Terceras', 'Sextas', 'Quintas perfectas', 'Octavas'],
+            question: '¿Qué aprendiste sobre la disonancia en la música?',
+            options: [
+                'Debe evitarse siempre',
+                'Es un error del compositor',
+                'Es tensión que hace significativa la consonancia',
+                'Solo existe en música moderna'
+            ],
             correct: 2
         }
     },

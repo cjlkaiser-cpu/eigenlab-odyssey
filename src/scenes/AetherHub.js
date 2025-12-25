@@ -41,6 +41,9 @@ export default class AetherHub extends Phaser.Scene {
         // M5.4: Atril del Primer Resonador
         this.atril = null;
         this.atrilPrompt = null;
+        // M6: Portal a La Disonancia
+        this.disonanciaPortal = null;
+        this.disonanciaPrompt = null;
     }
 
     init(data) {
@@ -64,6 +67,9 @@ export default class AetherHub extends Phaser.Scene {
 
         // M5.4: Crear el Atril del Primer Resonador (aparece con 10λ)
         this.createAtril();
+
+        // M6: Crear el Portal a La Disonancia (aparece con 11λ)
+        this.createDisonanciaPortal();
 
         // Crear los portales (todos los reinos)
         this.createPortals();
@@ -277,6 +283,100 @@ export default class AetherHub extends Phaser.Scene {
                         onComplete: () => {}
                     });
                 }
+            });
+        }
+    }
+
+    // M6: Portal a La Disonancia - aparece con 11 eigenvalores
+    createDisonanciaPortal() {
+        const eigenvalores = gameState.getEigenvalores();
+
+        // El portal solo aparece con 11+ eigenvalores
+        if (eigenvalores < 11) return;
+
+        const { width, height } = this.cameras.main;
+        const portalX = width / 2 - 150;
+        const portalY = height / 2;
+
+        // Portal oscuro con vetas rojas
+        const portalGraphics = this.add.graphics();
+
+        // Vórtice negro
+        for (let i = 5; i > 0; i--) {
+            const alpha = 0.2 * (i / 5);
+            const radius = 30 + (i * 8);
+            portalGraphics.fillStyle(0x0a0000, alpha);
+            portalGraphics.fillCircle(portalX, portalY, radius);
+        }
+
+        // Borde rojo pulsante
+        portalGraphics.lineStyle(3, 0xff0000, 0.8);
+        portalGraphics.strokeCircle(portalX, portalY, 35);
+
+        // Vetas rojas dentro del portal
+        for (let i = 0; i < 6; i++) {
+            const angle = (i / 6) * Math.PI * 2;
+            const innerX = portalX + Math.cos(angle) * 15;
+            const innerY = portalY + Math.sin(angle) * 15;
+            const outerX = portalX + Math.cos(angle) * 30;
+            const outerY = portalY + Math.sin(angle) * 30;
+            portalGraphics.lineStyle(1, 0xff3333, 0.5);
+            portalGraphics.lineBetween(innerX, innerY, outerX, outerY);
+        }
+
+        // Pulso amenazante
+        const pulseCircle = this.add.circle(portalX, portalY, 40, 0xff0000, 0.1);
+        this.tweens.add({
+            targets: pulseCircle,
+            scale: { from: 1, to: 1.5 },
+            alpha: { from: 0.2, to: 0 },
+            duration: 1500,
+            repeat: -1
+        });
+
+        // Área de interacción
+        this.disonanciaPortal = this.add.zone(portalX, portalY, 80, 80).setInteractive({ useHandCursor: true });
+        this.disonanciaPortal.x = portalX;
+        this.disonanciaPortal.y = portalY;
+        this.disonanciaPortal.interactionRadius = 80;
+
+        // Prompt
+        this.disonanciaPrompt = this.add.text(portalX, portalY + 55, '[E] Entrar al Vacío', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '13px',
+            color: '#ff6666'
+        }).setOrigin(0.5).setAlpha(0);
+
+        // Label
+        this.add.text(portalX, portalY - 55, 'EL CORAZÓN', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '11px',
+            fontWeight: '600',
+            color: '#ff3333'
+        }).setOrigin(0.5);
+
+        this.add.text(portalX, portalY - 42, 'DE LA DISONANCIA', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '9px',
+            color: '#ff6666'
+        }).setOrigin(0.5);
+
+        // Mostrar diálogo de aparición si es la primera vez
+        if (!hasSeenSpecialDialogue('disonancia-portal-aparece')) {
+            this.time.delayedCall(2000, () => {
+                markSpecialDialogueSeen('disonancia-portal-aparece');
+                const lines = [
+                    '...',
+                    'Un nuevo portal ha aparecido.',
+                    'Negro con vetas rojas pulsantes.',
+                    'Puedo sentir la interferencia desde aquí.',
+                    'Es el Corazón de La Disonancia.',
+                    'Es hora de terminar esto.'
+                ];
+                this.scene.launch('DialogScene', {
+                    lines,
+                    onComplete: () => {}
+                });
             });
         }
     }
@@ -502,6 +602,15 @@ export default class AetherHub extends Phaser.Scene {
             }
         }
 
+        // M6: Verificar Portal a La Disonancia
+        if (this.disonanciaPortal) {
+            const disonanciaDistance = Phaser.Math.Distance.Between(playerX, playerY, this.disonanciaPortal.x, this.disonanciaPortal.y);
+            if (disonanciaDistance < this.disonanciaPortal.interactionRadius) {
+                this.enterDisonancia();
+                return;
+            }
+        }
+
         // Verificar portales
         for (const [realm, portal] of Object.entries(this.portals)) {
             const distance = Phaser.Math.Distance.Between(playerX, playerY, portal.x, portal.y);
@@ -518,6 +627,7 @@ export default class AetherHub extends Phaser.Scene {
 
         if (eigenvalores === 0) {
             lines = NARRATIVE.lyraInteract;
+            this.scene.launch('DialogScene', { lines, onComplete: () => {} });
         } else if (eigenvalores < 5) {
             lines = [
                 'La Lira de Cuerdas Simpáticas.',
@@ -525,16 +635,103 @@ export default class AetherHub extends Phaser.Scene {
                 'Algunas cuerdas empiezan a vibrar tenuemente...',
                 'Necesitas más conocimiento para restaurarla.'
             ];
-        } else {
+            this.scene.launch('DialogScene', { lines, onComplete: () => {} });
+        } else if (eigenvalores < 12) {
+            // M6.4: Lira parcialmente tocable
             lines = [
                 'La Lira responde a tu presencia.',
-                `Con ${eigenvalores} Eigenvalores, las cuerdas resuenan.`,
-                'Las conexiones que has descubierto le dan vida.',
-                'Pronto podrás tocarla de nuevo...'
+                `Con ${eigenvalores} Eigenvalores, ${eigenvalores} cuerdas resuenan.`,
+                '¿Deseas tocarla?'
             ];
+            this.scene.launch('DialogScene', {
+                lines,
+                onComplete: () => {
+                    this.showLyraPlayOption(eigenvalores);
+                }
+            });
+        } else {
+            // M6.4: Lira completa - 12 cuerdas
+            lines = [
+                'La Lira de Cuerdas Simpáticas.',
+                'Las doce cuerdas vibran en perfecta armonía.',
+                'La Gran Sinfonía del Conocimiento espera ser tocada.'
+            ];
+            this.scene.launch('DialogScene', {
+                lines,
+                onComplete: () => {
+                    this.showLyraPlayOption(eigenvalores);
+                }
+            });
         }
+    }
 
-        this.scene.launch('DialogScene', { lines, onComplete: () => {} });
+    // M6.4: Opción para tocar la Lira (abre Sympathetic-12)
+    showLyraPlayOption(eigenvalores) {
+        const { width, height } = this.cameras.main;
+
+        const box = this.add.graphics();
+        box.fillStyle(0x0f172a, 0.95);
+        box.fillRoundedRect(width / 2 - 180, height / 2 - 50, 360, 100, 8);
+        box.lineStyle(2, 0xa855f7, 0.8);
+        box.strokeRoundedRect(width / 2 - 180, height / 2 - 50, 360, 100, 8);
+
+        const title = this.add.text(width / 2, height / 2 - 25, `LIRA DE CUERDAS SIMPATICAS (${eigenvalores}/12)`, {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '14px',
+            fontWeight: '600',
+            color: '#a855f7'
+        }).setOrigin(0.5);
+
+        const subtitle = this.add.text(width / 2, height / 2, 'Un oasis contemplativo. Sin objetivos, sin tiempo.', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '11px',
+            color: '#64748b'
+        }).setOrigin(0.5);
+
+        const playBtn = this.add.text(width / 2 - 60, height / 2 + 30, '[ E ] Tocar', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '14px',
+            color: '#22c55e'
+        }).setOrigin(0.5).setInteractive({ useHandCursor: true });
+
+        const cancelBtn = this.add.text(width / 2 + 60, height / 2 + 30, '[ ESC ] Volver', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '14px',
+            color: '#94a3b8'
+        }).setOrigin(0.5).setInteractive({ useHandCursor: true });
+
+        const cleanup = () => {
+            box.destroy();
+            title.destroy();
+            subtitle.destroy();
+            playBtn.destroy();
+            cancelBtn.destroy();
+        };
+
+        const playLyra = () => {
+            cleanup();
+            this.openSympathetic12(eigenvalores);
+        };
+
+        playBtn.on('pointerdown', playLyra);
+        cancelBtn.on('pointerdown', cleanup);
+
+        this.input.keyboard.once('keydown-E', playLyra);
+        this.input.keyboard.once('keydown-ESC', cleanup);
+    }
+
+    // M6.4: Abrir Sympathetic-12 como oasis
+    openSympathetic12(eigenvalores) {
+        // Lanzar la simulación con las cuerdas desbloqueadas
+        this.scene.launch('SimulationScene', {
+            simulation: 'sympathetic-12',
+            realm: 'aether',
+            isOasis: true, // No hay misión, es contemplativo
+            lyreStrings: eigenvalores, // Pasar número de cuerdas
+            onComplete: () => {
+                // No hacer nada especial, solo volver
+            }
+        });
     }
 
     // M5.4: Interacción con el Atril del Primer Resonador
@@ -604,6 +801,16 @@ export default class AetherHub extends Phaser.Scene {
                 }
             });
         }
+    }
+
+    // M6: Entrar al Corazón de La Disonancia
+    enterDisonancia() {
+        synthAudio.playPortal();
+
+        this.cameras.main.fadeOut(1000, 0, 0, 0);
+        this.cameras.main.once('camerafadeoutcomplete', () => {
+            this.scene.start('DissonanceScene');
+        });
     }
 
     enterPortal(realm, portal) {
@@ -697,6 +904,12 @@ export default class AetherHub extends Phaser.Scene {
         if (this.atril && this.atrilPrompt) {
             const atrilDistance = Phaser.Math.Distance.Between(playerX, playerY, this.atril.x, this.atril.y);
             this.atrilPrompt.setAlpha(atrilDistance < this.atril.interactionRadius ? 1 : 0);
+        }
+
+        // M6: Portal Disonancia
+        if (this.disonanciaPortal && this.disonanciaPrompt) {
+            const disonanciaDistance = Phaser.Math.Distance.Between(playerX, playerY, this.disonanciaPortal.x, this.disonanciaPortal.y);
+            this.disonanciaPrompt.setAlpha(disonanciaDistance < this.disonanciaPortal.interactionRadius ? 1 : 0);
         }
 
         // Portales
