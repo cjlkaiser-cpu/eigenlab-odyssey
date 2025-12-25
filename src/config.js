@@ -17,6 +17,9 @@ import RealmScene from './scenes/RealmScene.js';
 import SimulationScene from './scenes/SimulationScene.js';
 import PauseScene from './scenes/PauseScene.js';
 import GraphScene from './scenes/GraphScene.js';
+import DissonanceScene from './scenes/DissonanceScene.js';
+import EpilogueScene from './scenes/EpilogueScene.js';
+import CreditsScene from './scenes/CreditsScene.js';
 
 export const gameConfig = {
     type: Phaser.AUTO,
@@ -45,7 +48,10 @@ export const gameConfig = {
         RealmScene,
         SimulationScene,
         PauseScene,
-        GraphScene            // Grafo de conocimiento navegable
+        GraphScene,           // Grafo de conocimiento navegable
+        DissonanceScene,      // Acto IV - El Corazón de La Disonancia
+        EpilogueScene,        // Epílogo - La Nueva Sinfonía
+        CreditsScene          // Créditos interactivos
     ],
 
     render: {
