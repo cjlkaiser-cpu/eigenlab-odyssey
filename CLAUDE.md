@@ -127,7 +127,7 @@ Las simulaciones se cargan desde EigenLab local:
 
 Ver `src/scenes/SimulationScene.js` → `SIMULATION_PATHS` para mapeo completo.
 
-## Estado Actual: Alpha 0.4
+## Estado Actual: Alpha 0.5
 
 Ver `docs/ROADMAP.md` para el plan de producción detallado.
 
@@ -141,13 +141,18 @@ Ver `docs/ROADMAP.md` para el plan de producción detallado.
 - [x] 23 sprites extraídos
 - [x] Documentación completa (GDD, STORY, CHARACTERS, PITCH)
 - [x] Plan de producción con 7 milestones
+- [x] **Milestone 1 (Vertical Slice):**
+  - [x] Sprites del Resonador con animaciones direccionales
+  - [x] Constructo como compañero con follow behavior
+  - [x] Portales visuales con glow y colores de reino
+  - [x] Harmonices Mundi como puzzle central de COSMOS
+  - [x] LyreHUD mostrando cuerdas por eigenvalor
+  - [x] Diálogos de guardianes para todos los reinos
 
-### Próximo: Milestone 1 (Vertical Slice)
-- [ ] Sprites del Resonador animados
-- [ ] Constructo como compañero
-- [ ] COSMOS jugable con Harmonices Mundi
-- [ ] Lira visual progresiva
-- [ ] λ₂ obtenible
+### Próximo: Milestone 2 (Sistema de Exploración)
+- [ ] Fragmentos del Constructo por simulación
+- [ ] Resonancia (+5% por exploración)
+- [ ] Conexiones del grafo desbloqueables
 
 ## Convenciones
 

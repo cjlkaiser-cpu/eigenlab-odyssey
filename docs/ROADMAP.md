@@ -1,7 +1,7 @@
 # EigenLab Odyssey: Plan de Producción
 
 > Última actualización: 25 dic 2024
-> Estado: **Alpha 0.4** — Documentación completa, código base funcional
+> Estado: **Alpha 0.5** — Milestone 1 completado (Vertical Slice)
 
 ---
 
@@ -116,17 +116,19 @@ src/
 ### Autoevaluación M1
 
 ```
-□ Resonador animado reemplaza placeholder
-□ Constructo sigue al jugador
-□ Portal a Cosmos funciona
-□ Harmonices Mundi jugable con objetivo
-□ λ₂ se obtiene y guarda
-□ Lira muestra 2 cuerdas
-□ Guardián habla al entrar
-□ Flujo completo sin crashes
+✓ Resonador animado reemplaza placeholder
+✓ Constructo sigue al jugador
+✓ Portal a Cosmos funciona
+✓ Harmonices Mundi jugable con objetivo
+✓ λ₂ se obtiene y guarda
+✓ Lira muestra cuerdas según eigenvalores
+✓ Guardián habla al entrar
+✓ Build sin errores
 ```
 
 **Criterio de éxito global:** Un playtester puede jugar desde título hasta obtener λ₂ sin intervención.
+
+**Completado:** 25 dic 2024
 
 ---
 
@@ -354,8 +356,8 @@ src/
 
 | Milestone | Escenas | Puzzles | Eigenvalores | Exploraciones | Estado |
 |-----------|---------|---------|--------------|---------------|--------|
-| M1 | +0 | 1 | 2 | 0 | ⏳ Siguiente |
-| M2 | +0 | 1 | 2 | 3+ | ⬜ Pendiente |
+| M1 | +0 | 1 | 2 | 0 | ✅ Completado |
+| M2 | +0 | 1 | 2 | 3+ | ⏳ Siguiente |
 | M3 | +0 | 3 | 4 | 9+ | ⬜ Pendiente |
 | M4 | +0 | 6 | 7 | 15+ | ⬜ Pendiente |
 | M5 | +1 | 10 | 11 | 25+ | ⬜ Pendiente |
@@ -386,7 +388,16 @@ M1 ─────────────────────────�
 
 ## CHANGELOG NARRATIVO
 
-### 25 dic 2024
+### 25 dic 2024 (Milestone 1 - Vertical Slice)
+
+**Milestone 1 completado**
+- Resonador con sprites reales y animaciones direccionales
+- Constructo compañero con follow behavior y bobbing
+- Portales visuales con glow y tintes de color
+- Harmonices Mundi como puzzle central de COSMOS
+- LyreHUD mostrando progreso de eigenvalores
+- Diálogos de guardianes para todos los reinos
+- Build verificado sin errores
 
 **Game of Life reemplaza Perceptrón en MACHINA**
 - *Razón:* Más visual, demuestra Turing-completitud y emergencia
