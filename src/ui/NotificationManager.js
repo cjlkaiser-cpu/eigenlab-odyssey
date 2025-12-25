@@ -12,6 +12,7 @@ import Phaser from 'phaser';
 import { GAME_WIDTH, GAME_HEIGHT, REALM_COLORS, UI_COLORS } from '../core/constants.js';
 import { CONCEPTS, LEARNING_PATHS } from '../data/knowledgeGraph.js';
 import gameState from '../systems/GameState.js';
+import synthAudio from '../audio/SynthAudio.js';
 
 export default class NotificationManager {
     constructor(scene) {
@@ -91,23 +92,30 @@ export default class NotificationManager {
         this.isShowing = true;
         const notification = this.queue.shift();
 
+        // M7.1: Reproducir sonido según tipo
         switch (notification.type) {
             case 'connection':
+                synthAudio.playConnection();
                 this.showConnectionNotification(notification.data);
                 break;
             case 'realm-unlocked':
+                synthAudio.playSuccess();
                 this.showRealmUnlockedNotification(notification.data);
                 break;
             case 'path-completed':
+                synthAudio.playSuccess();
                 this.showPathCompletedNotification(notification.data);
                 break;
             case 'exploration':
+                synthAudio.playResonanceGain();
                 this.showExplorationNotification(notification.data);
                 break;
             case 'graph-connection':
+                synthAudio.playConnection();
                 this.showGraphConnectionNotification(notification.data);
                 break;
             case 'eigenvalor':
+                synthAudio.playEigenvalor();
                 this.showEigenvalorNotification(notification.data);
                 break;
             default:

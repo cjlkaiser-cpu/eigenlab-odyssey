@@ -98,6 +98,9 @@ export default class AetherHub extends Phaser.Scene {
         // Configurar cámara
         this.cameras.main.fadeIn(800, 0, 0, 0);
 
+        // M7.1: Iniciar música del reino Aether
+        synthAudio.startRealmMusic('aether');
+
         // Secuencia de despertar (solo primera vez)
         if (!gameState.hasSeenIntro()) {
             this.time.delayedCall(1000, () => {

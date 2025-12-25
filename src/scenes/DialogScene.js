@@ -7,6 +7,7 @@
 
 import Phaser from 'phaser';
 import { GAME_WIDTH, GAME_HEIGHT, UI_COLORS, REALM_COLORS } from '../core/constants.js';
+import synthAudio from '../audio/SynthAudio.js';
 
 export default class DialogScene extends Phaser.Scene {
     constructor() {
@@ -98,6 +99,9 @@ export default class DialogScene extends Phaser.Scene {
 
         // Fade in
         this.cameras.main.fadeIn(200);
+
+        // M7.1: Sonido de apertura
+        synthAudio.playDialogOpen();
     }
 
     showLine(index) {
@@ -170,6 +174,9 @@ export default class DialogScene extends Phaser.Scene {
     }
 
     closeDialog() {
+        // M7.1: Sonido de cierre
+        synthAudio.playDialogClose();
+
         this.cameras.main.fadeOut(200);
 
         this.cameras.main.once('camerafadeoutcomplete', () => {

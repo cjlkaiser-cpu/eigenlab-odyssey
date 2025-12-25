@@ -19,6 +19,7 @@ import ResonanceBar from '../ui/ResonanceBar.js';
 import gameState from '../systems/GameState.js';
 import { getMission } from '../data/missions.js';
 import { getGuardianIntro } from '../data/guardians.js';
+import synthAudio from '../audio/SynthAudio.js';
 
 // Metadatos de simulaciones
 const SIMULATION_META = {
@@ -210,6 +211,9 @@ export default class RealmScene extends Phaser.Scene {
 
         // Fade in
         this.cameras.main.fadeIn(500);
+
+        // M7.1: Iniciar música del reino
+        synthAudio.startRealmMusic(this.realm);
 
         // Mostrar diálogo del Guardián si es primera visita
         this.checkGuardianDialogue();
