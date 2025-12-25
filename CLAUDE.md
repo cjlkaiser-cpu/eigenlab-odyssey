@@ -127,7 +127,7 @@ Las simulaciones se cargan desde EigenLab local:
 
 Ver `src/scenes/SimulationScene.js` → `SIMULATION_PATHS` para mapeo completo.
 
-## Estado Actual: Alpha 0.5
+## Estado Actual: Alpha 0.6
 
 Ver `docs/ROADMAP.md` para el plan de producción detallado.
 
@@ -148,11 +148,17 @@ Ver `docs/ROADMAP.md` para el plan de producción detallado.
   - [x] Harmonices Mundi como puzzle central de COSMOS
   - [x] LyreHUD mostrando cuerdas por eigenvalor
   - [x] Diálogos de guardianes para todos los reinos
+- [x] **Milestone 2 (Sistema de Exploración):**
+  - [x] 50+ fragmentos del Constructo por simulación
+  - [x] Sistema de resonancia (+5% por exploración)
+  - [x] ResonanceBar HUD visual
+  - [x] 25+ conexiones del grafo desbloqueables
+  - [x] Notificaciones de exploración y conexiones
 
-### Próximo: Milestone 2 (Sistema de Exploración)
-- [ ] Fragmentos del Constructo por simulación
-- [ ] Resonancia (+5% por exploración)
-- [ ] Conexiones del grafo desbloqueables
+### Próximo: Milestone 3 (Tres Reinos Jugables)
+- [ ] Chaos: Atractor de Lorenz como puzzle central
+- [ ] Logos: Mandelbrot como puzzle central
+- [ ] Progresión y desbloqueo entre reinos
 
 ## Convenciones
 

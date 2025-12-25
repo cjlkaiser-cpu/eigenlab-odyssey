@@ -1,7 +1,7 @@
 # EigenLab Odyssey: Plan de Producción
 
 > Última actualización: 25 dic 2024
-> Estado: **Alpha 0.5** — Milestone 1 completado (Vertical Slice)
+> Estado: **Alpha 0.6** — Milestone 2 completado (Sistema de Exploración)
 
 ---
 
@@ -163,13 +163,15 @@ src/
 ### Autoevaluación M2
 
 ```
-□ Constructo habla al abrir exploración
-□ Diálogo único por simulación
-□ Barra de resonancia visible
-□ +5% funciona y se ve
-□ Conexiones del grafo se desbloquean
-□ Notificaciones informan al jugador
+✓ Constructo habla al abrir exploración
+✓ Diálogo único por simulación (50+ fragmentos)
+✓ Barra de resonancia visible
+✓ +5% funciona y se ve
+✓ Conexiones del grafo se desbloquean (25+ conexiones)
+✓ Notificaciones informan al jugador
 ```
+
+**Completado:** 25 dic 2024
 
 ---
 
@@ -357,8 +359,8 @@ src/
 | Milestone | Escenas | Puzzles | Eigenvalores | Exploraciones | Estado |
 |-----------|---------|---------|--------------|---------------|--------|
 | M1 | +0 | 1 | 2 | 0 | ✅ Completado |
-| M2 | +0 | 1 | 2 | 3+ | ⏳ Siguiente |
-| M3 | +0 | 3 | 4 | 9+ | ⬜ Pendiente |
+| M2 | +0 | 1 | 2 | 3+ | ✅ Completado |
+| M3 | +0 | 3 | 4 | 9+ | ⏳ Siguiente |
 | M4 | +0 | 6 | 7 | 15+ | ⬜ Pendiente |
 | M5 | +1 | 10 | 11 | 25+ | ⬜ Pendiente |
 | M6 | +1 | 11 | 12 | 30+ | ⬜ Pendiente |
@@ -387,6 +389,28 @@ M1 ─────────────────────────�
 ---
 
 ## CHANGELOG NARRATIVO
+
+### 25 dic 2024 (Milestone 2 - Sistema de Exploración)
+
+**Milestone 2 completado**
+- Sistema de fragmentos del Constructo implementado
+  - 50+ diálogos únicos por simulación
+  - Cada exploración muestra un fragmento aleatorio la primera vez
+  - Los fragmentos revelan la personalidad y filosofía del Constructo
+- Sistema de resonancia funcional
+  - ResonanceBar.js como HUD visual
+  - Base 100%, +5% por exploración completada
+  - Animaciones y colores según nivel de resonancia
+- Sistema de conexiones del grafo
+  - 25+ conexiones conceptuales entre simulaciones
+  - Se desbloquean al explorar ambas simulaciones requeridas
+  - Conexiones intra-reino e inter-reino
+- Notificaciones de exploración y conexiones
+
+**Archivos nuevos:**
+- `src/data/constructoFragments.js`
+- `src/data/graphConnections.js`
+- `src/ui/ResonanceBar.js`
 
 ### 25 dic 2024 (Milestone 1 - Vertical Slice)
 
