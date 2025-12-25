@@ -203,29 +203,50 @@ export default class AetherHub extends Phaser.Scene {
         const isUnlocked = gameState.isRealmUnlocked(realm);
         const color = REALM_COLORS[realm];
 
-        // Determinar textura
-        let textureKey = isUnlocked ? `portal-${realm}` : 'portal-inactive';
-
-        // Si no existe textura específica, crear una genérica con el color
-        if (!this.textures.exists(textureKey) && isUnlocked) {
-            this.createPortalTexture(realm, color);
-            textureKey = `portal-${realm}`;
-        }
-
-        // Si es bloqueado y no existe textura inactiva, usar cosmos como base
-        if (!this.textures.exists(textureKey)) {
-            textureKey = 'portal-cosmos';
+        // Usar sprites reales si existen, si no generar procedural
+        let textureKey;
+        if (isUnlocked && this.textures.exists('portal-active')) {
+            textureKey = 'portal-active';
+        } else if (!isUnlocked && this.textures.exists('portal-inactive')) {
+            textureKey = 'portal-inactive';
+        } else {
+            // Fallback a textura procedural
+            textureKey = isUnlocked ? `portal-${realm}` : 'portal-inactive';
+            if (!this.textures.exists(textureKey) && isUnlocked) {
+                this.createPortalTexture(realm, color);
+                textureKey = `portal-${realm}`;
+            }
+            if (!this.textures.exists(textureKey)) {
+                textureKey = 'portal-cosmos';
+            }
         }
 
         const portal = this.add.image(config.x, config.y, textureKey);
-        portal.setScale(isUnlocked ? 1 : 0.7);
+
+        // Escalar sprites reales (son grandes)
+        const targetSize = PORTAL.radius * 2;
+        const scale = targetSize / Math.max(portal.width, portal.height);
+        portal.setScale(isUnlocked ? scale : scale * 0.7);
+
         portal.realm = realm;
-        portal.baseScale = isUnlocked ? 1 : 0.7;
+        portal.baseScale = isUnlocked ? scale : scale * 0.7;
         portal.isUnlocked = isUnlocked;
 
         if (!isUnlocked) {
             portal.setAlpha(0.3);
             portal.setTint(0x4b5563);
+        } else {
+            // Tinte de color del reino
+            portal.setTint(color.primary);
+        }
+
+        // Crear glow para el portal (solo si está desbloqueado)
+        if (isUnlocked) {
+            const glow = this.add.graphics();
+            glow.fillStyle(color.primary, 0.15);
+            glow.fillCircle(config.x, config.y, PORTAL.radius * 1.3);
+            glow.setDepth(-1);
+            portal.glow = glow;
         }
 
         this.portals[realm] = portal;
