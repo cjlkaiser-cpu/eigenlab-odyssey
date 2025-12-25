@@ -127,7 +127,7 @@ Las simulaciones se cargan desde EigenLab local:
 
 Ver `src/scenes/SimulationScene.js` → `SIMULATION_PATHS` para mapeo completo.
 
-## Estado Actual: Beta 1.0
+## Estado Actual: Release 1.0
 
 Ver `docs/ROADMAP.md` para el plan de producción detallado.
 
@@ -181,12 +181,19 @@ Ver `docs/ROADMAP.md` para el plan de producción detallado.
   - [x] Lira tocable con 12 cuerdas interactivas
   - [x] CreditsScene: Créditos interactivos con constelaciones
   - [x] Lira como oasis (abre Sympathetic-12 con cuerdas según λ)
+- [x] **Milestone 7 (Pulido y Release):**
+  - [x] Audio: Música generativa por reino con escalas únicas
+  - [x] Audio: Drone ambiental + arpegiador generativo
+  - [x] Audio: Nuevos efectos de UI (eigenvalor, resonancia, diálogos)
+  - [x] Visual: TransitionManager con múltiples tipos de transición
+  - [x] Visual: ParticleEffects con partículas ambientales por reino
+  - [x] UX: TutorialOverlay con hints contextuales
+  - [x] UX: AccessibilityManager con opciones de accesibilidad
+  - [x] UX: OptionsScene accesible desde pausa
+  - [x] Testing: PerformanceMonitor con herramientas de debugging
+  - [x] Testing: Build verificado sin errores
 
-### Próximo: Milestone 7 (Pulido y Release)
-- [ ] Audio: Temas por reino, música adaptativa
-- [ ] Visual: Transiciones suaves, partículas mejoradas
-- [ ] UX: Tutorial mejorado, accesibilidad
-- [ ] Testing: Playtest completo, 60fps
+### Estado: Juego Completo (Release 1.0)
 
 ## Convenciones
 
