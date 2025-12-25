@@ -127,7 +127,7 @@ Las simulaciones se cargan desde EigenLab local:
 
 Ver `src/scenes/SimulationScene.js` → `SIMULATION_PATHS` para mapeo completo.
 
-## Estado Actual: Alpha 0.7
+## Estado Actual: Alpha 0.8
 
 Ver `docs/ROADMAP.md` para el plan de producción detallado.
 
@@ -160,11 +160,16 @@ Ver `docs/ROADMAP.md` para el plan de producción detallado.
   - [x] Sistema de progresión: puzzles → eigenvalores, exploraciones → resonancia
   - [x] Notificación visual de eigenvalor obtenido
   - [x] Reinos bloqueados con requisitos visibles
+- [x] **Milestone 4 (Seis Reinos):**
+  - [x] Orbitales 3D como puzzle central de ATOMOS (λ₅)
+  - [x] Terremotos como puzzle central de TERRA (λ₆)
+  - [x] Game of Life como puzzle central de MACHINA (λ₇)
 
-### Próximo: Milestone 4 (Seis Reinos)
-- [ ] Atomos: Orbitales 3D como puzzle central
-- [ ] Terra: Ondas sísmicas como puzzle central
-- [ ] Machina: Game of Life como puzzle central
+### Próximo: Milestone 5 (Nueve Reinos + Acto III)
+- [ ] Alchemy: Le Chatelier como puzzle central
+- [ ] Bios: Neurona como puzzle central
+- [ ] Psyche: Boids como puzzle central + crisis del Constructo
+- [ ] Acto III: Rameau Machine + flashback
 
 ## Convenciones
 

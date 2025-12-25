@@ -1,7 +1,7 @@
 # EigenLab Odyssey: Plan de Producción
 
 > Última actualización: 25 dic 2024
-> Estado: **Alpha 0.7** — Milestone 3 completado (Tres Reinos Jugables)
+> Estado: **Alpha 0.8** — Milestone 4 completado (Seis Reinos Jugables)
 
 ---
 
@@ -229,8 +229,8 @@ src/
 - Guardián: Observador Cuántico
 - λ₅ obtenible
 
-### M4.2 — Terra: Ondas Sísmicas
-- Puzzle: triangular epicentro
+### M4.2 — Terra: Terremotos
+- Puzzle: triangular epicentro con ondas P y S
 - Guardián: Memoria Geológica
 - λ₆ obtenible
 
@@ -242,12 +242,14 @@ src/
 ### Autoevaluación M4
 
 ```
-□ 6 reinos jugables
-□ 6 puzzles completables
-□ 7 Eigenvalores (λ₁-λ₇)
-□ Lira con 7 cuerdas brillantes
-□ Acto II narrativamente completo
+✓ 6 reinos jugables (Cosmos, Chaos, Logos, Atomos, Terra, Machina)
+✓ 6 puzzles centrales completables
+✓ 7 Eigenvalores (λ₁-λ₇)
+✓ Lira con 7 cuerdas brillantes
+✓ Acto II narrativamente completo
 ```
+
+**Completado:** 25 dic 2024
 
 ---
 
@@ -363,8 +365,8 @@ src/
 | M1 | +0 | 1 | 2 | 0 | ✅ Completado |
 | M2 | +0 | 1 | 2 | 3+ | ✅ Completado |
 | M3 | +0 | 3 | 4 | 9+ | ✅ Completado |
-| M4 | +0 | 6 | 7 | 15+ | ⏳ Siguiente |
-| M5 | +1 | 10 | 11 | 25+ | ⬜ Pendiente |
+| M4 | +0 | 6 | 7 | 15+ | ✅ Completado |
+| M5 | +1 | 10 | 11 | 25+ | ⏳ Siguiente |
 | M6 | +1 | 11 | 12 | 30+ | ⬜ Pendiente |
 | M7 | +0 | 11 | 12 | 30+ | ⬜ Pendiente |
 
@@ -391,6 +393,28 @@ M1 ─────────────────────────�
 ---
 
 ## CHANGELOG NARRATIVO
+
+### 25 dic 2024 (Milestone 4 - Seis Reinos Jugables)
+
+**Milestone 4 completado**
+- 3 nuevos reinos añadidos: Atomos, Terra, Machina
+- Puzzles centrales implementados:
+  - ATOMOS: `orbitales` - Explorar nubes de probabilidad 3D, encontrar orbital 4f₀
+  - TERRA: `terremotos` - Triangular epicentro usando diferencia ondas P/S
+  - MACHINA: `game-of-life` - Construir Gosper Glider Gun
+- Eigenvalores λ₅, λ₆, λ₇ obtenibles
+- Todos los reinos desbloquean con 2 eigenvalores
+- Guardianes con diálogos únicos para cada reino
+
+**Archivos modificados:**
+- `src/data/missions.js` - Añadidas misiones centrales + misiones Terra
+- `src/core/constants.js` - Puzzles centrales primero en listas
+- `src/data/constructoFragments.js` - CENTRAL_PUZZLES actualizado
+- `src/data/guardians.js` - Diálogo Terra corregido
+- `src/scenes/RealmScene.js` - Metadata de orbitales
+
+**Decisión técnica:**
+- `ondas-sismicas` no existe en EigenLab → usamos `terremotos` que tiene ondas P/S
 
 ### 25 dic 2024 (Milestone 3 - Tres Reinos Jugables)
 
