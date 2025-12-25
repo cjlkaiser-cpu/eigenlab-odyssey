@@ -14,6 +14,7 @@ import {
     REALM_SIMULATIONS
 } from '../core/constants.js';
 import ProgressUI from '../ui/ProgressUI.js';
+import LyreHUD from '../ui/LyreHUD.js';
 import gameState from '../systems/GameState.js';
 import { getMission } from '../data/missions.js';
 
@@ -169,6 +170,7 @@ export default class RealmScene extends Phaser.Scene {
         this.simulations = [];
         this.simNodes = [];
         this.progressUI = null;
+        this.lyreHUD = null;
     }
 
     init(data) {
@@ -194,6 +196,9 @@ export default class RealmScene extends Phaser.Scene {
 
         // Progress UI
         this.progressUI = new ProgressUI(this);
+
+        // Lyre HUD
+        this.lyreHUD = new LyreHUD(this);
 
         // Fade in
         this.cameras.main.fadeIn(500);
@@ -490,6 +495,9 @@ export default class RealmScene extends Phaser.Scene {
     shutdown() {
         if (this.progressUI) {
             this.progressUI.destroy();
+        }
+        if (this.lyreHUD) {
+            this.lyreHUD.destroy();
         }
     }
 }

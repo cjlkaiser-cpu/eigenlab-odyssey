@@ -19,6 +19,7 @@ import Resonator from '../entities/Resonator.js';
 import Constructo from '../entities/Constructo.js';
 import ProgressUI from '../ui/ProgressUI.js';
 import NotificationManager from '../ui/NotificationManager.js';
+import LyreHUD from '../ui/LyreHUD.js';
 import gameState from '../systems/GameState.js';
 import synthAudio from '../audio/SynthAudio.js';
 
@@ -33,6 +34,7 @@ export default class AetherHub extends Phaser.Scene {
         this.ambientParticles = null;
         this.portalLabels = {};
         this.progressUI = null;
+        this.lyreHUD = null;
     }
 
     init(data) {
@@ -65,6 +67,9 @@ export default class AetherHub extends Phaser.Scene {
 
         // UI de progreso
         this.progressUI = new ProgressUI(this);
+
+        // HUD de la Lira
+        this.lyreHUD = new LyreHUD(this);
 
         // Sistema de notificaciones
         this.notifications = new NotificationManager(this);
@@ -525,6 +530,9 @@ export default class AetherHub extends Phaser.Scene {
         }
         if (this.constructo) {
             this.constructo.destroy();
+        }
+        if (this.lyreHUD) {
+            this.lyreHUD.destroy();
         }
     }
 }
