@@ -127,7 +127,7 @@ Las simulaciones se cargan desde EigenLab local:
 
 Ver `src/scenes/SimulationScene.js` → `SIMULATION_PATHS` para mapeo completo.
 
-## Estado Actual: Alpha 0.9
+## Estado Actual: Beta 1.0
 
 Ver `docs/ROADMAP.md` para el plan de producción detallado.
 
@@ -172,11 +172,21 @@ Ver `docs/ROADMAP.md` para el plan de producción detallado.
   - [x] Rameau Machine como puzzle de Acto III (λ₁₁)
   - [x] Flashback del Primer Resonador + revelación de La Disonancia
   - [x] Sistema de diálogos especiales (specialDialogues.js)
+- [x] **Milestone 6 (Acto IV + Epílogo):**
+  - [x] DissonanceScene: El Corazón de La Disonancia (ambiente fracturado)
+  - [x] Portal a La Disonancia (aparece con 11λ)
+  - [x] Encuentro con La Disonancia (primera vez que el Resonador habla)
+  - [x] Contrapunctus como puzzle final (λ₁₂)
+  - [x] EpilogueScene: Aether transformado con grafo visible
+  - [x] Lira tocable con 12 cuerdas interactivas
+  - [x] CreditsScene: Créditos interactivos con constelaciones
+  - [x] Lira como oasis (abre Sympathetic-12 con cuerdas según λ)
 
-### Próximo: Milestone 6 (Acto IV + Epílogo)
-- [ ] DissonanceScene: El Corazón de La Disonancia
-- [ ] Contrapunctus como puzzle final (λ₁₂)
-- [ ] Epílogo: Lira completa, créditos interactivos
+### Próximo: Milestone 7 (Pulido y Release)
+- [ ] Audio: Temas por reino, música adaptativa
+- [ ] Visual: Transiciones suaves, partículas mejoradas
+- [ ] UX: Tutorial mejorado, accesibilidad
+- [ ] Testing: Playtest completo, 60fps
 
 ## Convenciones
 

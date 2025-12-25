@@ -1,7 +1,7 @@
 # EigenLab Odyssey: Plan de Producción
 
 > Última actualización: 25 dic 2024
-> Estado: **Alpha 0.9** — Milestone 5 completado (Nueve Reinos + Acto III)
+> Estado: **Beta 1.0** — Milestone 6 completado (Juego Completable)
 
 ---
 
@@ -315,14 +315,16 @@ src/
 ### Autoevaluación M6
 
 ```
-□ Acto IV jugable completo
-□ 12 Eigenvalores obtenibles
-□ Contrapunctus funciona como puzzle
-□ El Resonador habla por primera vez
-□ Créditos interactivos
-□ Lira tocable con 12 cuerdas
-□ Juego completable de inicio a fin
+✓ Acto IV jugable completo (DissonanceScene)
+✓ 12 Eigenvalores obtenibles
+✓ Contrapunctus funciona como puzzle final
+✓ El Resonador habla por primera vez
+✓ Créditos interactivos (CreditsScene)
+✓ Lira tocable con cuerdas según eigenvalores (Sympathetic-12)
+✓ Juego completable de inicio a fin
 ```
+
+**Completado:** 25 dic 2024
 
 ---
 
