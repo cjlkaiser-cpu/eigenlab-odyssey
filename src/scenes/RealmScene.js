@@ -17,6 +17,7 @@ import ProgressUI from '../ui/ProgressUI.js';
 import LyreHUD from '../ui/LyreHUD.js';
 import gameState from '../systems/GameState.js';
 import { getMission } from '../data/missions.js';
+import { getGuardianIntro } from '../data/guardians.js';
 
 // Metadatos de simulaciones
 const SIMULATION_META = {
@@ -202,6 +203,33 @@ export default class RealmScene extends Phaser.Scene {
 
         // Fade in
         this.cameras.main.fadeIn(500);
+
+        // Mostrar diálogo del Guardián si es primera visita
+        this.checkGuardianDialogue();
+    }
+
+    checkGuardianDialogue() {
+        // Verificar si es la primera visita a este reino
+        const visitKey = `guardian-${this.realm}-seen`;
+
+        // Usar localStorage para persistir entre sesiones
+        const hasSeen = localStorage.getItem(visitKey);
+
+        if (!hasSeen) {
+            // Marcar como visto
+            localStorage.setItem(visitKey, 'true');
+
+            // Mostrar diálogo después de un breve delay
+            this.time.delayedCall(800, () => {
+                const lines = getGuardianIntro(this.realm);
+                this.scene.launch('DialogScene', {
+                    lines,
+                    onComplete: () => {
+                        // Opcional: hacer algo después del diálogo
+                    }
+                });
+            });
+        }
     }
 
     createBackground(color) {
