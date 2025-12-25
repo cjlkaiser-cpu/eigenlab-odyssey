@@ -12,6 +12,7 @@ import Phaser from 'phaser';
 import { GAME_WIDTH, GAME_HEIGHT, REALM_COLORS, UI_COLORS } from '../core/constants.js';
 import { getMission } from '../data/missions.js';
 import { getFragment, isCentralPuzzle } from '../data/constructoFragments.js';
+import { getSpecialDialogue, hasSeenSpecialDialogue, markSpecialDialogueSeen } from '../data/specialDialogues.js';
 import gameState from '../systems/GameState.js';
 
 // Rutas de simulaciones - VERIFICADAS contra estructura real de EigenLab
@@ -742,6 +743,22 @@ export default class SimulationScene extends Phaser.Scene {
             });
         } else {
             this.onComplete(completed);
+        }
+
+        // M5.3: Crisis del Constructo al completar boids-masivo
+        if (completed && this.simulation === 'boids-masivo' && !hasSeenSpecialDialogue('constructo-crisis')) {
+            markSpecialDialogueSeen('constructo-crisis');
+            const crisis = getSpecialDialogue('constructo-crisis');
+            if (crisis) {
+                // Lanzar diálogo especial antes de cerrar
+                this.scene.launch('DialogScene', {
+                    lines: crisis.lines,
+                    onComplete: () => {
+                        this.scene.stop();
+                    }
+                });
+                return; // No cerrar todavía, esperar al diálogo
+            }
         }
 
         this.scene.stop();
