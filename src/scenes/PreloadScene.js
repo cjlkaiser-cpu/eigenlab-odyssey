@@ -30,6 +30,34 @@ export default class PreloadScene extends Phaser.Scene {
             progressBar.destroy();
             progressBox.destroy();
         });
+
+        // ═══════════════════════════════════════════════════════════════
+        // CARGAR SPRITES REALES
+        // ═══════════════════════════════════════════════════════════════
+
+        // Resonador
+        this.load.image('resonator-idle', 'assets/sprites/resonator/idle.png');
+        this.load.image('resonator-walk-down', 'assets/sprites/resonator/walk-down.png');
+        this.load.image('resonator-walk-up', 'assets/sprites/resonator/walk-up.png');
+        this.load.image('resonator-walk-left', 'assets/sprites/resonator/walk-left.png');
+        this.load.image('resonator-walk-right', 'assets/sprites/resonator/walk-right.png');
+        this.load.image('resonator-portrait', 'assets/sprites/resonator/portrait.png');
+
+        // Constructo
+        this.load.image('construct-normal', 'assets/sprites/companion/construct-normal.png');
+        this.load.image('construct-glitch', 'assets/sprites/companion/construct-glitch.png');
+
+        // Portales
+        this.load.image('portal-active', 'assets/sprites/portals/portal-active.png');
+        this.load.image('portal-inactive', 'assets/sprites/portals/portal-inactive.png');
+
+        // Lira
+        this.load.image('lyra-active', 'assets/sprites/lyra/lyra-active.png');
+        this.load.image('lyra-inactive', 'assets/sprites/lyra/lyra-inactive.png');
+
+        // Entorno
+        this.load.image('column-formulas', 'assets/sprites/environment/column-formulas.png');
+        this.load.image('platform-stone', 'assets/sprites/environment/platform-stone.png');
     }
 
     create() {

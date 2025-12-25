@@ -15,6 +15,9 @@ export default class Resonator extends Phaser.GameObjects.Container {
 
         this.scene = scene;
         this.speed = PLAYER.speed;
+        this.direction = 'down'; // Dirección actual: down, up, left, right
+        this.isMoving = false;
+        this.breathPhase = 0;
 
         // Estado del jugador
         this.state = {
@@ -29,9 +32,22 @@ export default class Resonator extends Phaser.GameObjects.Container {
             connections: []
         };
 
-        // Crear sprite del jugador
-        this.sprite = scene.add.image(0, 0, 'resonator');
-        this.add(this.sprite);
+        // Crear sprites para cada dirección
+        this.sprites = {
+            idle: this.createSprite('resonator-idle'),
+            down: this.createSprite('resonator-walk-down'),
+            up: this.createSprite('resonator-walk-up'),
+            left: this.createSprite('resonator-walk-left'),
+            right: this.createSprite('resonator-walk-right')
+        };
+
+        // Ocultar todos excepto idle
+        Object.values(this.sprites).forEach(sprite => {
+            sprite.setVisible(false);
+            this.add(sprite);
+        });
+        this.sprites.idle.setVisible(true);
+        this.currentSprite = this.sprites.idle;
 
         // Glow trail
         this.createGlowTrail();
@@ -58,6 +74,22 @@ export default class Resonator extends Phaser.GameObjects.Container {
 
         // Profundidad (encima de otros elementos)
         this.setDepth(100);
+
+        // Iniciar animación de breathing
+        this.startBreathingAnimation();
+    }
+
+    createSprite(textureKey) {
+        // Verificar si la textura existe, si no usar fallback
+        const texture = this.scene.textures.exists(textureKey) ? textureKey : 'resonator';
+        const sprite = this.scene.add.image(0, 0, texture);
+
+        // Escalar el sprite a un tamaño apropiado (los originales son muy grandes)
+        const targetHeight = PLAYER.size * 3; // ~72px de alto
+        const scale = targetHeight / sprite.height;
+        sprite.setScale(scale);
+
+        return sprite;
     }
 
     createGlowTrail() {
@@ -75,22 +107,49 @@ export default class Resonator extends Phaser.GameObjects.Container {
         });
     }
 
+    startBreathingAnimation() {
+        // Animación de respiración sutil cuando está idle
+        this.breathTween = this.scene.tweens.add({
+            targets: this,
+            breathPhase: Math.PI * 2,
+            duration: 2500,
+            repeat: -1,
+            ease: 'Sine.easeInOut'
+        });
+    }
+
+    switchSprite(direction) {
+        if (this.currentSprite === this.sprites[direction]) return;
+
+        // Ocultar sprite actual
+        this.currentSprite.setVisible(false);
+
+        // Mostrar nuevo sprite
+        this.currentSprite = this.sprites[direction];
+        this.currentSprite.setVisible(true);
+    }
+
     update() {
         // Movimiento
         let velocityX = 0;
         let velocityY = 0;
+        let newDirection = null;
 
         // Teclas de dirección o WASD
         if (this.cursors.left.isDown || this.wasd.left.isDown) {
             velocityX = -this.speed;
+            newDirection = 'left';
         } else if (this.cursors.right.isDown || this.wasd.right.isDown) {
             velocityX = this.speed;
+            newDirection = 'right';
         }
 
         if (this.cursors.up.isDown || this.wasd.up.isDown) {
             velocityY = -this.speed;
+            if (!newDirection) newDirection = 'up';
         } else if (this.cursors.down.isDown || this.wasd.down.isDown) {
             velocityY = this.speed;
+            if (!newDirection) newDirection = 'down';
         }
 
         // Normalizar diagonal
@@ -102,13 +161,34 @@ export default class Resonator extends Phaser.GameObjects.Container {
         // Aplicar velocidad
         this.body.setVelocity(velocityX, velocityY);
 
-        // Efecto visual al moverse
-        const isMoving = velocityX !== 0 || velocityY !== 0;
-        this.trail.emitting = isMoving;
+        // Determinar si está en movimiento
+        this.isMoving = velocityX !== 0 || velocityY !== 0;
 
-        // Pulso del sprite
-        const pulse = Math.sin(this.scene.time.now * 0.005) * 0.1 + 1;
-        this.sprite.setScale(pulse);
+        // Cambiar sprite según dirección
+        if (this.isMoving && newDirection) {
+            this.direction = newDirection;
+            this.switchSprite(newDirection);
+        } else if (!this.isMoving) {
+            // Volver a idle cuando no se mueve
+            this.switchSprite('idle');
+        }
+
+        // Efecto visual
+        this.trail.emitting = this.isMoving;
+
+        // Animación de breathing/pulso
+        const breathScale = 1 + Math.sin(this.breathPhase) * 0.03;
+        const baseScale = this.currentSprite.scale || 0.1;
+
+        if (!this.isMoving) {
+            // Breathing más pronunciado cuando está idle
+            const idleBreath = 1 + Math.sin(this.breathPhase) * 0.05;
+            this.currentSprite.setScale(baseScale * idleBreath);
+        } else {
+            // Bobbing sutil al caminar
+            const walkBob = 1 + Math.sin(this.scene.time.now * 0.015) * 0.02;
+            this.currentSprite.setScale(baseScale * walkBob);
+        }
     }
 
     // Métodos de progresión
@@ -143,5 +223,15 @@ export default class Resonator extends Phaser.GameObjects.Container {
 
     setState(newState) {
         this.state = { ...this.state, ...newState };
+    }
+
+    destroy() {
+        if (this.breathTween) {
+            this.breathTween.destroy();
+        }
+        if (this.trail) {
+            this.trail.destroy();
+        }
+        super.destroy();
     }
 }
