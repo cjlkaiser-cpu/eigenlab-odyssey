@@ -485,9 +485,13 @@ export default class RealmScene extends Phaser.Scene {
         this.scene.launch('SimulationScene', {
             simulation: simId,
             realm: this.realm,
-            onComplete: (completed) => {
+            onComplete: (completed, explorationData) => {
                 if (completed) {
-                    const result = gameState.completeSimulation(simId);
+                    // Si es exploración, SimulationScene ya llamó a exploreSimulation()
+                    // Solo los puzzles centrales llaman a completeSimulation() para eigenvalor
+                    if (!explorationData?.isExploration) {
+                        gameState.completeSimulation(simId);
+                    }
                     // Actualizar UI
                     this.updateCompletionUI();
                     this.updateNodeVisual(simId);

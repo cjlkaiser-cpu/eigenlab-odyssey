@@ -65,7 +65,7 @@ export const REALM_SIMULATIONS = {
         'estaciones'
     ],
     chaos: [
-        'lorenz-attractor',
+        'lorenz-attractor', // Puzzle central de CHAOS
         'strange-attractors',
         'double-pendulum',
         'atractor-multicuerpo',
@@ -77,7 +77,7 @@ export const REALM_SIMULATIONS = {
         'galton-board'
     ],
     logos: [
-        'mandelbrot',
+        'mandelbrot', // Puzzle central de LOGOS
         'fractales-ifs',
         'riemann',
         'domain-coloring',

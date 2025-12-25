@@ -65,6 +65,14 @@ export default class NotificationManager {
                 data: connection
             });
         });
+
+        // M3: Notificación de eigenvalor obtenido (puzzle central)
+        gameState.on('eigenvalor-change', (newTotal) => {
+            this.queueNotification({
+                type: 'eigenvalor',
+                data: { total: newTotal }
+            });
+        });
     }
 
     queueNotification(notification) {
@@ -98,6 +106,9 @@ export default class NotificationManager {
                 break;
             case 'graph-connection':
                 this.showGraphConnectionNotification(notification.data);
+                break;
+            case 'eigenvalor':
+                this.showEigenvalorNotification(notification.data);
                 break;
             default:
                 this.showNext();
@@ -606,12 +617,117 @@ export default class NotificationManager {
         this.currentNotification = container;
     }
 
+    showEigenvalorNotification(data) {
+        const { width, height } = this.scene.cameras.main;
+
+        // Container
+        const container = this.scene.add.container(width / 2, -180);
+        container.setDepth(1000);
+        container.setScrollFactor(0);
+
+        // Glow dorado
+        const glow = this.scene.add.graphics();
+        glow.fillStyle(0xfbbf24, 0.2);
+        glow.fillRoundedRect(-200, -70, 400, 140, 16);
+        container.add(glow);
+
+        // Fondo
+        const bg = this.scene.add.graphics();
+        bg.fillStyle(0x0f172a, 0.98);
+        bg.fillRoundedRect(-180, -60, 360, 120, 12);
+        bg.lineStyle(3, 0xfbbf24, 0.9);
+        bg.strokeRoundedRect(-180, -60, 360, 120, 12);
+        container.add(bg);
+
+        // Símbolo Lambda grande
+        const lambda = this.scene.add.text(0, -35, 'λ', {
+            fontFamily: 'Georgia, serif',
+            fontSize: '42px',
+            fontWeight: '700',
+            color: '#fbbf24'
+        }).setOrigin(0.5);
+        container.add(lambda);
+
+        // Título
+        const title = this.scene.add.text(0, 5, 'EIGENVALOR OBTENIDO', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '12px',
+            fontWeight: '700',
+            color: '#fbbf24'
+        }).setOrigin(0.5);
+        container.add(title);
+
+        // Conteo
+        const count = this.scene.add.text(0, 28, `${data.total} de 12 cuerdas restauradas`, {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '14px',
+            fontWeight: '600',
+            color: '#f8fafc'
+        }).setOrigin(0.5);
+        container.add(count);
+
+        // Subtexto
+        const sub = this.scene.add.text(0, 48, 'La Lira resuena más fuerte', {
+            fontFamily: 'Inter, system-ui, sans-serif',
+            fontSize: '10px',
+            fontStyle: 'italic',
+            color: '#94a3b8'
+        }).setOrigin(0.5);
+        container.add(sub);
+
+        // Animación entrada
+        this.scene.tweens.add({
+            targets: container,
+            y: 110,
+            duration: 600,
+            ease: 'Back.out'
+        });
+
+        // Pulso del lambda
+        this.scene.tweens.add({
+            targets: lambda,
+            scale: { from: 1, to: 1.15 },
+            duration: 400,
+            yoyo: true,
+            repeat: 2,
+            ease: 'Sine.inOut'
+        });
+
+        // Pulso del glow
+        this.scene.tweens.add({
+            targets: glow,
+            alpha: { from: 1, to: 0.4 },
+            scale: { from: 1, to: 1.08 },
+            duration: 600,
+            yoyo: true,
+            repeat: 3
+        });
+
+        // Salida después de 4 segundos
+        this.scene.time.delayedCall(4000, () => {
+            this.scene.tweens.add({
+                targets: container,
+                y: -180,
+                alpha: 0,
+                duration: 400,
+                ease: 'Power2',
+                onComplete: () => {
+                    container.destroy();
+                    this.showNext();
+                }
+            });
+        });
+
+        this.currentNotification = container;
+    }
+
     destroy() {
         gameState.off('connection-discovered');
         gameState.off('realms-unlocked');
         gameState.off('path-completed');
         gameState.off('exploration-complete');
         gameState.off('graph-connection-unlocked');
+        gameState.off('eigenvalor-change');
 
         if (this.currentNotification) {
             this.currentNotification.destroy();

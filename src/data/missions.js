@@ -95,8 +95,10 @@ export const MISSIONS = {
     // ═══════════════════════════════════════════════════════════════
     'lorenz-attractor': {
         objective: 'Encuentra las dos "alas" del atractor y observa cómo alterna entre ellas',
-        hint: 'Inicia con condiciones cercanas y observa cómo divergen',
-        minTime: 40,
+        hint: 'Inicia con condiciones cercanas y observa cómo divergen. El caos es determinista',
+        minTime: 45,
+        isCentralPuzzle: true,
+        eigenvalorReward: 'chaos',
         verification: {
             question: '¿Qué representa el "efecto mariposa" en este sistema?',
             options: ['Las alas del atractor', 'Sensibilidad a condiciones iniciales', 'El vuelo de insectos', 'Oscilaciones regulares'],
@@ -148,9 +150,11 @@ export const MISSIONS = {
     // LOGOS - Matemáticas
     // ═══════════════════════════════════════════════════════════════
     'mandelbrot': {
-        objective: 'Haz zoom hasta encontrar una "mini-Mandelbrot" dentro del conjunto',
-        hint: 'Explora los bordes del cardioide principal',
-        minTime: 50,
+        objective: 'Haz zoom hasta encontrar una "mini-Mandelbrot" dentro del conjunto, el símbolo λ oculto',
+        hint: 'Explora los bordes del cardioide principal. El infinito se repite a sí mismo',
+        minTime: 55,
+        isCentralPuzzle: true,
+        eigenvalorReward: 'logos',
         verification: {
             question: '¿Qué propiedad tiene el conjunto de Mandelbrot?',
             options: ['Es finito', 'Es auto-similar', 'Es circular', 'Es aleatorio'],
