@@ -16,6 +16,7 @@ import {
     NARRATIVE
 } from '../core/constants.js';
 import Resonator from '../entities/Resonator.js';
+import Constructo from '../entities/Constructo.js';
 import ProgressUI from '../ui/ProgressUI.js';
 import NotificationManager from '../ui/NotificationManager.js';
 import gameState from '../systems/GameState.js';
@@ -26,6 +27,7 @@ export default class AetherHub extends Phaser.Scene {
         super({ key: 'AetherHub' });
 
         this.player = null;
+        this.constructo = null;
         this.portals = {};
         this.lyra = null;
         this.ambientParticles = null;
@@ -57,6 +59,9 @@ export default class AetherHub extends Phaser.Scene {
 
         // Crear al jugador
         this.createPlayer();
+
+        // Crear al Constructo (compañero)
+        this.createConstructo();
 
         // UI de progreso
         this.progressUI = new ProgressUI(this);
@@ -293,6 +298,17 @@ export default class AetherHub extends Phaser.Scene {
         this.physics.world.enable(this.player);
     }
 
+    createConstructo() {
+        if (!this.player) return;
+
+        this.constructo = new Constructo(this, this.player, {
+            followDistance: 60,
+            followSpeed: 0.05,
+            bobAmplitude: 6,
+            scale: 0.06
+        });
+    }
+
     createRealmUI() {
         this.add.text(30, 30, 'AETHER', {
             fontFamily: 'Inter, system-ui, sans-serif',
@@ -427,6 +443,10 @@ export default class AetherHub extends Phaser.Scene {
             this.player.update();
         }
 
+        if (this.constructo) {
+            this.constructo.update(time);
+        }
+
         // Animar anillos
         if (this.waveRings) {
             this.waveRings.forEach((ring) => {
@@ -481,6 +501,9 @@ export default class AetherHub extends Phaser.Scene {
         }
         if (this.notifications) {
             this.notifications.destroy();
+        }
+        if (this.constructo) {
+            this.constructo.destroy();
         }
     }
 }
