@@ -24,6 +24,8 @@ import ResonanceBar from '../ui/ResonanceBar.js';
 import gameState from '../systems/GameState.js';
 import synthAudio from '../audio/SynthAudio.js';
 import { getSpecialDialogue, hasSeenSpecialDialogue, markSpecialDialogueSeen } from '../data/specialDialogues.js';
+import TransitionManager from '../systems/TransitionManager.js';
+import ParticleEffects from '../systems/ParticleEffects.js';
 
 export default class AetherHub extends Phaser.Scene {
     constructor() {
@@ -44,6 +46,9 @@ export default class AetherHub extends Phaser.Scene {
         // M6: Portal a La Disonancia
         this.disonanciaPortal = null;
         this.disonanciaPrompt = null;
+        // M7.2: Sistemas visuales
+        this.transitionManager = null;
+        this.particleEffects = null;
     }
 
     init(data) {
@@ -91,6 +96,11 @@ export default class AetherHub extends Phaser.Scene {
 
         // Sistema de notificaciones
         this.notifications = new NotificationManager(this);
+
+        // M7.2: Sistemas visuales
+        this.transitionManager = new TransitionManager(this);
+        this.particleEffects = new ParticleEffects(this);
+        this.particleEffects.createAmbientParticles('aether', 'medium');
 
         // UI del reino
         this.createRealmUI();
@@ -831,11 +841,8 @@ export default class AetherHub extends Phaser.Scene {
             return;
         }
 
-        // Sonido de portal al entrar
-        synthAudio.playPortal();
-
-        this.cameras.main.fadeOut(500, 0, 0, 0);
-        this.cameras.main.once('camerafadeoutcomplete', () => {
+        // M7.2: Transición mejorada con efectos del reino
+        this.transitionManager.realmTransition(realm, 800).then(() => {
             this.scene.start('RealmScene', {
                 realm: realm,
                 from: 'aether'
@@ -939,6 +946,13 @@ export default class AetherHub extends Phaser.Scene {
         }
         if (this.resonanceBar) {
             this.resonanceBar.destroy();
+        }
+        // M7.2: Limpieza de sistemas visuales
+        if (this.transitionManager) {
+            this.transitionManager.cleanup();
+        }
+        if (this.particleEffects) {
+            this.particleEffects.destroy();
         }
     }
 }

@@ -20,6 +20,8 @@ import gameState from '../systems/GameState.js';
 import { getMission } from '../data/missions.js';
 import { getGuardianIntro } from '../data/guardians.js';
 import synthAudio from '../audio/SynthAudio.js';
+import TransitionManager from '../systems/TransitionManager.js';
+import ParticleEffects from '../systems/ParticleEffects.js';
 
 // Metadatos de simulaciones
 const SIMULATION_META = {
@@ -177,6 +179,9 @@ export default class RealmScene extends Phaser.Scene {
         this.progressUI = null;
         this.lyreHUD = null;
         this.resonanceBar = null;
+        // M7.2: Sistemas visuales
+        this.transitionManager = null;
+        this.particleEffects = null;
     }
 
     init(data) {
@@ -208,6 +213,11 @@ export default class RealmScene extends Phaser.Scene {
 
         // M2: Barra de resonancia
         this.resonanceBar = new ResonanceBar(this, width - 200, 30);
+
+        // M7.2: Sistemas visuales
+        this.transitionManager = new TransitionManager(this);
+        this.particleEffects = new ParticleEffects(this);
+        this.particleEffects.createAmbientParticles(this.realm, 'low');
 
         // Fade in
         this.cameras.main.fadeIn(500);
@@ -529,8 +539,8 @@ export default class RealmScene extends Phaser.Scene {
     }
 
     returnToAether() {
-        this.cameras.main.fadeOut(400);
-        this.cameras.main.once('camerafadeoutcomplete', () => {
+        // M7.2: Transición mejorada
+        this.transitionManager.fadeOut(400).then(() => {
             this.scene.start('AetherHub', { fromRealm: this.realm });
         });
     }
@@ -544,6 +554,13 @@ export default class RealmScene extends Phaser.Scene {
         }
         if (this.resonanceBar) {
             this.resonanceBar.destroy();
+        }
+        // M7.2: Limpieza de sistemas visuales
+        if (this.transitionManager) {
+            this.transitionManager.cleanup();
+        }
+        if (this.particleEffects) {
+            this.particleEffects.destroy();
         }
     }
 }
