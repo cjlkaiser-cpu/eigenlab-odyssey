@@ -116,13 +116,20 @@ export const MISSIONS = {
         }
     },
     'game-of-life': {
-        objective: 'Crea un "glider" que se mueva diagonalmente por la pantalla',
-        hint: 'Patrón: 3 células en fila + 1 arriba a la derecha + 1 en el medio',
-        minTime: 40,
+        objective: 'Construye un Gosper Glider Gun: vida que crea vida',
+        hint: 'El Gun tiene dos secciones que disparan gliders periódicamente. Busca el patrón en la biblioteca',
+        minTime: 60,
+        isCentralPuzzle: true,
+        eigenvalorReward: 'machina',
         verification: {
-            question: '¿Cuántas células vivas necesita un "glider"?',
-            options: ['3', '4', '5', '6'],
-            correct: 2
+            question: '¿Por qué el Game of Life es Turing-completo?',
+            options: [
+                'Porque tiene muchas células',
+                'Porque puede simular cualquier computación',
+                'Porque Conway lo diseñó así',
+                'Porque usa números binarios'
+            ],
+            correct: 1
         }
     },
     'boids-masivo': {
@@ -205,6 +212,23 @@ export const MISSIONS = {
     // ═══════════════════════════════════════════════════════════════
     // ATOMOS - Física
     // ═══════════════════════════════════════════════════════════════
+    'orbitales': {
+        objective: 'Explora las nubes de probabilidad y encuentra el orbital 4f₀',
+        hint: 'Navega por los números cuánticos n, l, m. Los orbitales f tienen formas más complejas',
+        minTime: 55,
+        isCentralPuzzle: true,
+        eigenvalorReward: 'atomos',
+        verification: {
+            question: '¿Qué determina la forma de un orbital atómico?',
+            options: [
+                'Solo el número cuántico principal n',
+                'Los números cuánticos l y m',
+                'La carga del núcleo',
+                'La temperatura'
+            ],
+            correct: 1
+        }
+    },
     'ondas': {
         objective: 'Crea una onda estacionaria con 3 nodos',
         hint: 'Ajusta la frecuencia para que coincida con la longitud del medio',
@@ -277,6 +301,57 @@ export const MISSIONS = {
             question: '¿Qué compuerta da 1 solo cuando ambas entradas son 1?',
             options: ['OR', 'AND', 'XOR', 'NOT'],
             correct: 1
+        }
+    },
+
+    // ═══════════════════════════════════════════════════════════════
+    // TERRA - Geología
+    // ═══════════════════════════════════════════════════════════════
+    'terremotos': {
+        objective: 'Triangula el epicentro del terremoto usando las ondas P y S',
+        hint: 'Las ondas P viajan más rápido que las S. La diferencia de tiempo revela la distancia',
+        minTime: 55,
+        isCentralPuzzle: true,
+        eigenvalorReward: 'terra',
+        verification: {
+            question: '¿Qué diferencia hay entre las ondas P y S?',
+            options: [
+                'Las P son más destructivas',
+                'Las P son longitudinales, las S transversales',
+                'Las S viajan más rápido',
+                'No hay diferencia'
+            ],
+            correct: 1
+        }
+    },
+    'tectonica-placas': {
+        objective: 'Observa cómo se mueven las placas tectónicas y predice dónde ocurrirán volcanes',
+        hint: 'Los volcanes suelen aparecer en los bordes de las placas, especialmente en zonas de subducción',
+        minTime: 40,
+        verification: {
+            question: '¿Dónde se forman más volcanes?',
+            options: ['En el centro de los continentes', 'En los bordes de placas', 'En los océanos profundos', 'Aleatoriamente'],
+            correct: 1
+        }
+    },
+    'erosion': {
+        objective: 'Simula millones de años de erosión y observa cómo se forma un cañón',
+        hint: 'El agua es paciente. Dale tiempo suficiente a la simulación',
+        minTime: 45,
+        verification: {
+            question: '¿Cuál es el principal agente de erosión en la formación de cañones?',
+            options: ['Viento', 'Agua', 'Temperatura', 'Gravedad'],
+            correct: 1
+        }
+    },
+    'ciclo-rocas': {
+        objective: 'Sigue el ciclo completo de una roca: de ígnea a sedimentaria a metamórfica',
+        hint: 'El calor y la presión transforman las rocas. El enfriamiento crea nuevas',
+        minTime: 40,
+        verification: {
+            question: '¿Qué tipo de roca se forma cuando el magma se enfría?',
+            options: ['Sedimentaria', 'Metamórfica', 'Ígnea', 'Fósil'],
+            correct: 2
         }
     },
 

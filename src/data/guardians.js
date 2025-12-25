@@ -108,7 +108,7 @@ export const GUARDIANS = {
             'Los terremotos son el latido de la Tierra.',
             'Las ondas P y S revelan lo que hay debajo.',
             'Triangula el epicentro. Escucha las vibraciones.',
-            '[Busca las Ondas Sísmicas]'
+            '[Busca Terremotos]'
         ],
         hints: [
             'Las ondas P llegan primero. Las S llegan después.',

@@ -743,8 +743,8 @@ export const CENTRAL_PUZZLES = [
     'lorenz-attractor',  // CHAOS
     'mandelbrot',        // LOGOS
     'orbitales',         // ATOMOS (3D orbitales)
-    'ondas-sismicas',    // TERRA
-    'game-of-life',      // MACHINA
+    'terremotos',        // TERRA (ondas sísmicas P y S)
+    'game-of-life',      // MACHINA (Gosper Glider Gun)
     'le-chatelier',      // ALCHEMY
     'neurona',           // BIOS
     'boids-masivo',      // PSYCHE

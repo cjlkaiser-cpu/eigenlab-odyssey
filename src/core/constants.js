@@ -99,6 +99,7 @@ export const REALM_SIMULATIONS = {
         'mobius-strip'
     ],
     atomos: [
+        'orbitales', // Puzzle central de ATOMOS
         'ondas',
         'interferencia',
         'efecto-doppler',
@@ -116,8 +117,8 @@ export const REALM_SIMULATIONS = {
         'fluidos-2d'
     ],
     terra: [
+        'terremotos', // Puzzle central de TERRA
         'tectonica-placas',
-        'terremotos',
         'volcanes',
         'erosion',
         'erosion-hidraulica',
@@ -125,6 +126,7 @@ export const REALM_SIMULATIONS = {
         'estratigrafia'
     ],
     machina: [
+        'game-of-life', // Puzzle central de MACHINA
         'automatas-elementales',
         'finite-automata',
         'binary-search-tree',

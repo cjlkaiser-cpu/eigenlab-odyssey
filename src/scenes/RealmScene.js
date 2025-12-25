@@ -64,6 +64,7 @@ const SIMULATION_META = {
     'symmetry-groups': { name: 'Grupos de Simetría', desc: 'Transformaciones' },
 
     // ATOMOS
+    'orbitales': { name: 'Orbitales 3D', desc: 'Nubes de probabilidad cuántica' },
     'ondas': { name: 'Ondas', desc: 'Propagación ondulatoria' },
     'interferencia': { name: 'Interferencia', desc: 'Superposición de ondas' },
     'efecto-doppler': { name: 'Efecto Doppler', desc: 'Frecuencia en movimiento' },
