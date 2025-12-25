@@ -1,5 +1,7 @@
 # EigenLab Odyssey - Contexto del Proyecto
 
+> **Para ejecución autónoma:** Lee también `CLAUDE_INSTRUCTIONS.md`
+
 ## Descripción
 
 **EigenLab Odyssey** es un juego de aventura/exploración que conecta más de 150 simulaciones científicas interactivas de EigenLab en una narrativa unificada. El jugador es "El Resonador", un ser que restaura la armonía del conocimiento usando instrumentos musicales mágicos.
@@ -125,18 +127,27 @@ Las simulaciones se cargan desde EigenLab local:
 
 Ver `src/scenes/SimulationScene.js` → `SIMULATION_PATHS` para mapeo completo.
 
-## Estado Actual
+## Estado Actual: Alpha 0.4
 
+Ver `docs/ROADMAP.md` para el plan de producción detallado.
+
+### Completado
 - [x] Escenas cinematográficas (intro, catedral, mapa)
 - [x] Hub central funcional
 - [x] Navegación a reinos
 - [x] Sistema de misiones
 - [x] Grafo de conocimiento interactivo
-- [x] Audio procedural
+- [x] Audio procedural base
 - [x] 23 sprites extraídos
-- [ ] Integración de sprites en escenas
-- [ ] Sistema de combate/interacción
-- [ ] Guardado en la nube
+- [x] Documentación completa (GDD, STORY, CHARACTERS, PITCH)
+- [x] Plan de producción con 7 milestones
+
+### Próximo: Milestone 1 (Vertical Slice)
+- [ ] Sprites del Resonador animados
+- [ ] Constructo como compañero
+- [ ] COSMOS jugable con Harmonices Mundi
+- [ ] Lira visual progresiva
+- [ ] λ₂ obtenible
 
 ## Convenciones
 
