@@ -127,7 +127,7 @@ Las simulaciones se cargan desde EigenLab local:
 
 Ver `src/scenes/SimulationScene.js` → `SIMULATION_PATHS` para mapeo completo.
 
-## Estado Actual: Alpha 0.8
+## Estado Actual: Alpha 0.9
 
 Ver `docs/ROADMAP.md` para el plan de producción detallado.
 
@@ -164,12 +164,19 @@ Ver `docs/ROADMAP.md` para el plan de producción detallado.
   - [x] Orbitales 3D como puzzle central de ATOMOS (λ₅)
   - [x] Terremotos como puzzle central de TERRA (λ₆)
   - [x] Game of Life como puzzle central de MACHINA (λ₇)
+- [x] **Milestone 5 (Nueve Reinos + Acto III):**
+  - [x] Le Chatelier como puzzle central de ALCHEMY (λ₈)
+  - [x] Neurona H-H como puzzle central de BIOS (λ₉)
+  - [x] Boids como puzzle central de PSYCHE (λ₁₀) + crisis del Constructo
+  - [x] Atril del Primer Resonador (aparece con 10λ)
+  - [x] Rameau Machine como puzzle de Acto III (λ₁₁)
+  - [x] Flashback del Primer Resonador + revelación de La Disonancia
+  - [x] Sistema de diálogos especiales (specialDialogues.js)
 
-### Próximo: Milestone 5 (Nueve Reinos + Acto III)
-- [ ] Alchemy: Le Chatelier como puzzle central
-- [ ] Bios: Neurona como puzzle central
-- [ ] Psyche: Boids como puzzle central + crisis del Constructo
-- [ ] Acto III: Rameau Machine + flashback
+### Próximo: Milestone 6 (Acto IV + Epílogo)
+- [ ] DissonanceScene: El Corazón de La Disonancia
+- [ ] Contrapunctus como puzzle final (λ₁₂)
+- [ ] Epílogo: Lira completa, créditos interactivos
 
 ## Convenciones
 

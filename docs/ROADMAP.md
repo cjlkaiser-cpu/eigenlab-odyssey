@@ -1,7 +1,7 @@
 # EigenLab Odyssey: Plan de Producción
 
 > Última actualización: 25 dic 2024
-> Estado: **Alpha 0.8** — Milestone 4 completado (Seis Reinos Jugables)
+> Estado: **Alpha 0.9** — Milestone 5 completado (Nueve Reinos + Acto III)
 
 ---
 
@@ -278,13 +278,15 @@ src/
 ### Autoevaluación M5
 
 ```
-□ 9 reinos completados
-□ 11 Eigenvalores (λ₁-λ₁₁)
-□ Rameau Machine playable en Acto III
-□ Flashback cinemático funciona
-□ Constructo tiene crisis en Psyche
-□ Historia revelada correctamente
+✓ 9 reinos completados
+✓ 11 Eigenvalores (λ₁-λ₁₁)
+✓ Rameau Machine playable en Acto III
+✓ Flashback cinemático funciona (diálogos especiales)
+✓ Constructo tiene crisis en Psyche
+✓ Historia revelada correctamente
 ```
+
+**Completado:** 25 dic 2024
 
 ---
 
