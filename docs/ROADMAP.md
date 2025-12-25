@@ -1,7 +1,7 @@
 # EigenLab Odyssey: Plan de Producción
 
 > Última actualización: 25 dic 2024
-> Estado: **Alpha 0.6** — Milestone 2 completado (Sistema de Exploración)
+> Estado: **Alpha 0.7** — Milestone 3 completado (Tres Reinos Jugables)
 
 ---
 
@@ -207,14 +207,16 @@ src/
 ### Autoevaluación M3
 
 ```
-□ 3 reinos jugables (Cosmos, Chaos, Logos)
-□ 3 puzzles centrales completables
-□ 3 Eigenvalores obtenibles (λ₂, λ₃, λ₄)
-□ 9+ exploraciones con recompensas
-□ Lira muestra 4 cuerdas (con λ₁ tutorial)
-□ Grafo tiene conexiones desbloqueadas
-□ Sistema de desbloqueo funciona
+✓ 3 reinos jugables (Cosmos, Chaos, Logos)
+✓ 3 puzzles centrales completables
+✓ 3 Eigenvalores obtenibles (λ₂, λ₃, λ₄)
+✓ 9+ exploraciones con recompensas
+✓ Lira muestra 4 cuerdas (con λ₁ tutorial)
+✓ Grafo tiene conexiones desbloqueadas
+✓ Sistema de desbloqueo funciona
 ```
+
+**Completado:** 25 dic 2024
 
 ---
 
@@ -360,8 +362,8 @@ src/
 |-----------|---------|---------|--------------|---------------|--------|
 | M1 | +0 | 1 | 2 | 0 | ✅ Completado |
 | M2 | +0 | 1 | 2 | 3+ | ✅ Completado |
-| M3 | +0 | 3 | 4 | 9+ | ⏳ Siguiente |
-| M4 | +0 | 6 | 7 | 15+ | ⬜ Pendiente |
+| M3 | +0 | 3 | 4 | 9+ | ✅ Completado |
+| M4 | +0 | 6 | 7 | 15+ | ⏳ Siguiente |
 | M5 | +1 | 10 | 11 | 25+ | ⬜ Pendiente |
 | M6 | +1 | 11 | 12 | 30+ | ⬜ Pendiente |
 | M7 | +0 | 11 | 12 | 30+ | ⬜ Pendiente |
@@ -389,6 +391,29 @@ M1 ─────────────────────────�
 ---
 
 ## CHANGELOG NARRATIVO
+
+### 25 dic 2024 (Milestone 3 - Tres Reinos Jugables)
+
+**Milestone 3 completado**
+- lorenz-attractor marcado como puzzle central de CHAOS
+  - Objetivo: encontrar las dos "alas" del atractor
+  - Otorga λ₃ al completar
+- mandelbrot marcado como puzzle central de LOGOS
+  - Objetivo: zoom hasta mini-Mandelbrot (isla-λ)
+  - Otorga λ₄ al completar
+- Sistema de progresión implementado
+  - Puzzles centrales dan eigenvalores
+  - Exploraciones dan resonancia (+5%)
+  - Reinos bloqueados muestran requisitos
+- Notificación visual de eigenvalor
+  - Animación lambda dorada pulsante
+  - Conteo de cuerdas restauradas
+
+**Archivos modificados:**
+- `src/data/missions.js` - puzzles centrales marcados
+- `src/core/constants.js` - comentarios de puzzles centrales
+- `src/scenes/RealmScene.js` - diferenciación puzzle/exploración
+- `src/ui/NotificationManager.js` - notificación eigenvalor
 
 ### 25 dic 2024 (Milestone 2 - Sistema de Exploración)
 

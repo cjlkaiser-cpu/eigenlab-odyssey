@@ -127,7 +127,7 @@ Las simulaciones se cargan desde EigenLab local:
 
 Ver `src/scenes/SimulationScene.js` → `SIMULATION_PATHS` para mapeo completo.
 
-## Estado Actual: Alpha 0.6
+## Estado Actual: Alpha 0.7
 
 Ver `docs/ROADMAP.md` para el plan de producción detallado.
 
@@ -154,11 +154,17 @@ Ver `docs/ROADMAP.md` para el plan de producción detallado.
   - [x] ResonanceBar HUD visual
   - [x] 25+ conexiones del grafo desbloqueables
   - [x] Notificaciones de exploración y conexiones
+- [x] **Milestone 3 (Tres Reinos Jugables):**
+  - [x] Atractor de Lorenz como puzzle central de CHAOS
+  - [x] Mandelbrot como puzzle central de LOGOS
+  - [x] Sistema de progresión: puzzles → eigenvalores, exploraciones → resonancia
+  - [x] Notificación visual de eigenvalor obtenido
+  - [x] Reinos bloqueados con requisitos visibles
 
-### Próximo: Milestone 3 (Tres Reinos Jugables)
-- [ ] Chaos: Atractor de Lorenz como puzzle central
-- [ ] Logos: Mandelbrot como puzzle central
-- [ ] Progresión y desbloqueo entre reinos
+### Próximo: Milestone 4 (Seis Reinos)
+- [ ] Atomos: Orbitales 3D como puzzle central
+- [ ] Terra: Ondas sísmicas como puzzle central
+- [ ] Machina: Game of Life como puzzle central
 
 ## Convenciones
 
